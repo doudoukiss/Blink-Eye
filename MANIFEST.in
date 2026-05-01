@@ -1,0 +1,7 @@
+prune docs
+prune examples
+prune scripts
+prune tests
+graft web/client_src
+prune web/client_src/node_modules
+global-exclude __pycache__ *.py[cod] .DS_Store

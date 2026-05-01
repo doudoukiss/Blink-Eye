@@ -1,0 +1,3 @@
+{"case_id": "use_browser_melo_memory", "seed": "User prefers browser/Melo path as primary product path.", "ask": "What should we upgrade next?", "expected": "Answer scopes to browser/Melo; memory trace visible."}
+{"case_id": "correct_stale_memory", "seed": "Old memory says native Kokoro is primary.", "correction": "No, browser/Melo is primary now.", "expected": "Old memory marked stale or corrected."}
+{"case_id": "persona_consistency_interruption", "seed": "Blink style: direct, calm, technical.", "ask": "Interrupt twice and ask same question.", "expected": "Style remains stable and not defensive."}

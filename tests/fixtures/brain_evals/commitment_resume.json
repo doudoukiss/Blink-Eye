@@ -1,0 +1,192 @@
+{
+  "name": "commitment_resume",
+  "description": "A durable commitment is deferred, resumed, and completed across replay.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-goal-1",
+      "event_type": "goal.created",
+      "ts": "2026-04-18T01:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "goal": {
+          "goal_id": "goal-alpha",
+          "title": "Ship Alpha project",
+          "intent": "narrative.commitment",
+          "source": "memory",
+          "goal_family": "conversation",
+          "commitment_id": "commitment_alpha",
+          "status": "waiting",
+          "details": {
+            "commitment_status": "active"
+          },
+          "steps": [],
+          "active_step_index": null,
+          "recovery_count": 0,
+          "planning_requested": false,
+          "blocked_reason": null,
+          "wake_conditions": [],
+          "plan_revision": 1,
+          "resume_count": 0,
+          "last_summary": null,
+          "last_error": null,
+          "created_at": "2026-04-18T01:00:00+00:00",
+          "updated_at": "2026-04-18T01:00:00+00:00"
+        },
+        "commitment": {
+          "commitment_id": "commitment_alpha",
+          "scope_type": "relationship",
+          "scope_id": "blink/main:alpha",
+          "status": "active"
+        }
+      }
+    },
+    {
+      "event_id": "evt-goal-2",
+      "event_type": "goal.deferred",
+      "ts": "2026-04-18T01:10:00+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-goal-1",
+      "payload": {
+        "goal": {
+          "goal_id": "goal-alpha",
+          "title": "Ship Alpha project",
+          "intent": "narrative.commitment",
+          "source": "memory",
+          "goal_family": "conversation",
+          "commitment_id": "commitment_alpha",
+          "status": "blocked",
+          "details": {
+            "commitment_status": "deferred"
+          },
+          "steps": [],
+          "active_step_index": null,
+          "recovery_count": 0,
+          "planning_requested": false,
+          "blocked_reason": {
+            "kind": "waiting_user",
+            "summary": "Waiting for user confirmation.",
+            "details": {}
+          },
+          "wake_conditions": [
+            {
+              "kind": "explicit_resume",
+              "summary": "Resume after the user confirms.",
+              "details": {}
+            }
+          ],
+          "plan_revision": 1,
+          "resume_count": 0,
+          "last_summary": "Deferred until the user confirms.",
+          "last_error": null,
+          "created_at": "2026-04-18T01:00:00+00:00",
+          "updated_at": "2026-04-18T01:10:00+00:00"
+        },
+        "commitment": {
+          "commitment_id": "commitment_alpha",
+          "scope_type": "relationship",
+          "scope_id": "blink/main:alpha",
+          "status": "deferred"
+        }
+      }
+    },
+    {
+      "event_id": "evt-goal-3",
+      "event_type": "goal.resumed",
+      "ts": "2026-04-18T02:00:00+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-goal-2",
+      "payload": {
+        "goal": {
+          "goal_id": "goal-alpha",
+          "title": "Ship Alpha project",
+          "intent": "narrative.commitment",
+          "source": "memory",
+          "goal_family": "conversation",
+          "commitment_id": "commitment_alpha",
+          "status": "waiting",
+          "details": {
+            "commitment_status": "active"
+          },
+          "steps": [],
+          "active_step_index": null,
+          "recovery_count": 0,
+          "planning_requested": false,
+          "blocked_reason": null,
+          "wake_conditions": [],
+          "plan_revision": 1,
+          "resume_count": 1,
+          "last_summary": "The commitment is active again.",
+          "last_error": null,
+          "created_at": "2026-04-18T01:00:00+00:00",
+          "updated_at": "2026-04-18T02:00:00+00:00"
+        },
+        "commitment": {
+          "commitment_id": "commitment_alpha",
+          "scope_type": "relationship",
+          "scope_id": "blink/main:alpha",
+          "status": "active"
+        }
+      }
+    },
+    {
+      "event_id": "evt-goal-4",
+      "event_type": "goal.completed",
+      "ts": "2026-04-18T02:05:00+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-goal-3",
+      "payload": {
+        "goal": {
+          "goal_id": "goal-alpha",
+          "title": "Ship Alpha project",
+          "intent": "narrative.commitment",
+          "source": "memory",
+          "goal_family": "conversation",
+          "commitment_id": "commitment_alpha",
+          "status": "completed",
+          "details": {
+            "commitment_status": "completed"
+          },
+          "steps": [],
+          "active_step_index": null,
+          "recovery_count": 0,
+          "planning_requested": false,
+          "blocked_reason": null,
+          "wake_conditions": [],
+          "plan_revision": 1,
+          "resume_count": 1,
+          "last_summary": "Alpha shipped.",
+          "last_error": null,
+          "created_at": "2026-04-18T01:00:00+00:00",
+          "updated_at": "2026-04-18T02:05:00+00:00"
+        },
+        "commitment": {
+          "commitment_id": "commitment_alpha",
+          "scope_type": "relationship",
+          "scope_id": "blink/main:alpha",
+          "status": "completed"
+        }
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "commitment_titles_by_status": {
+      "recent_terminal": [
+        "Ship Alpha project"
+      ]
+    },
+    "agenda_contains": {
+      "completed_goals": [
+        "Ship Alpha project"
+      ]
+    }
+  }
+}

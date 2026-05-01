@@ -1,0 +1,223 @@
+{
+  "description": "An unsupported capability proposal is rejected without any fake downstream adoption.",
+  "events": [
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "commitment_3ce6db0a5bd55a25b44bcbd5df9d7e92",
+      "event_id": "36be21bed9024c25b8e962d7588a35bd",
+      "event_type": "goal.created",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_3ce6db0a5bd55a25b44bcbd5df9d7e92",
+          "scope_id": "blink/main:planning-reject",
+          "scope_type": "relationship",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment_3ce6db0a5bd55a25b44bcbd5df9d7e92",
+          "created_at": "2026-04-19T17:11:01.356435+00:00",
+          "details": {
+            "commitment_status": "active",
+            "durable_commitment": true
+          },
+          "goal_family": "conversation",
+          "goal_id": "f0502fbfe731464d8221f654fed86f22",
+          "intent": "narrative.commitment",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Replay rejected plan",
+          "updated_at": "2026-04-19T17:11:01.356436+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-reject",
+      "source": "fixture",
+      "thread_id": "browser:planning-reject",
+      "ts": "2026-04-19T17:11:01.357189+00:00",
+      "user_id": "planning-reject"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "f0502fbfe731464d8221f654fed86f22",
+      "event_id": "c99ccef09d3f433296ad61dcb34fd5ce",
+      "event_type": "planning.requested",
+      "payload": {
+        "goal_id": "f0502fbfe731464d8221f654fed86f22",
+        "intent": "narrative.commitment"
+      },
+      "session_id": "browser:planning-reject",
+      "source": "executive",
+      "thread_id": "browser:planning-reject",
+      "ts": "2026-04-19T17:11:01.357584+00:00",
+      "user_id": "planning-reject"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "c99ccef09d3f433296ad61dcb34fd5ce",
+      "correlation_id": "f0502fbfe731464d8221f654fed86f22",
+      "event_id": "0c65e4a0491f4348bec296f8a3899635",
+      "event_type": "planning.rejected",
+      "payload": {
+        "commitment_id": "commitment_3ce6db0a5bd55a25b44bcbd5df9d7e92",
+        "decision": {
+          "details": {
+            "invalid_capability_ids": [
+              "unknown.capability"
+            ],
+            "request_kind": "initial_plan"
+          },
+          "reason": "unsupported_capability",
+          "summary": "The bounded planner referenced unsupported capabilities."
+        },
+        "goal_id": "f0502fbfe731464d8221f654fed86f22",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment_3ce6db0a5bd55a25b44bcbd5df9d7e92",
+          "created_at": "2026-04-19T17:11:01.357880+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "invalid_capability_ids": [
+              "unknown.capability"
+            ],
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "f0502fbfe731464d8221f654fed86f22",
+          "missing_inputs": [],
+          "plan_proposal_id": "plan-proposal-82c82f2d-a4c6-4cdf-91c3-d73844ee0fea",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "needs_operator_review",
+          "source": "bounded_planner",
+          "steps": [],
+          "summary": "The bounded planner referenced unsupported capabilities.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-reject",
+      "source": "executive",
+      "thread_id": "browser:planning-reject",
+      "ts": "2026-04-19T17:11:01.357880+00:00",
+      "user_id": "planning-reject"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "0c65e4a0491f4348bec296f8a3899635",
+      "correlation_id": "f0502fbfe731464d8221f654fed86f22",
+      "event_id": "a27c5e7e95194279bab0b56c35517863",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_3ce6db0a5bd55a25b44bcbd5df9d7e92",
+          "scope_id": "blink/main:planning-reject",
+          "scope_type": "relationship",
+          "status": "blocked"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": {
+            "details": {
+              "plan_proposal_id": "plan-proposal-82c82f2d-a4c6-4cdf-91c3-d73844ee0fea",
+              "reason": "unsupported_capability"
+            },
+            "kind": "operator_review",
+            "summary": "A bounded operator review is required before planning can continue."
+          },
+          "commitment_id": "commitment_3ce6db0a5bd55a25b44bcbd5df9d7e92",
+          "created_at": "2026-04-19T17:11:01.356435+00:00",
+          "details": {
+            "commitment_status": "blocked",
+            "durable_commitment": true,
+            "plan_review_policy": "needs_operator_review"
+          },
+          "goal_family": "conversation",
+          "goal_id": "f0502fbfe731464d8221f654fed86f22",
+          "intent": "narrative.commitment",
+          "last_error": "unsupported_capability",
+          "last_summary": "The bounded planner referenced unsupported capabilities.",
+          "plan_revision": 1,
+          "planning_requested": true,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "blocked",
+          "steps": [],
+          "title": "Replay rejected plan",
+          "updated_at": "2026-04-19T17:11:01.358177+00:00",
+          "wake_conditions": [
+            {
+              "details": {
+                "plan_proposal_id": "plan-proposal-82c82f2d-a4c6-4cdf-91c3-d73844ee0fea"
+              },
+              "kind": "operator_review",
+              "summary": "Resume after bounded operator review."
+            }
+          ]
+        }
+      },
+      "session_id": "browser:planning-reject",
+      "source": "executive",
+      "thread_id": "browser:planning-reject",
+      "ts": "2026-04-19T17:11:01.358972+00:00",
+      "user_id": "planning-reject"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "a27c5e7e95194279bab0b56c35517863",
+      "correlation_id": "a27c5e7e95194279bab0b56c35517863",
+      "event_id": "295f7ab1b243462b89f9407bab832f19",
+      "event_type": "director.reevaluation.triggered",
+      "payload": {
+        "candidate_goal_ids": [],
+        "trigger": {
+          "details": {
+            "goal_family": "conversation"
+          },
+          "kind": "goal_family_available",
+          "source_event_id": "a27c5e7e95194279bab0b56c35517863",
+          "source_event_type": "goal.updated",
+          "summary": "Reevaluate held conversation candidates after the active family cleared.",
+          "ts": "2026-04-19T17:11:01.358972+00:00"
+        }
+      },
+      "session_id": "browser:planning-reject",
+      "source": "presence_director",
+      "thread_id": "browser:planning-reject",
+      "ts": "2026-04-19T17:11:01.358972+00:00",
+      "user_id": "planning-reject"
+    }
+  ],
+  "expected_state": {
+    "commitment_titles_by_status": {
+      "blocked": [
+        "Replay rejected plan"
+      ]
+    },
+    "planning_reason_codes": [
+      "unsupported_capability"
+    ],
+    "planning_recent_outcome_kinds": [
+      "rejected"
+    ]
+  },
+  "expected_terminal_state": {},
+  "language": "en",
+  "name": "planning_propose_reject_unknown_capability",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "session_id": "browser:planning-reject",
+    "thread_id": "browser:planning-reject",
+    "user_id": "planning-reject"
+  }
+}

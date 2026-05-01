@@ -1,0 +1,22 @@
+<svg width="332" height="96" viewBox="0 0 332 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="blinkLogoTitle blinkLogoDesc">
+<title id="blinkLogoTitle">Blink</title>
+<desc id="blinkLogoDesc">Blink browser wordmark</desc>
+<rect x="8" y="12" width="76" height="72" rx="26" fill="url(#blinkBg)"/>
+<path d="M33 30L56 48L33 66" stroke="url(#blinkSpark)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="58" cy="48" r="18" fill="#F8FAFC" fill-opacity="0.12"/>
+<path d="M117 29.5H130.5C142.65 29.5 149 35.77 149 45.77C149 55.73 142.65 62 130.5 62H117V29.5ZM129.9 55.02C137.05 55.02 141.16 51.2 141.16 45.77C141.16 40.3 137.05 36.48 129.9 36.48H124.7V55.02H129.9Z" fill="#111827"/>
+<path d="M157.55 29.5H165.25V62H157.55V29.5Z" fill="#111827"/>
+<path d="M174.58 29.5H182.28V55.53H198.34V62H174.58V29.5Z" fill="#111827"/>
+<path d="M204.08 29.5H211.78V44.39L225.84 29.5H234.98L221.62 43.86L235.76 62H226.49L216.51 48.78L211.78 53.76V62H204.08V29.5Z" fill="#111827"/>
+<path d="M242.63 29.5H267.06V36.06H250.33V42.62H265.09V48.96H250.33V62H242.63V29.5Z" fill="#111827"/>
+<defs>
+<linearGradient id="blinkBg" x1="8" y1="12" x2="84" y2="84" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0F172A"/>
+<stop offset="1" stop-color="#2563EB"/>
+</linearGradient>
+<linearGradient id="blinkSpark" x1="33" y1="30" x2="56" y2="66" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F59E0B"/>
+<stop offset="1" stop-color="#F97316"/>
+</linearGradient>
+</defs>
+</svg>

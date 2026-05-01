@@ -1,0 +1,4 @@
+{"case_id": "speaker_protected_self_interrupt_regression", "setup": "Mac speakers, protected mode", "expected": "No self-interruption; barge-in shows protected."}
+{"case_id": "headphones_clear_interrupt", "setup": "Headphones, adaptive barge-in enabled", "expected": "Accepted interruption and stale Melo chunks dropped."}
+{"case_id": "backchannel_continue", "setup": "User says brief “嗯/okay/right” while assistant speaks", "expected": "Classified as backchannel or low-confidence; assistant usually continues."}
+{"case_id": "cough_noise_reject", "setup": "Cough or non-speech noise", "expected": "No accepted interruption."}

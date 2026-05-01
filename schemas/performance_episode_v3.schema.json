@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PerformanceEpisodeV3",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "episode_id",
+    "profile",
+    "language",
+    "tts_runtime_label",
+    "privacy_level",
+    "created_at_ms",
+    "segments",
+    "metrics",
+    "failure_labels",
+    "sanitizer"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 3
+    },
+    "episode_id": {
+      "type": "string"
+    },
+    "profile": {
+      "enum": [
+        "browser-zh-melo",
+        "browser-en-kokoro",
+        "manual"
+      ]
+    },
+    "language": {
+      "enum": [
+        "zh",
+        "en",
+        "unknown"
+      ]
+    },
+    "tts_runtime_label": {
+      "type": "string"
+    },
+    "privacy_level": {
+      "enum": [
+        "public_safe",
+        "debug_opt_in"
+      ]
+    },
+    "created_at_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "session_id_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "client_id_hash": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "segments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "segment_id",
+          "segment_type",
+          "turn_index",
+          "subturn_index",
+          "start_ms",
+          "end_ms",
+          "duration_ms",
+          "event_ids",
+          "event_type_counts",
+          "reason_codes",
+          "floor",
+          "camera",
+          "interruption",
+          "speech",
+          "memory",
+          "persona",
+          "active_listening",
+          "performance_plan"
+        ],
+        "properties": {
+          "segment_id": {
+            "type": "string"
+          },
+          "segment_type": {
+            "enum": [
+              "listen_segment",
+              "think_segment",
+              "look_segment",
+              "speak_segment",
+              "overlap_segment",
+              "repair_segment",
+              "idle_segment"
+            ]
+          },
+          "turn_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "subturn_index": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "start_ms": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_ms": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "duration_ms": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "event_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "event_type_counts": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer"
+            }
+          },
+          "reason_codes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "floor": {
+            "type": "object"
+          },
+          "camera": {
+            "type": "object"
+          },
+          "interruption": {
+            "type": "object"
+          },
+          "speech": {
+            "type": "object"
+          },
+          "memory": {
+            "type": "object"
+          },
+          "persona": {
+            "type": "object"
+          },
+          "active_listening": {
+            "type": "object"
+          },
+          "performance_plan": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "metrics": {
+      "type": "object"
+    },
+    "failure_labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sanitizer": {
+      "type": "object",
+      "required": [
+        "passed",
+        "blocked_keys",
+        "blocked_values",
+        "reason_codes"
+      ],
+      "properties": {
+        "passed": {
+          "type": "boolean"
+        },
+        "blocked_keys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "blocked_values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

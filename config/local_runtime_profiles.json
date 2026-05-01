@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "profiles": [
+    {
+      "id": "browser-zh-melo",
+      "label": "Browser Chinese MeloTTS",
+      "runtime": "browser",
+      "values": {
+        "language": "zh",
+        "tts_backend": "local-http-wav",
+        "browser_vision": true,
+        "continuous_perception": false,
+        "allow_barge_in": false
+      }
+    },
+    {
+      "id": "browser-en-kokoro",
+      "label": "Browser English Kokoro",
+      "runtime": "browser",
+      "values": {
+        "language": "en",
+        "tts_backend": "kokoro",
+        "browser_vision": true,
+        "continuous_perception": false,
+        "allow_barge_in": false,
+        "ignore_env_system_prompt": true
+      }
+    },
+    {
+      "id": "native-en-kokoro",
+      "label": "Native English Kokoro",
+      "runtime": "voice",
+      "values": {
+        "language": "en",
+        "tts_backend": "kokoro",
+        "voice_vision": false,
+        "camera_source": "none",
+        "allow_barge_in": false,
+        "ignore_env_system_prompt": true
+      }
+    },
+    {
+      "id": "native-en-kokoro-macos-camera",
+      "label": "Native English Kokoro With macOS Camera Helper",
+      "runtime": "voice",
+      "values": {
+        "language": "en",
+        "tts_backend": "kokoro",
+        "voice_vision": false,
+        "camera_source": "macos-helper",
+        "camera_framerate": 1.0,
+        "camera_max_width": 640,
+        "allow_barge_in": false,
+        "ignore_env_system_prompt": true
+      }
+    }
+  ]
+}

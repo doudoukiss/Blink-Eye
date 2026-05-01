@@ -1,0 +1,64 @@
+{
+  "name": "autonomy_suppression_low_confidence",
+  "description": "A low-confidence candidate is suppressed and remains inspectable through the autonomy digest.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-autonomy-suppress-1",
+      "event_type": "goal.candidate.created",
+      "ts": "2026-04-19T01:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "candidate_goal": {
+          "candidate_goal_id": "candidate-low-confidence",
+          "candidate_type": "presence_attention_returned",
+          "source": "perception",
+          "summary": "Weak attention return should be suppressed.",
+          "goal_family": "environment",
+          "urgency": 0.4,
+          "confidence": 0.32,
+          "initiative_class": "silent_attention_shift",
+          "cooldown_key": "cooldown:low-confidence",
+          "dedupe_key": "dedupe:low-confidence",
+          "policy_tags": [
+            "phase6"
+          ],
+          "requires_user_turn_gap": false,
+          "expires_at": "2026-04-19T01:05:00+00:00",
+          "payload": {},
+          "created_at": "2026-04-19T01:00:00+00:00"
+        }
+      }
+    },
+    {
+      "event_id": "evt-autonomy-suppress-2",
+      "event_type": "goal.candidate.suppressed",
+      "ts": "2026-04-19T01:00:02+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-autonomy-suppress-1",
+      "payload": {
+        "candidate_goal_id": "candidate-low-confidence",
+        "reason": "low_confidence",
+        "reason_details": {
+          "confidence": 0.32
+        }
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "autonomy_recent_decision_kinds": [
+      "suppressed"
+    ],
+    "autonomy_reason_codes": [
+      "low_confidence"
+    ]
+  }
+}

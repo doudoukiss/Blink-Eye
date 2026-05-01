@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "WebRTC Audio Health",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "session_id",
+    "protected_playback",
+    "barge_in_enabled",
+    "echo_safe_state"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "protected_playback": {
+      "type": "boolean"
+    },
+    "barge_in_enabled": {
+      "type": "boolean"
+    },
+    "echo_safe_state": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "protected",
+        "likely_safe",
+        "risky",
+        "unsafe"
+      ]
+    },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "echoCancellation": {
+          "type": [
+            "boolean",
+            "string",
+            "null"
+          ]
+        },
+        "noiseSuppression": {
+          "type": [
+            "boolean",
+            "string",
+            "null"
+          ]
+        },
+        "autoGainControl": {
+          "type": [
+            "boolean",
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "last_interruption": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": true
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

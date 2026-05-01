@@ -1,0 +1,440 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CameraSceneState",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "profile",
+    "language",
+    "enabled",
+    "available",
+    "state",
+    "status",
+    "vision_backend",
+    "continuous_perception_enabled",
+    "permission_state",
+    "camera_connected",
+    "camera_fresh",
+    "freshness_state",
+    "track_state",
+    "latest_frame_sequence",
+    "latest_frame_age_ms",
+    "latest_frame_received_at",
+    "on_demand_vision_state",
+    "current_answer_used_vision",
+    "grounding_mode",
+    "last_vision_result_state",
+    "last_used_frame_sequence",
+    "last_used_frame_age_ms",
+    "last_used_frame_at",
+    "degradation",
+    "scene_social_state_v2",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "profile": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "language": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "available": {
+      "type": "boolean"
+    },
+    "state": {
+      "$ref": "#/$defs/camera_scene_status"
+    },
+    "status": {
+      "$ref": "#/$defs/camera_scene_status"
+    },
+    "vision_backend": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "continuous_perception_enabled": {
+      "type": "boolean"
+    },
+    "permission_state": {
+      "enum": [
+        "disabled",
+        "granted",
+        "permission_needed",
+        "unknown"
+      ]
+    },
+    "camera_connected": {
+      "type": "boolean"
+    },
+    "camera_fresh": {
+      "type": "boolean"
+    },
+    "freshness_state": {
+      "enum": [
+        "disabled",
+        "fresh",
+        "stale",
+        "waiting",
+        "unknown"
+      ]
+    },
+    "track_state": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "latest_frame_sequence": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "latest_frame_age_ms": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "latest_frame_received_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 96
+    },
+    "on_demand_vision_state": {
+      "enum": [
+        "idle",
+        "looking",
+        "success",
+        "error",
+        "unavailable"
+      ]
+    },
+    "current_answer_used_vision": {
+      "type": "boolean"
+    },
+    "grounding_mode": {
+      "enum": [
+        "none",
+        "single_frame",
+        "continuous_perception"
+      ]
+    },
+    "last_vision_result_state": {
+      "type": "string",
+      "maxLength": 48
+    },
+    "last_used_frame_sequence": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "last_used_frame_age_ms": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "last_used_frame_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 96
+    },
+    "degradation": {
+      "type": "object",
+      "required": [
+        "state",
+        "components",
+        "reason_codes"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "ok",
+            "degraded",
+            "error"
+          ]
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "camera",
+              "vision"
+            ]
+          },
+          "maxItems": 4,
+          "uniqueItems": true
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "scene_social_state_v2": {
+      "$ref": "#/$defs/scene_social_state_v2"
+    },
+    "reason_codes": {
+      "$ref": "#/$defs/reason_codes"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "camera_scene_status": {
+      "enum": [
+        "disabled",
+        "permission_needed",
+        "waiting_for_frame",
+        "available",
+        "looking",
+        "stale",
+        "stalled",
+        "error"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      },
+      "maxItems": 32,
+      "uniqueItems": true
+    },
+    "scene_social_state_v2": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "state_id",
+        "profile",
+        "language",
+        "camera_status",
+        "vision_status",
+        "camera_honesty_state",
+        "frame_freshness",
+        "frame_age_ms",
+        "latest_frame_sequence",
+        "last_used_frame_sequence",
+        "last_used_frame_age_ms",
+        "user_presence_hint",
+        "face_hint",
+        "body_hint",
+        "hands_hint",
+        "object_hint",
+        "object_showing_likelihood",
+        "scene_change_reason",
+        "scene_transition",
+        "last_moondream_result_state",
+        "last_grounding_summary",
+        "last_grounding_summary_hash",
+        "confidence",
+        "confidence_bucket",
+        "scene_age_ms",
+        "updated_at_ms",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 2
+        },
+        "state_id": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "profile": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "language": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "camera_status": {
+          "enum": [
+            "unknown",
+            "permission_needed",
+            "ready",
+            "disabled",
+            "unavailable",
+            "error"
+          ]
+        },
+        "vision_status": {
+          "enum": [
+            "idle",
+            "looking",
+            "answered",
+            "stale",
+            "unavailable",
+            "degraded"
+          ]
+        },
+        "camera_honesty_state": {
+          "enum": [
+            "can_see_now",
+            "recent_frame_available",
+            "available_not_used",
+            "unavailable"
+          ]
+        },
+        "frame_freshness": {
+          "enum": [
+            "none",
+            "fresh",
+            "recent",
+            "stale",
+            "waiting",
+            "disabled",
+            "unknown"
+          ]
+        },
+        "frame_age_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "latest_frame_sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "last_used_frame_sequence": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "last_used_frame_age_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "user_presence_hint": {
+          "enum": [
+            "unknown",
+            "present",
+            "absent",
+            "partial"
+          ]
+        },
+        "face_hint": {
+          "$ref": "#/$defs/visibility_hint"
+        },
+        "body_hint": {
+          "$ref": "#/$defs/visibility_hint"
+        },
+        "hands_hint": {
+          "$ref": "#/$defs/visibility_hint"
+        },
+        "object_hint": {
+          "enum": [
+            "unknown",
+            "visible",
+            "not_visible",
+            "object_showing",
+            "not_evaluated"
+          ]
+        },
+        "object_showing_likelihood": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "scene_change_reason": {
+          "$ref": "#/$defs/scene_transition"
+        },
+        "scene_transition": {
+          "$ref": "#/$defs/scene_transition"
+        },
+        "last_moondream_result_state": {
+          "enum": [
+            "none",
+            "looking",
+            "answered",
+            "unavailable",
+            "error",
+            "stale"
+          ]
+        },
+        "last_grounding_summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 80
+        },
+        "last_grounding_summary_hash": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 32
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "confidence_bucket": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "scene_age_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "updated_at_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "scene_transition": {
+      "enum": [
+        "none",
+        "camera_ready",
+        "looking_requested",
+        "frame_captured",
+        "vision_answered",
+        "vision_stale",
+        "vision_unavailable"
+      ]
+    },
+    "visibility_hint": {
+      "enum": [
+        "unknown",
+        "visible",
+        "not_visible",
+        "partial",
+        "not_evaluated"
+      ]
+    }
+  }
+}

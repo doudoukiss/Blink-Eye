@@ -1,0 +1,284 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WebRTCAudioHealthV2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "runtime",
+    "transport",
+    "profile",
+    "language",
+    "microphone_state",
+    "input_track_state",
+    "output_playback_state",
+    "echo_risk",
+    "barge_in_state",
+    "protected_playback",
+    "adaptive_barge_in_armed",
+    "explicit_barge_in_armed",
+    "headphones_recommended",
+    "microphone",
+    "input_track",
+    "output_playback",
+    "echo",
+    "stats",
+    "barge_in",
+    "false_interruption_counts",
+    "updated_at",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "runtime": {
+      "const": "browser"
+    },
+    "transport": {
+      "const": "WebRTC"
+    },
+    "profile": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "language": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "microphone_state": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "input_track_state": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "output_playback_state": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "echo_risk": {
+      "enum": [
+        "unknown",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "barge_in_state": {
+      "enum": [
+        "protected",
+        "armed",
+        "adaptive"
+      ]
+    },
+    "protected_playback": {
+      "type": "boolean"
+    },
+    "adaptive_barge_in_armed": {
+      "type": "boolean"
+    },
+    "explicit_barge_in_armed": {
+      "type": "boolean"
+    },
+    "headphones_recommended": {
+      "type": "boolean"
+    },
+    "microphone": {
+      "$ref": "#/$defs/component"
+    },
+    "input_track": {
+      "$ref": "#/$defs/component"
+    },
+    "output_playback": {
+      "type": "object",
+      "required": [
+        "state",
+        "route",
+        "assistant_speaking",
+        "reason_codes"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "route": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "assistant_speaking": {
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "echo": {
+      "type": "object",
+      "required": [
+        "echo_cancellation",
+        "noise_suppression",
+        "auto_gain_control",
+        "echo_safe",
+        "echo_safe_source",
+        "reason_codes"
+      ],
+      "properties": {
+        "echo_cancellation": {
+          "enum": [
+            "enabled",
+            "disabled",
+            "unsupported",
+            "unknown"
+          ]
+        },
+        "noise_suppression": {
+          "enum": [
+            "enabled",
+            "disabled",
+            "unsupported",
+            "unknown"
+          ]
+        },
+        "auto_gain_control": {
+          "enum": [
+            "enabled",
+            "disabled",
+            "unsupported",
+            "unknown"
+          ]
+        },
+        "echo_safe": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "echo_safe_source": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "stats": {
+      "type": "object",
+      "required": [
+        "available",
+        "summary",
+        "reason_codes"
+      ],
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "summary": {
+          "type": "object",
+          "additionalProperties": {
+            "type": [
+              "integer",
+              "number"
+            ]
+          },
+          "maxProperties": 16
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "barge_in": {
+      "type": "object",
+      "required": [
+        "state",
+        "protected",
+        "armed",
+        "adaptive",
+        "explicitly_armed",
+        "reason_codes"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "protected",
+            "armed",
+            "adaptive"
+          ]
+        },
+        "protected": {
+          "type": "boolean"
+        },
+        "armed": {
+          "type": "boolean"
+        },
+        "adaptive": {
+          "type": "boolean"
+        },
+        "explicitly_armed": {
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "false_interruption_counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "maxProperties": 16
+    },
+    "updated_at": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "reason_codes": {
+      "$ref": "#/$defs/reason_codes"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "component": {
+      "type": "object",
+      "required": [
+        "state",
+        "reason_codes"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "ready": {
+          "type": "boolean"
+        },
+        "healthy": {
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      },
+      "maxItems": 32,
+      "uniqueItems": true
+    }
+  }
+}

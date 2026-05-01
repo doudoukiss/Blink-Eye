@@ -1,0 +1,74 @@
+{
+  "name": "autonomy_non_action_user_turn",
+  "description": "A valid candidate remains current while the director records user-turn gating.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-autonomy-non-action-1",
+      "event_type": "goal.candidate.created",
+      "ts": "2026-04-19T03:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "candidate_goal": {
+          "candidate_goal_id": "candidate-user-turn-open",
+          "candidate_type": "presence_brief_reengagement_speech",
+          "source": "perception",
+          "summary": "Spoken re-engagement should wait until the user turn ends.",
+          "goal_family": "environment",
+          "urgency": 0.9,
+          "confidence": 0.95,
+          "initiative_class": "speak_briefly_if_idle",
+          "cooldown_key": "cooldown:user-turn-open",
+          "dedupe_key": "dedupe:user-turn-open",
+          "policy_tags": [
+            "phase6"
+          ],
+          "requires_user_turn_gap": true,
+          "expires_at": "2026-04-19T03:05:00+00:00",
+          "payload": {},
+          "created_at": "2026-04-19T03:00:00+00:00"
+        }
+      }
+    },
+    {
+      "event_id": "evt-autonomy-non-action-2",
+      "event_type": "director.non_action.recorded",
+      "ts": "2026-04-19T03:00:02+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-autonomy-non-action-1",
+      "payload": {
+        "candidate_goal_id": "candidate-user-turn-open",
+        "reason": "user_turn_open",
+        "reason_details": {
+          "gate": "user_turn"
+        },
+        "expected_reevaluation_condition": "after user turn ends"
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "autonomy_current_candidate_ids": [
+      "candidate-user-turn-open"
+    ],
+    "autonomy_current_candidate_summaries": [
+      "Spoken re-engagement should wait until the user turn ends."
+    ],
+    "autonomy_recent_decision_kinds": [
+      "non_action"
+    ],
+    "autonomy_reason_codes": [
+      "user_turn_open"
+    ],
+    "autonomy_reevaluation_conditions": [
+      "after user turn ends"
+    ]
+  }
+}

@@ -1,0 +1,302 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BilingualActorBenchResult",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "suite_id",
+    "run_id",
+    "generated_at",
+    "passed",
+    "threshold",
+    "profile_results",
+    "paired_comparison",
+    "release_gate",
+    "case_results",
+    "artifact_links"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "suite_id": {
+      "const": "bilingual_actor_bench/v1"
+    },
+    "run_id": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "generated_at": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "passed": {
+      "type": "boolean"
+    },
+    "threshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "profile_results": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "$ref": "#/$defs/profile_result"
+      }
+    },
+    "paired_comparison": {
+      "type": "object",
+      "required": [
+        "matched_pair_count",
+        "categories",
+        "profiles",
+        "structural_parity"
+      ],
+      "properties": {
+        "matched_pair_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "profiles": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "browser-zh-melo",
+              "browser-en-kokoro"
+            ]
+          }
+        },
+        "structural_parity": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "release_gate": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "passed",
+        "threshold",
+        "hard_blockers",
+        "scores",
+        "profile_failures",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "passed": {
+          "type": "boolean"
+        },
+        "threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "hard_blockers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scores": {
+          "type": "object"
+        },
+        "profile_failures": {
+          "type": "object"
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "case_results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/case_result"
+      }
+    },
+    "artifact_links": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "maxLength": 240
+      }
+    }
+  },
+  "$defs": {
+    "profile_result": {
+      "type": "object",
+      "required": [
+        "profile",
+        "language",
+        "tts_backend",
+        "tts_label",
+        "case_count",
+        "category_results",
+        "scores",
+        "hard_blockers",
+        "passed",
+        "reason_codes"
+      ],
+      "properties": {
+        "profile": {
+          "enum": [
+            "browser-zh-melo",
+            "browser-en-kokoro"
+          ]
+        },
+        "language": {
+          "enum": [
+            "zh",
+            "en"
+          ]
+        },
+        "tts_backend": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "tts_label": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "case_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "category_results": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        },
+        "scores": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          }
+        },
+        "hard_blockers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "passed": {
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 160
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "case_result": {
+      "type": "object",
+      "required": [
+        "case",
+        "passed",
+        "checks",
+        "scores",
+        "hard_blockers",
+        "evidence"
+      ],
+      "properties": {
+        "case": {
+          "type": "object",
+          "required": [
+            "case_id",
+            "pair_id",
+            "profile",
+            "language",
+            "tts_backend",
+            "tts_label",
+            "vision_backend",
+            "category",
+            "title",
+            "event_count",
+            "quality_dimensions",
+            "reason_codes"
+          ],
+          "additionalProperties": true
+        },
+        "passed": {
+          "type": "boolean"
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "check_id",
+              "passed",
+              "detail",
+              "reason_codes"
+            ],
+            "properties": {
+              "check_id": {
+                "type": "string",
+                "maxLength": 120
+              },
+              "passed": {
+                "type": "boolean"
+              },
+              "detail": {
+                "type": "string",
+                "maxLength": 240
+              },
+              "reason_codes": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "maxLength": 160
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "scores": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5
+          }
+        },
+        "hard_blockers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "evidence": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

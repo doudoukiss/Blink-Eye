@@ -1,0 +1,67 @@
+{
+  "name": "dossier_relationship_needs_refresh",
+  "description": "A newer current claim leaves the older relationship summary visible but marked as needing refresh.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-rel-1",
+      "event_type": "autobiography.entry.upserted",
+      "ts": "2026-04-18T04:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "scope_type": "relationship",
+        "scope_id": "blink/main:alpha",
+        "entry_kind": "relationship_arc",
+        "rendered_summary": "Earlier relationship summary before the latest role update.",
+        "content": {
+          "summary": "Earlier relationship summary before the latest role update."
+        },
+        "salience": 0.8,
+        "source_episode_ids": [],
+        "source_claim_ids": [],
+        "source_event_ids": [
+          "evt-rel-1"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-role-1",
+      "event_type": "memory.claim.recorded",
+      "ts": "2026-04-18T04:02:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "subject_entity_id": "entity:user:alpha",
+        "predicate": "profile.role",
+        "object": {
+          "value": "maintainer"
+        },
+        "status": "active",
+        "scope_type": "user",
+        "scope_id": "alpha",
+        "claim_key": "profile.role:alpha"
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "current_claims": [
+      {
+        "predicate": "profile.role",
+        "value": "maintainer"
+      }
+    ],
+    "relationship_dossier_summary_contains": "Earlier relationship summary",
+    "relationship_dossier_freshness": "needs_refresh",
+    "relationship_dossier_contradiction": "clear",
+    "dossier_needs_refresh_ids": [
+      "dossier_3123f743a89150a897ad0ba5a2ee21ac"
+    ]
+  }
+}

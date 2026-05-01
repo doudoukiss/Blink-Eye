@@ -1,0 +1,3 @@
+{"case_id": "camera_enabled_not_used", "ask": "Ask non-visual technical question.", "expected": "Camera available may show, but current_answer_used_vision=false."}
+{"case_id": "single_frame_visual_question", "ask": "What am I holding?", "expected": "looking -> used single frame -> frame seq/age visible."}
+{"case_id": "camera_stale_degrade", "ask": "Ask visual question after camera stalls.", "expected": "Honest stale/unavailable response; no fabricated visual claim."}

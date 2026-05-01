@@ -1,0 +1,1704 @@
+{
+  "context_queries": {
+    "planning": "Revise the maintenance tail after the first step."
+  },
+  "qa_categories": [
+    "skill_reuse"
+  ],
+  "description": "A revise-tail request adopts a bounded delta on top of a retrieved active skill.",
+  "events": [
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-1",
+      "event_id": "c7f38547b9d34a73ac2be39c0cbb4ab7",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-1",
+          "created_at": "2026-04-20T12:19:21.984892+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Seed skill one",
+          "updated_at": "2026-04-20T12:19:21.984897+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:00+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-1",
+      "event_id": "a2067069b43f4dcfa41b8ec14d1ae7b7",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "seed-commitment-1",
+        "goal_id": "seed-goal-1",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "seed-commitment-1",
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "seed-goal-1",
+          "missing_inputs": [],
+          "plan_proposal_id": "seed-proposal-1",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.985285+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.985287+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Seed skill one.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:00+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "a2067069b43f4dcfa41b8ec14d1ae7b7",
+      "correlation_id": "seed-goal-1",
+      "event_id": "eec4939a8d6b4373a5aa582c8b25b88f",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "seed-commitment-1",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Seed skill one."
+        },
+        "goal_id": "seed-goal-1",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "seed-commitment-1",
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "seed-goal-1",
+          "missing_inputs": [],
+          "plan_proposal_id": "seed-proposal-1",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.985285+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.985287+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Seed skill one.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:01+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "eec4939a8d6b4373a5aa582c8b25b88f",
+      "correlation_id": "seed-goal-1",
+      "event_id": "9414b1607e9d4d8aba01b4f42ccdfb9b",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "seed-commitment-1",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-1",
+          "created_at": "2026-04-20T12:19:21.985882+00:00",
+          "details": {
+            "current_plan_proposal_id": "seed-proposal-1"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Seed skill one.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.985879+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.985880+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Seed skill one",
+          "updated_at": "2026-04-20T12:19:21.985883+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:02+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-1",
+      "event_id": "2e3c1b3b929f4a55a464187cc20dbced",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "seed-goal-1",
+        "step_index": 0
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:03+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "2e3c1b3b929f4a55a464187cc20dbced",
+      "correlation_id": "seed-goal-1",
+      "event_id": "b33582ced25d4614bf46847dcac970dc",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "seed-goal-1",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:04+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-1",
+      "event_id": "f2ac8c625ece46379f3a54da5a63cdd2",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "reporting.record_maintenance_note",
+        "goal_id": "seed-goal-1",
+        "step_index": 1
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:05+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "f2ac8c625ece46379f3a54da5a63cdd2",
+      "correlation_id": "seed-goal-1",
+      "event_id": "34b122b1014745f9890ece0eda8194a5",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "reporting.record_maintenance_note",
+        "goal_id": "seed-goal-1",
+        "result": {
+          "accepted": true,
+          "capability_id": "reporting.record_maintenance_note",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 1
+          },
+          "retryable": false,
+          "summary": "Completed reporting.record_maintenance_note.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:06+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-1",
+      "event_id": "1d49a1bc9d264775b05aaf24650aff55",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "seed-commitment-1",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-1",
+          "created_at": "2026-04-20T12:19:21.987412+00:00",
+          "details": {
+            "current_plan_proposal_id": "seed-proposal-1"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Seed skill one.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T12:19:21.986884+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {
+                "slot": 1
+              },
+              "status": "completed",
+              "summary": "Completed reporting.record_maintenance_note.",
+              "updated_at": "2026-04-20T12:19:21.987409+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Seed skill one",
+          "updated_at": "2026-04-20T12:19:21.987413+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:07+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-2",
+      "event_id": "324c4da3ed0549b0bbb090ada496f26c",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-2",
+          "created_at": "2026-04-20T12:19:21.987743+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Seed skill two",
+          "updated_at": "2026-04-20T12:19:21.987745+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:40+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-2",
+      "event_id": "5aa2404010c04b2f997d4c487200eee4",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "seed-commitment-2",
+        "goal_id": "seed-goal-2",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "seed-commitment-2",
+          "created_at": "2026-01-01T00:00:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "seed-goal-2",
+          "missing_inputs": [],
+          "plan_proposal_id": "seed-proposal-2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.988089+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.988091+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Seed skill two.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:40+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "5aa2404010c04b2f997d4c487200eee4",
+      "correlation_id": "seed-goal-2",
+      "event_id": "590af04fb237446bb0b04f0076b54a70",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "seed-commitment-2",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Seed skill two."
+        },
+        "goal_id": "seed-goal-2",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "seed-commitment-2",
+          "created_at": "2026-01-01T00:00:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "seed-goal-2",
+          "missing_inputs": [],
+          "plan_proposal_id": "seed-proposal-2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.988089+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.988091+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Seed skill two.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:41+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "590af04fb237446bb0b04f0076b54a70",
+      "correlation_id": "seed-goal-2",
+      "event_id": "b2cbd829bd6d4b0eb608b6c9f5bfc21d",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "seed-commitment-2",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-2",
+          "created_at": "2026-04-20T12:19:21.988672+00:00",
+          "details": {
+            "current_plan_proposal_id": "seed-proposal-2"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Seed skill two.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.988669+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.988670+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Seed skill two",
+          "updated_at": "2026-04-20T12:19:21.988672+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:42+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-2",
+      "event_id": "22bf663486544669ac8d049042a5e1f2",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "seed-goal-2",
+        "step_index": 0
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:43+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "22bf663486544669ac8d049042a5e1f2",
+      "correlation_id": "seed-goal-2",
+      "event_id": "9cfde80d70d74f789d8d50b943122c03",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "seed-goal-2",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:44+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-2",
+      "event_id": "21899a08463946809918b6af7480e3c0",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "reporting.record_maintenance_note",
+        "goal_id": "seed-goal-2",
+        "step_index": 1
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:45+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "21899a08463946809918b6af7480e3c0",
+      "correlation_id": "seed-goal-2",
+      "event_id": "bc83330e04a6489bb31f0123943a7693",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "reporting.record_maintenance_note",
+        "goal_id": "seed-goal-2",
+        "result": {
+          "accepted": true,
+          "capability_id": "reporting.record_maintenance_note",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 1
+          },
+          "retryable": false,
+          "summary": "Completed reporting.record_maintenance_note.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:46+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-2",
+      "event_id": "552a673c873744d8aca4d483859a502c",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "seed-commitment-2",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-2",
+          "created_at": "2026-04-20T12:19:21.990513+00:00",
+          "details": {
+            "current_plan_proposal_id": "seed-proposal-2"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Seed skill two.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T12:19:21.989866+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {
+                "slot": 1
+              },
+              "status": "completed",
+              "summary": "Completed reporting.record_maintenance_note.",
+              "updated_at": "2026-04-20T12:19:21.990509+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Seed skill two",
+          "updated_at": "2026-04-20T12:19:21.990514+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-01-01T00:00:47+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+      "event_id": "1777f5b8aaa94846b2eb637e2266d2da",
+      "event_type": "goal.created",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "scope_id": "blink/main",
+          "scope_type": "agent",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "created_at": "2026-04-20T12:19:21.991856+00:00",
+          "details": {
+            "commitment_status": "active",
+            "survive_restart": true
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Delta revise maintenance skill",
+          "updated_at": "2026-04-20T12:19:21.991857+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-04-20T12:19:21.992299+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+      "event_id": "bb1f3db266574a358152732514698db7",
+      "event_type": "planning.requested",
+      "payload": {
+        "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+        "intent": "maintenance.review"
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-04-20T12:19:21.992630+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "bb1f3db266574a358152732514698db7",
+      "correlation_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+      "event_id": "55b1ea76d3d944a68cfe3ed0594eeed9",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+        "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "created_at": "2026-04-20T12:19:21.993130+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "capability_families": [
+              "maintenance",
+              "reporting"
+            ],
+            "procedural": {
+              "delta": null,
+              "origin": "fresh_draft",
+              "rejected_skills": [],
+              "retrieved_skill_candidates": [
+                {
+                  "confidence": 0.7200000000000001,
+                  "details": {
+                    "review_policy": "auto_adopt_ok",
+                    "skill_family_key": "procedural_skill_family_c710908c028b57d9aae41688dcca301a",
+                    "template_fingerprint": "procedural_skill_template_8af124a9c74051beb9fc0eda7a937dbd"
+                  },
+                  "eligibility": "reusable",
+                  "goal_family": "memory_maintenance",
+                  "purpose": "Execute Seed skill two.",
+                  "reason": null,
+                  "required_capability_ids": [
+                    "maintenance.review_memory_health",
+                    "reporting.record_maintenance_note"
+                  ],
+                  "review_policy": "auto_adopt_ok",
+                  "score": 2.02,
+                  "skill_id": "procedural_skill_97ffd5d1fc535058a1255551983b4f11",
+                  "skill_status": "active",
+                  "support_plan_proposal_ids": [
+                    "seed-proposal-1",
+                    "seed-proposal-2"
+                  ],
+                  "support_trace_ids": [
+                    "procedural_trace_d8371b437d725163b1581bdc73259711",
+                    "procedural_trace_ff70c894d67a57bb88ce8383472af901"
+                  ],
+                  "title": "Seed skill two"
+                }
+              ],
+              "selected_skill_confidence": null,
+              "selected_skill_id": null,
+              "selected_skill_status": null,
+              "selected_skill_support_plan_proposal_ids": [],
+              "selected_skill_support_trace_ids": []
+            },
+            "remaining_step_count": 2,
+            "request_kind": "initial_plan",
+            "requested_review_policy": "auto_adopt_ok"
+          },
+          "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+          "missing_inputs": [],
+          "plan_proposal_id": "plan-proposal-91388bc5-5e0c-406a-bbb7-878974397507",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991731+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991734+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Initial safe maintenance plan.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-04-20T12:19:21.993130+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "55b1ea76d3d944a68cfe3ed0594eeed9",
+      "correlation_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+      "event_id": "0d6870474c9b48bcab6ec93f51cbd755",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+        "decision": {
+          "details": {
+            "capability_families": [
+              "maintenance",
+              "reporting"
+            ],
+            "delta_operation_count": 0,
+            "procedural_origin": "fresh_draft",
+            "request_kind": "initial_plan",
+            "selected_skill_id": null
+          },
+          "reason": "bounded_plan_available",
+          "summary": "The bounded plan is safe to adopt automatically."
+        },
+        "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "created_at": "2026-04-20T12:19:21.993130+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "capability_families": [
+              "maintenance",
+              "reporting"
+            ],
+            "procedural": {
+              "delta": null,
+              "origin": "fresh_draft",
+              "rejected_skills": [],
+              "retrieved_skill_candidates": [
+                {
+                  "confidence": 0.7200000000000001,
+                  "details": {
+                    "review_policy": "auto_adopt_ok",
+                    "skill_family_key": "procedural_skill_family_c710908c028b57d9aae41688dcca301a",
+                    "template_fingerprint": "procedural_skill_template_8af124a9c74051beb9fc0eda7a937dbd"
+                  },
+                  "eligibility": "reusable",
+                  "goal_family": "memory_maintenance",
+                  "purpose": "Execute Seed skill two.",
+                  "reason": null,
+                  "required_capability_ids": [
+                    "maintenance.review_memory_health",
+                    "reporting.record_maintenance_note"
+                  ],
+                  "review_policy": "auto_adopt_ok",
+                  "score": 2.02,
+                  "skill_id": "procedural_skill_97ffd5d1fc535058a1255551983b4f11",
+                  "skill_status": "active",
+                  "support_plan_proposal_ids": [
+                    "seed-proposal-1",
+                    "seed-proposal-2"
+                  ],
+                  "support_trace_ids": [
+                    "procedural_trace_d8371b437d725163b1581bdc73259711",
+                    "procedural_trace_ff70c894d67a57bb88ce8383472af901"
+                  ],
+                  "title": "Seed skill two"
+                }
+              ],
+              "selected_skill_confidence": null,
+              "selected_skill_id": null,
+              "selected_skill_status": null,
+              "selected_skill_support_plan_proposal_ids": [],
+              "selected_skill_support_trace_ids": []
+            },
+            "remaining_step_count": 2,
+            "request_kind": "initial_plan",
+            "requested_review_policy": "auto_adopt_ok"
+          },
+          "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+          "missing_inputs": [],
+          "plan_proposal_id": "plan-proposal-91388bc5-5e0c-406a-bbb7-878974397507",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991731+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991734+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Initial safe maintenance plan.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-04-20T12:19:21.993130+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "0d6870474c9b48bcab6ec93f51cbd755",
+      "correlation_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+      "event_id": "d461ed866d9b4e3b8f3673357052cf1d",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "scope_id": "blink/main",
+          "scope_type": "agent",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "created_at": "2026-04-20T12:19:21.991856+00:00",
+          "details": {
+            "commitment_status": "active",
+            "current_plan_proposal_id": "plan-proposal-91388bc5-5e0c-406a-bbb7-878974397507",
+            "plan_review_policy": "auto_adopt_ok",
+            "survive_restart": true
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "The bounded plan is safe to adopt automatically.",
+          "plan_revision": 1,
+          "planning_requested": true,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991731+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991734+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Delta revise maintenance skill",
+          "updated_at": "2026-04-20T12:19:21.993844+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-04-20T12:19:21.994243+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+      "event_id": "895e71402c984f87a7851cab70c271f6",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {},
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+        "step_index": 0
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-04-20T12:19:21.994648+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "895e71402c984f87a7851cab70c271f6",
+      "correlation_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+      "event_id": "eea3ae37ecf145958efababeb5de6512",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {
+            "operator_visible": true
+          },
+          "outcome": "completed",
+          "output": {
+            "cycle_id": null,
+            "findings": [],
+            "report_id": null,
+            "status": "unknown"
+          },
+          "retryable": false,
+          "summary": "Memory health status=unknown with 0 findings.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-04-20T12:19:21.995037+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+      "event_id": "dd9dad18e6364cae94a972e2ef98bf7c",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "scope_id": "blink/main",
+          "scope_type": "agent",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": 0,
+          "blocked_reason": null,
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "created_at": "2026-04-20T12:19:21.991856+00:00",
+          "details": {
+            "commitment_status": "active",
+            "current_plan_proposal_id": "plan-proposal-91388bc5-5e0c-406a-bbb7-878974397507",
+            "plan_review_policy": "auto_adopt_ok",
+            "survive_restart": true
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Memory health status=unknown with 0 findings.",
+          "plan_revision": 1,
+          "planning_requested": true,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "in_progress",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "cycle_id": null,
+                "findings": [],
+                "report_id": null,
+                "status": "unknown"
+              },
+              "status": "completed",
+              "summary": "Memory health status=unknown with 0 findings.",
+              "updated_at": "2026-04-20T12:19:21.995031+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991734+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Delta revise maintenance skill",
+          "updated_at": "2026-04-20T12:19:21.993844+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-04-20T12:19:21.995337+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+      "event_id": "193de1fa765f4adba02ee0593057e83a",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+        "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "created_at": "2026-04-20T12:19:21.995952+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "capability_families": [
+              "reporting",
+              "maintenance"
+            ],
+            "procedural": {
+              "delta": {
+                "details": {},
+                "operation_count": 1,
+                "operations": [
+                  {
+                    "index": 1,
+                    "kind": "insert",
+                    "to_capability_id": "maintenance.review_scheduler_backpressure"
+                  }
+                ],
+                "planned_capability_ids": [
+                  "reporting.record_maintenance_note",
+                  "maintenance.review_scheduler_backpressure"
+                ],
+                "preserved_prefix_count": 1,
+                "selected_skill_capability_ids": [
+                  "reporting.record_maintenance_note"
+                ]
+              },
+              "origin": "skill_delta",
+              "rejected_skills": [],
+              "retrieved_skill_candidates": [
+                {
+                  "confidence": 0.7200000000000001,
+                  "details": {
+                    "review_policy": "auto_adopt_ok",
+                    "skill_family_key": "procedural_skill_family_c710908c028b57d9aae41688dcca301a",
+                    "template_fingerprint": "procedural_skill_template_8af124a9c74051beb9fc0eda7a937dbd"
+                  },
+                  "eligibility": "reusable",
+                  "goal_family": "memory_maintenance",
+                  "purpose": "Execute Seed skill two.",
+                  "reason": null,
+                  "required_capability_ids": [
+                    "maintenance.review_memory_health",
+                    "reporting.record_maintenance_note"
+                  ],
+                  "review_policy": "auto_adopt_ok",
+                  "score": 2.5200000000000005,
+                  "skill_id": "procedural_skill_97ffd5d1fc535058a1255551983b4f11",
+                  "skill_status": "active",
+                  "support_plan_proposal_ids": [
+                    "seed-proposal-1",
+                    "seed-proposal-2"
+                  ],
+                  "support_trace_ids": [
+                    "procedural_trace_d8371b437d725163b1581bdc73259711",
+                    "procedural_trace_ff70c894d67a57bb88ce8383472af901"
+                  ],
+                  "title": "Seed skill two"
+                }
+              ],
+              "selected_skill_confidence": 0.7200000000000001,
+              "selected_skill_id": "procedural_skill_97ffd5d1fc535058a1255551983b4f11",
+              "selected_skill_status": "active",
+              "selected_skill_support_plan_proposal_ids": [
+                "seed-proposal-1",
+                "seed-proposal-2"
+              ],
+              "selected_skill_support_trace_ids": [
+                "procedural_trace_d8371b437d725163b1581bdc73259711",
+                "procedural_trace_ff70c894d67a57bb88ce8383472af901"
+              ]
+            },
+            "remaining_step_count": 2,
+            "request_kind": "revise_tail",
+            "requested_review_policy": "auto_adopt_ok"
+          },
+          "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+          "missing_inputs": [],
+          "plan_proposal_id": "plan-proposal-a21fde7b-2c5c-4c64-a77a-59b90ecee9fc",
+          "plan_revision": 2,
+          "preserved_prefix_count": 1,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "cycle_id": null,
+                "findings": [],
+                "report_id": null,
+                "status": "unknown"
+              },
+              "status": "completed",
+              "summary": "Memory health status=unknown with 0 findings.",
+              "updated_at": "2026-04-20T12:19:21.995031+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991742+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_scheduler_backpressure",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991744+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Adapt the reusable skill with one bounded delta on the unfinished tail.",
+          "supersedes_plan_proposal_id": "plan-proposal-91388bc5-5e0c-406a-bbb7-878974397507"
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-04-20T12:19:21.995952+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "193de1fa765f4adba02ee0593057e83a",
+      "correlation_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+      "event_id": "1e4e2a46caa449a1b6524850b802ce55",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+        "decision": {
+          "details": {
+            "capability_families": [
+              "reporting",
+              "maintenance"
+            ],
+            "delta_operation_count": 1,
+            "procedural_origin": "skill_delta",
+            "request_kind": "revise_tail",
+            "selected_skill_id": "procedural_skill_97ffd5d1fc535058a1255551983b4f11"
+          },
+          "reason": "bounded_plan_available",
+          "summary": "The bounded plan is safe to adopt automatically."
+        },
+        "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "created_at": "2026-04-20T12:19:21.995952+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "capability_families": [
+              "reporting",
+              "maintenance"
+            ],
+            "procedural": {
+              "delta": {
+                "details": {},
+                "operation_count": 1,
+                "operations": [
+                  {
+                    "index": 1,
+                    "kind": "insert",
+                    "to_capability_id": "maintenance.review_scheduler_backpressure"
+                  }
+                ],
+                "planned_capability_ids": [
+                  "reporting.record_maintenance_note",
+                  "maintenance.review_scheduler_backpressure"
+                ],
+                "preserved_prefix_count": 1,
+                "selected_skill_capability_ids": [
+                  "reporting.record_maintenance_note"
+                ]
+              },
+              "origin": "skill_delta",
+              "rejected_skills": [],
+              "retrieved_skill_candidates": [
+                {
+                  "confidence": 0.7200000000000001,
+                  "details": {
+                    "review_policy": "auto_adopt_ok",
+                    "skill_family_key": "procedural_skill_family_c710908c028b57d9aae41688dcca301a",
+                    "template_fingerprint": "procedural_skill_template_8af124a9c74051beb9fc0eda7a937dbd"
+                  },
+                  "eligibility": "reusable",
+                  "goal_family": "memory_maintenance",
+                  "purpose": "Execute Seed skill two.",
+                  "reason": null,
+                  "required_capability_ids": [
+                    "maintenance.review_memory_health",
+                    "reporting.record_maintenance_note"
+                  ],
+                  "review_policy": "auto_adopt_ok",
+                  "score": 2.5200000000000005,
+                  "skill_id": "procedural_skill_97ffd5d1fc535058a1255551983b4f11",
+                  "skill_status": "active",
+                  "support_plan_proposal_ids": [
+                    "seed-proposal-1",
+                    "seed-proposal-2"
+                  ],
+                  "support_trace_ids": [
+                    "procedural_trace_d8371b437d725163b1581bdc73259711",
+                    "procedural_trace_ff70c894d67a57bb88ce8383472af901"
+                  ],
+                  "title": "Seed skill two"
+                }
+              ],
+              "selected_skill_confidence": 0.7200000000000001,
+              "selected_skill_id": "procedural_skill_97ffd5d1fc535058a1255551983b4f11",
+              "selected_skill_status": "active",
+              "selected_skill_support_plan_proposal_ids": [
+                "seed-proposal-1",
+                "seed-proposal-2"
+              ],
+              "selected_skill_support_trace_ids": [
+                "procedural_trace_d8371b437d725163b1581bdc73259711",
+                "procedural_trace_ff70c894d67a57bb88ce8383472af901"
+              ]
+            },
+            "remaining_step_count": 2,
+            "request_kind": "revise_tail",
+            "requested_review_policy": "auto_adopt_ok"
+          },
+          "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+          "missing_inputs": [],
+          "plan_proposal_id": "plan-proposal-a21fde7b-2c5c-4c64-a77a-59b90ecee9fc",
+          "plan_revision": 2,
+          "preserved_prefix_count": 1,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "cycle_id": null,
+                "findings": [],
+                "report_id": null,
+                "status": "unknown"
+              },
+              "status": "completed",
+              "summary": "Memory health status=unknown with 0 findings.",
+              "updated_at": "2026-04-20T12:19:21.995031+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991742+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_scheduler_backpressure",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991744+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Adapt the reusable skill with one bounded delta on the unfinished tail.",
+          "supersedes_plan_proposal_id": "plan-proposal-91388bc5-5e0c-406a-bbb7-878974397507"
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-04-20T12:19:21.995952+00:00",
+      "user_id": "planning-skill-delta-tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "1e4e2a46caa449a1b6524850b802ce55",
+      "correlation_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+      "event_id": "c3915b68bf2743029ca867ccaa26db37",
+      "event_type": "goal.repaired",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "scope_id": "blink/main",
+          "scope_type": "agent",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": 0,
+          "blocked_reason": null,
+          "commitment_id": "commitment_5f4d2cdf3d15590ba4071e2ab4de4000",
+          "created_at": "2026-04-20T12:19:21.991856+00:00",
+          "details": {
+            "commitment_status": "active",
+            "current_plan_proposal_id": "plan-proposal-a21fde7b-2c5c-4c64-a77a-59b90ecee9fc",
+            "plan_review_policy": "auto_adopt_ok",
+            "survive_restart": true
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "fac8f3ac366a457386ad6d24ee7bf30b",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "The bounded plan is safe to adopt automatically.",
+          "plan_revision": 2,
+          "planning_requested": true,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "waiting",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "cycle_id": null,
+                "findings": [],
+                "report_id": null,
+                "status": "unknown"
+              },
+              "status": "completed",
+              "summary": "Memory health status=unknown with 0 findings.",
+              "updated_at": "2026-04-20T12:19:21.995031+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991742+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_scheduler_backpressure",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.991744+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Delta revise maintenance skill",
+          "updated_at": "2026-04-20T12:19:21.995971+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-delta-tail",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-delta-tail",
+      "ts": "2026-04-20T12:19:21.997110+00:00",
+      "user_id": "planning-skill-delta-tail"
+    }
+  ],
+  "expected_state": {
+    "planning_reason_codes": [
+      "bounded_plan_available"
+    ],
+    "planning_procedural_origins": [
+      "skill_delta"
+    ],
+    "planning_delta_operation_counts": [
+      "1"
+    ],
+    "planning_recent_outcome_kinds": [
+      "adopted"
+    ],
+    "planning_recent_revision_goal_ids": [
+      "fac8f3ac366a457386ad6d24ee7bf30b"
+    ],
+    "planning_selected_skill_ids": [
+      "procedural_skill_97ffd5d1fc535058a1255551983b4f11"
+    ],
+    "planning_selected_anchor_types": [
+      "procedural_skill"
+    ],
+    "planning_selected_backing_ids": [
+      "procedural_skill_97ffd5d1fc535058a1255551983b4f11"
+    ],
+    "procedural_active_skill_ids": [
+      "procedural_skill_97ffd5d1fc535058a1255551983b4f11"
+    ]
+  },
+  "expected_terminal_state": {},
+  "name": "planning_skill_delta_revise_tail",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "session_id": "browser:planning-skill-delta-tail",
+    "thread_id": "browser:planning-skill-delta-tail",
+    "user_id": "planning-skill-delta-tail"
+  }
+}

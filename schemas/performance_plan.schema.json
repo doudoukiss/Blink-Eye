@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Blink Performance Plan",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "turn_id",
+    "stance",
+    "response_shape",
+    "interruption_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "turn_id": {
+      "type": "string"
+    },
+    "floor_state": {
+      "type": "string",
+      "enum": [
+        "user_has_floor",
+        "assistant_has_floor",
+        "overlap",
+        "handoff",
+        "repair"
+      ]
+    },
+    "stance": {
+      "type": "string",
+      "enum": [
+        "neutral",
+        "focused",
+        "curious",
+        "skeptical",
+        "supportive",
+        "playful",
+        "serious"
+      ]
+    },
+    "response_shape": {
+      "type": "string",
+      "enum": [
+        "brief",
+        "conversational",
+        "structured",
+        "deep_dive"
+      ]
+    },
+    "voice_directives": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "ui_directives": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "camera_directives": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "memory_directives": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "interruption_policy": {
+      "type": "string",
+      "enum": [
+        "protected_playback",
+        "yield_immediately",
+        "finish_short_phrase"
+      ]
+    },
+    "reason_trace": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

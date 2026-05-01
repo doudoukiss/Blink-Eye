@@ -1,0 +1,657 @@
+{
+  "description": "A bounded revision proposal preserves the completed prefix and lands through goal.repaired.",
+  "events": [
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+      "event_id": "ce66eb6189704e6d8f2a632f5dbb5d22",
+      "event_type": "goal.created",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "scope_id": "blink/main",
+          "scope_type": "agent",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "created_at": "2026-04-19T17:11:01.382095+00:00",
+          "details": {
+            "commitment_status": "active",
+            "survive_restart": true
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Replay revised plan",
+          "updated_at": "2026-04-19T17:11:01.382097+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-revise",
+      "source": "fixture",
+      "thread_id": "browser:planning-revise",
+      "ts": "2026-04-19T17:11:01.382561+00:00",
+      "user_id": "planning-revise"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+      "event_id": "ecf353095bb14761a6e027fd8edfb989",
+      "event_type": "planning.requested",
+      "payload": {
+        "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+        "intent": "maintenance.review"
+      },
+      "session_id": "browser:planning-revise",
+      "source": "executive",
+      "thread_id": "browser:planning-revise",
+      "ts": "2026-04-19T17:11:01.382873+00:00",
+      "user_id": "planning-revise"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "ecf353095bb14761a6e027fd8edfb989",
+      "correlation_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+      "event_id": "c22844cb818b4733b1073c9fce324573",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+        "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "created_at": "2026-04-19T17:11:01.383165+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "capability_families": [
+              "maintenance",
+              "reporting"
+            ],
+            "remaining_step_count": 2,
+            "request_kind": "initial_plan",
+            "requested_review_policy": "auto_adopt_ok"
+          },
+          "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+          "missing_inputs": [],
+          "plan_proposal_id": "plan-proposal-4d0f1274-460a-4e7c-8d85-656a7a7660a2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-19T17:11:01.381790+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-19T17:11:01.381802+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Create the initial revision target plan.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-revise",
+      "source": "executive",
+      "thread_id": "browser:planning-revise",
+      "ts": "2026-04-19T17:11:01.383165+00:00",
+      "user_id": "planning-revise"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "c22844cb818b4733b1073c9fce324573",
+      "correlation_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+      "event_id": "0a25ccbb1c464bd4a554bf6c2567346c",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+        "decision": {
+          "details": {
+            "capability_families": [
+              "maintenance",
+              "reporting"
+            ],
+            "request_kind": "initial_plan"
+          },
+          "reason": "bounded_plan_available",
+          "summary": "The bounded plan is safe to adopt automatically."
+        },
+        "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "created_at": "2026-04-19T17:11:01.383165+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "capability_families": [
+              "maintenance",
+              "reporting"
+            ],
+            "remaining_step_count": 2,
+            "request_kind": "initial_plan",
+            "requested_review_policy": "auto_adopt_ok"
+          },
+          "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+          "missing_inputs": [],
+          "plan_proposal_id": "plan-proposal-4d0f1274-460a-4e7c-8d85-656a7a7660a2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-19T17:11:01.381790+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-19T17:11:01.381802+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Create the initial revision target plan.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-revise",
+      "source": "executive",
+      "thread_id": "browser:planning-revise",
+      "ts": "2026-04-19T17:11:01.383165+00:00",
+      "user_id": "planning-revise"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "0a25ccbb1c464bd4a554bf6c2567346c",
+      "correlation_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+      "event_id": "8260ce3076a049d9b8e26c5a08f49c8c",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "scope_id": "blink/main",
+          "scope_type": "agent",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "created_at": "2026-04-19T17:11:01.382095+00:00",
+          "details": {
+            "commitment_status": "active",
+            "current_plan_proposal_id": "plan-proposal-4d0f1274-460a-4e7c-8d85-656a7a7660a2",
+            "plan_review_policy": "auto_adopt_ok",
+            "survive_restart": true
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "The bounded plan is safe to adopt automatically.",
+          "plan_revision": 1,
+          "planning_requested": true,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-19T17:11:01.381790+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-19T17:11:01.381802+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Replay revised plan",
+          "updated_at": "2026-04-19T17:11:01.383819+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-revise",
+      "source": "executive",
+      "thread_id": "browser:planning-revise",
+      "ts": "2026-04-19T17:11:01.384376+00:00",
+      "user_id": "planning-revise"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+      "event_id": "ff29cf9150d841d3837ed0d0d1307857",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {},
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+        "step_index": 0
+      },
+      "session_id": "browser:planning-revise",
+      "source": "executive",
+      "thread_id": "browser:planning-revise",
+      "ts": "2026-04-19T17:11:01.384712+00:00",
+      "user_id": "planning-revise"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "ff29cf9150d841d3837ed0d0d1307857",
+      "correlation_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+      "event_id": "90d1f645fd504d30b7cad5cc02badd7a",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {
+            "operator_visible": true
+          },
+          "outcome": "completed",
+          "output": {
+            "cycle_id": null,
+            "findings": [],
+            "report_id": null,
+            "status": "unknown"
+          },
+          "retryable": false,
+          "summary": "Memory health status=unknown with 0 findings.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "browser:planning-revise",
+      "source": "executive",
+      "thread_id": "browser:planning-revise",
+      "ts": "2026-04-19T17:11:01.385125+00:00",
+      "user_id": "planning-revise"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+      "event_id": "2d7b34917c3c4c67b181de6cf7b84880",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "scope_id": "blink/main",
+          "scope_type": "agent",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": 0,
+          "blocked_reason": null,
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "created_at": "2026-04-19T17:11:01.382095+00:00",
+          "details": {
+            "commitment_status": "active",
+            "current_plan_proposal_id": "plan-proposal-4d0f1274-460a-4e7c-8d85-656a7a7660a2",
+            "plan_review_policy": "auto_adopt_ok",
+            "survive_restart": true
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Memory health status=unknown with 0 findings.",
+          "plan_revision": 1,
+          "planning_requested": true,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "in_progress",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "cycle_id": null,
+                "findings": [],
+                "report_id": null,
+                "status": "unknown"
+              },
+              "status": "completed",
+              "summary": "Memory health status=unknown with 0 findings.",
+              "updated_at": "2026-04-19T17:11:01.385103+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-19T17:11:01.381802+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Replay revised plan",
+          "updated_at": "2026-04-19T17:11:01.383819+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-revise",
+      "source": "executive",
+      "thread_id": "browser:planning-revise",
+      "ts": "2026-04-19T17:11:01.385449+00:00",
+      "user_id": "planning-revise"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+      "event_id": "acd63cef686f4068a17c396b04c35821",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+        "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+        "proposal": {
+          "assumptions": [
+            "the first maintenance step is already complete"
+          ],
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "created_at": "2026-04-19T17:11:01.385897+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "capability_families": [
+              "maintenance"
+            ],
+            "remaining_step_count": 1,
+            "request_kind": "revise_tail",
+            "requested_review_policy": "auto_adopt_ok"
+          },
+          "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+          "missing_inputs": [],
+          "plan_proposal_id": "plan-proposal-48216883-36d2-4b9e-ab96-b2e13fd3087e",
+          "plan_revision": 2,
+          "preserved_prefix_count": 1,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "cycle_id": null,
+                "findings": [],
+                "report_id": null,
+                "status": "unknown"
+              },
+              "status": "completed",
+              "summary": "Memory health status=unknown with 0 findings.",
+              "updated_at": "2026-04-19T17:11:01.385103+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_scheduler_backpressure",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-19T17:11:01.381808+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Revise the unfinished tail after the first step completed.",
+          "supersedes_plan_proposal_id": "plan-proposal-4d0f1274-460a-4e7c-8d85-656a7a7660a2"
+        }
+      },
+      "session_id": "browser:planning-revise",
+      "source": "executive",
+      "thread_id": "browser:planning-revise",
+      "ts": "2026-04-19T17:11:01.385897+00:00",
+      "user_id": "planning-revise"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "acd63cef686f4068a17c396b04c35821",
+      "correlation_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+      "event_id": "1d8a2a329b914cc2b238005613f61ba4",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+        "decision": {
+          "details": {
+            "capability_families": [
+              "maintenance"
+            ],
+            "request_kind": "revise_tail"
+          },
+          "reason": "bounded_plan_available",
+          "summary": "The bounded plan is safe to adopt automatically."
+        },
+        "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+        "proposal": {
+          "assumptions": [
+            "the first maintenance step is already complete"
+          ],
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "created_at": "2026-04-19T17:11:01.385897+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "capability_families": [
+              "maintenance"
+            ],
+            "remaining_step_count": 1,
+            "request_kind": "revise_tail",
+            "requested_review_policy": "auto_adopt_ok"
+          },
+          "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+          "missing_inputs": [],
+          "plan_proposal_id": "plan-proposal-48216883-36d2-4b9e-ab96-b2e13fd3087e",
+          "plan_revision": 2,
+          "preserved_prefix_count": 1,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "cycle_id": null,
+                "findings": [],
+                "report_id": null,
+                "status": "unknown"
+              },
+              "status": "completed",
+              "summary": "Memory health status=unknown with 0 findings.",
+              "updated_at": "2026-04-19T17:11:01.385103+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_scheduler_backpressure",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-19T17:11:01.381808+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Revise the unfinished tail after the first step completed.",
+          "supersedes_plan_proposal_id": "plan-proposal-4d0f1274-460a-4e7c-8d85-656a7a7660a2"
+        }
+      },
+      "session_id": "browser:planning-revise",
+      "source": "executive",
+      "thread_id": "browser:planning-revise",
+      "ts": "2026-04-19T17:11:01.385897+00:00",
+      "user_id": "planning-revise"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "1d8a2a329b914cc2b238005613f61ba4",
+      "correlation_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+      "event_id": "d058d37033284fd6a69aa84927b3031d",
+      "event_type": "goal.repaired",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "scope_id": "blink/main",
+          "scope_type": "agent",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": 0,
+          "blocked_reason": null,
+          "commitment_id": "commitment_ca863b7709ff57aeba94af224cadc319",
+          "created_at": "2026-04-19T17:11:01.382095+00:00",
+          "details": {
+            "commitment_status": "active",
+            "current_plan_proposal_id": "plan-proposal-48216883-36d2-4b9e-ab96-b2e13fd3087e",
+            "plan_review_policy": "auto_adopt_ok",
+            "survive_restart": true
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "a6cd2707d7f14d069b0768e5b2fbd595",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "The bounded plan is safe to adopt automatically.",
+          "plan_revision": 2,
+          "planning_requested": true,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "waiting",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "cycle_id": null,
+                "findings": [],
+                "report_id": null,
+                "status": "unknown"
+              },
+              "status": "completed",
+              "summary": "Memory health status=unknown with 0 findings.",
+              "updated_at": "2026-04-19T17:11:01.385103+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_scheduler_backpressure",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-19T17:11:01.381808+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Replay revised plan",
+          "updated_at": "2026-04-19T17:11:01.385919+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-revise",
+      "source": "executive",
+      "thread_id": "browser:planning-revise",
+      "ts": "2026-04-19T17:11:01.386874+00:00",
+      "user_id": "planning-revise"
+    }
+  ],
+  "expected_state": {
+    "commitment_titles_by_status": {
+      "active": [
+        "Replay revised plan"
+      ]
+    },
+    "planning_reason_codes": [
+      "bounded_plan_available"
+    ],
+    "planning_recent_outcome_kinds": [
+      "adopted"
+    ],
+    "planning_recent_review_policies": [
+      "auto_adopt_ok"
+    ],
+    "planning_recent_revision_goal_ids": [
+      "a6cd2707d7f14d069b0768e5b2fbd595"
+    ]
+  },
+  "expected_terminal_state": {},
+  "language": "en",
+  "name": "planning_revise_after_block_adopt",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "session_id": "browser:planning-revise",
+    "thread_id": "browser:planning-revise",
+    "user_id": "planning-revise"
+  }
+}

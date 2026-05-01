@@ -1,0 +1,356 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MemoryContinuityTrace",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "turn_id",
+    "session_id",
+    "user_id",
+    "agent_id",
+    "thread_id",
+    "created_at",
+    "profile",
+    "language",
+    "selected_memory_count",
+    "suppressed_memory_count",
+    "cross_language_count",
+    "selected_memories",
+    "suppressed_memories",
+    "memory_effect",
+    "inspectable",
+    "editable",
+    "user_actions",
+    "memory_continuity_v3",
+    "command_intent",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "turn_id": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "session_id": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "user_id": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "agent_id": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "thread_id": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "created_at": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "profile": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "language": {
+      "enum": ["zh", "en", "unknown"]
+    },
+    "selected_memory_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 8
+    },
+    "suppressed_memory_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cross_language_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 8
+    },
+    "selected_memories": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "memory_id",
+          "display_kind",
+          "summary",
+          "safe_provenance_label",
+          "source_language",
+          "cross_language",
+          "inspectable",
+          "editable",
+          "effect_labels",
+          "linked_discourse_episode_ids",
+          "conflict_labels",
+          "staleness_labels",
+          "reason_codes"
+        ],
+        "properties": {
+          "memory_id": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "display_kind": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "summary": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "safe_provenance_label": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "source_language": {
+            "enum": ["zh", "en", "unknown"]
+          },
+          "cross_language": {
+            "type": "boolean"
+          },
+          "inspectable": {
+            "type": "boolean"
+          },
+          "editable": {
+            "type": "boolean"
+          },
+          "effect_labels": {
+            "$ref": "#/$defs/effect_labels"
+          },
+          "linked_discourse_episode_ids": {
+            "type": "array",
+            "maxItems": 8,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "maxLength": 120
+            }
+          },
+          "conflict_labels": {
+            "$ref": "#/$defs/label_array"
+          },
+          "staleness_labels": {
+            "$ref": "#/$defs/label_array"
+          },
+          "reason_codes": {
+            "$ref": "#/$defs/reason_codes"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "suppressed_memories": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["bucket", "count", "user_visible", "reason_codes"],
+        "properties": {
+          "bucket": {
+            "type": "string",
+            "maxLength": 64
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "user_visible": {
+            "type": "boolean"
+          },
+          "reason_codes": {
+            "$ref": "#/$defs/reason_codes"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "memory_effect": {
+      "enum": [
+        "none",
+        "callback_available",
+        "cross_language_callback",
+        "repair_or_uncertainty"
+      ]
+    },
+    "inspectable": {
+      "type": "boolean"
+    },
+    "editable": {
+      "type": "boolean"
+    },
+    "user_actions": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "enum": [
+          "inspect",
+          "edit",
+          "correct",
+          "forget",
+          "suppress",
+          "pin",
+          "mark_stale",
+          "list_visible",
+          "explain"
+        ]
+      }
+    },
+    "memory_continuity_v3": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "selected_discourse_episodes",
+        "effect_labels",
+        "conflict_labels",
+        "staleness_labels",
+        "cross_language_transfer_count",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 3
+        },
+        "selected_discourse_episodes": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": [
+              "discourse_episode_id",
+              "category_labels",
+              "effect_labels",
+              "confidence_bucket",
+              "reason_codes"
+            ],
+            "properties": {
+              "discourse_episode_id": {
+                "type": "string",
+                "maxLength": 120
+              },
+              "category_labels": {
+                "$ref": "#/$defs/label_array"
+              },
+              "effect_labels": {
+                "$ref": "#/$defs/effect_labels"
+              },
+              "confidence_bucket": {
+                "enum": ["high", "medium", "low", "uncertain"]
+              },
+              "reason_codes": {
+                "$ref": "#/$defs/reason_codes"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "effect_labels": {
+          "$ref": "#/$defs/effect_labels"
+        },
+        "conflict_labels": {
+          "$ref": "#/$defs/label_array"
+        },
+        "staleness_labels": {
+          "$ref": "#/$defs/label_array"
+        },
+        "cross_language_transfer_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "command_intent": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "required": ["intent", "language", "confidence", "text_chars", "reason_codes"],
+          "properties": {
+            "intent": {
+              "enum": [
+                "none",
+                "remember",
+                "forget",
+                "correct",
+                "list_memory",
+                "explain_answer"
+              ]
+            },
+            "language": {
+              "enum": ["zh", "en", "unknown"]
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "text_chars": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reason_codes"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "reason_codes": {
+      "$ref": "#/$defs/reason_codes"
+    }
+  },
+  "$defs": {
+    "effect_labels": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "shorter_explanation",
+          "project_constraint_recall",
+          "corrected_preference",
+          "avoid_repetition",
+          "visual_context_acknowledgement",
+          "tentative_callback",
+          "suppressed_stale_memory",
+          "none"
+        ]
+      }
+    },
+    "label_array": {
+      "type": "array",
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      }
+    },
+    "reason_codes": {
+      "type": "array",
+      "maxItems": 24,
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      }
+    }
+  },
+  "additionalProperties": false
+}

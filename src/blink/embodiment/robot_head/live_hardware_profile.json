@@ -1,0 +1,35 @@
+{
+  "schema_version": "blink_robot_head_live_profile/v1",
+  "profile_name": "robot_head_live_v1",
+  "source_notes": [
+    "Blink-owned mirrored hardware profile for the current 11-servo Mac-connected head.",
+    "Servo IDs and direction semantics are mirrored into this repo so Blink does not depend on the separate Blink-AI runtime at execution time.",
+    "Neutral and raw range values are aligned with the tracked robot_head live-limit and revalidation notes.",
+    "Live conversational motion stays conservative: default kinetics use the slower 100/32 proof lane."
+  ],
+  "port_hint": "/dev/cu.usbmodemXXXX",
+  "baud_rate": 1000000,
+  "timeout_seconds": 0.2,
+  "default_transition_ms": 160,
+  "minimum_transition_ms": 80,
+  "neutral_recovery_ms": 220,
+  "live_speed": 100,
+  "live_acceleration": 32,
+  "safe_speed_ceiling": 120,
+  "safe_acceleration_ceiling": 40,
+  "neck_tilt_left_raw": 2009,
+  "neck_tilt_right_raw": 2251,
+  "joints": [
+    { "joint_name": "head_yaw", "servo_ids": [1], "neutral": 2096, "raw_min": 1641, "raw_max": 2453, "positive_direction": "look_right" },
+    { "joint_name": "head_pitch_pair_a", "servo_ids": [2], "neutral": 2041, "raw_min": 1362, "raw_max": 2647, "positive_direction": "head_up_raw_plus" },
+    { "joint_name": "head_pitch_pair_b", "servo_ids": [3], "neutral": 2058, "raw_min": 1447, "raw_max": 2681, "positive_direction": "head_up_raw_minus" },
+    { "joint_name": "lower_lid_left", "servo_ids": [4], "neutral": 2050, "raw_min": 1948, "raw_max": 2346, "positive_direction": "close" },
+    { "joint_name": "upper_lid_left", "servo_ids": [5], "neutral": 2048, "raw_min": 1550, "raw_max": 2242, "positive_direction": "open" },
+    { "joint_name": "lower_lid_right", "servo_ids": [6], "neutral": 2045, "raw_min": 1749, "raw_max": 2140, "positive_direction": "open" },
+    { "joint_name": "upper_lid_right", "servo_ids": [7], "neutral": 2006, "raw_min": 1848, "raw_max": 2545, "positive_direction": "close" },
+    { "joint_name": "eye_pitch", "servo_ids": [8], "neutral": 2147, "raw_min": 1953, "raw_max": 2440, "positive_direction": "look_up" },
+    { "joint_name": "eye_yaw", "servo_ids": [9], "neutral": 2073, "raw_min": 1756, "raw_max": 2332, "positive_direction": "look_right" },
+    { "joint_name": "brow_left", "servo_ids": [10], "neutral": 2094, "raw_min": 1897, "raw_max": 2197, "positive_direction": "raise_brow" },
+    { "joint_name": "brow_right", "servo_ids": [11], "neutral": 2000, "raw_min": 1897, "raw_max": 2197, "positive_direction": "raise_brow_raw_minus" }
+  ]
+}

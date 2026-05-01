@@ -1,0 +1,76 @@
+{
+  "name": "preference_change",
+  "description": "A changed preference keeps only the newest current truth.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-pref-1",
+      "event_type": "memory.claim.recorded",
+      "ts": "2026-04-18T00:10:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "subject_entity_id": "entity:user:alpha",
+        "predicate": "preference.like",
+        "object": {
+          "value": "coffee"
+        },
+        "status": "active",
+        "scope_type": "user",
+        "scope_id": "alpha",
+        "claim_key": "preference:coffee:alpha"
+      }
+    },
+    {
+      "event_id": "evt-pref-2",
+      "event_type": "memory.claim.recorded",
+      "ts": "2026-04-18T00:11:00+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-pref-1",
+      "payload": {
+        "subject_entity_id": "entity:user:alpha",
+        "predicate": "preference.dislike",
+        "object": {
+          "value": "coffee"
+        },
+        "status": "active",
+        "scope_type": "user",
+        "scope_id": "alpha",
+        "claim_key": "preference:coffee:alpha"
+      }
+    },
+    {
+      "event_id": "evt-pref-3",
+      "event_type": "memory.claim.superseded",
+      "ts": "2026-04-18T00:11:10+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-pref-2",
+      "payload": {
+        "prior_claim_id": "claim_0020f86e5aa25aa48babf21d3a88d79b",
+        "new_claim_id": "claim_16902d1a00c75785a6b2cd0d862f005a",
+        "reason": "explicit_correction"
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "current_claims": [
+      {
+        "predicate": "preference.dislike",
+        "value": "coffee"
+      }
+    ],
+    "historical_claims": [
+      {
+        "predicate": "preference.like",
+        "value": "coffee"
+      }
+    ]
+  }
+}

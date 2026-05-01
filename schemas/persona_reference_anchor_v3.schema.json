@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PersonaReferenceAnchorV3",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "anchor_id",
+    "situation_key",
+    "zh_example",
+    "en_example",
+    "behavior_constraints",
+    "negative_examples",
+    "stance_label",
+    "response_shape_label",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 3
+    },
+    "anchor_id": {
+      "type": "string",
+      "maxLength": 96,
+      "pattern": "^persona-anchor-v3:[a-z_]+$"
+    },
+    "situation_key": {
+      "enum": [
+        "interruption_response",
+        "correction_response",
+        "deep_technical_planning",
+        "casual_check_in",
+        "visual_grounding",
+        "uncertainty",
+        "disagreement",
+        "memory_callback",
+        "playful_not_fake_human"
+      ]
+    },
+    "zh_example": {
+      "type": "string",
+      "maxLength": 280
+    },
+    "en_example": {
+      "type": "string",
+      "maxLength": 280
+    },
+    "behavior_constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 160
+      },
+      "minItems": 2,
+      "maxItems": 8,
+      "uniqueItems": true
+    },
+    "negative_examples": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 160
+      },
+      "minItems": 2,
+      "maxItems": 8,
+      "uniqueItems": true
+    },
+    "stance_label": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "response_shape_label": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      },
+      "maxItems": 12,
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

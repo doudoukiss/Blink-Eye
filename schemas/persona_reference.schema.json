@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PersonaReference",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "locale",
+    "scenario",
+    "stance",
+    "response_shape",
+    "example_input",
+    "example_output"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "maxLength": 96,
+      "pattern": "^persona:(zh|en):[a-z_]+$"
+    },
+    "locale": {
+      "enum": [
+        "zh",
+        "en",
+        "bilingual"
+      ]
+    },
+    "scenario": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "stance": {
+      "type": "string",
+      "maxLength": 140
+    },
+    "response_shape": {
+      "type": "string",
+      "maxLength": 180
+    },
+    "forbidden_moves": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 140
+      },
+      "maxItems": 8,
+      "uniqueItems": true
+    },
+    "example_input": {
+      "type": "string",
+      "maxLength": 240
+    },
+    "example_output": {
+      "type": "string",
+      "maxLength": 360
+    },
+    "performance_notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 160
+      },
+      "maxItems": 8,
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="180" viewBox="0 0 640 180" role="img" aria-labelledby="title desc">
+  <title id="title">Blink</title>
+  <desc id="desc">Blink product wordmark</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="spark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+  </defs>
+  <rect width="640" height="180" rx="28" fill="url(#bg)" />
+  <circle cx="106" cy="90" r="42" fill="#f8fafc" opacity="0.12" />
+  <path d="M90 54 L124 90 L90 126" fill="none" stroke="url(#spark)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="168" y="108" fill="#f8fafc" font-family="'Avenir Next', 'Helvetica Neue', Arial, sans-serif" font-size="68" font-weight="700" letter-spacing="2">Blink</text>
+  <text x="170" y="140" fill="#bfdbfe" font-family="'Avenir Next', 'Helvetica Neue', Arial, sans-serif" font-size="20" letter-spacing="4">VOICE AND MULTIMODAL AGENTS</text>
+</svg>

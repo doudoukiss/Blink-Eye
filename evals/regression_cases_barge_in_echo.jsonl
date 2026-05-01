@@ -1,0 +1,4 @@
+{"id": "native_no_forced_barge_in", "path": "./scripts/run-local-voice-en.sh", "expected": "barge_in=off by default"}
+{"id": "browser_no_forced_barge_in", "path": "./scripts/run-local-browser-melo.sh", "expected": "barge_in=off unless explicit"}
+{"id": "melo_sidecar_supervision", "path": "./scripts/run-local-browser-melo.sh", "expected": "sidecar reused or supervised; health loss triggers restart"}
+{"id": "camera_not_claimed_without_frame", "path": "./scripts/run-local-browser-melo.sh", "expected": "no camera claims without fresh frame"}

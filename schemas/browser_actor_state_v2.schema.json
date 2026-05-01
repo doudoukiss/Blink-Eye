@@ -1,0 +1,1138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BrowserActorStateV2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "available",
+    "runtime",
+    "transport",
+    "profile",
+    "language",
+    "mode",
+    "tts",
+    "webrtc",
+    "microphone",
+    "camera",
+    "camera_scene",
+    "vision",
+    "protected_playback",
+    "interruption",
+    "webrtc_audio_health",
+    "active_listening",
+    "speech",
+    "conversation_floor",
+    "memory_persona",
+    "memory",
+    "degradation",
+    "live_text",
+    "last_actor_event",
+    "last_actor_event_id",
+    "last_actor_event_at",
+    "active_session_id",
+    "active_client_id",
+    "updated_at",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "available": {
+      "type": "boolean"
+    },
+    "runtime": {
+      "const": "browser"
+    },
+    "transport": {
+      "const": "WebRTC"
+    },
+    "profile": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "language": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "mode": {
+      "enum": [
+        "connected",
+        "listening",
+        "heard",
+        "thinking",
+        "looking",
+        "speaking",
+        "interrupted",
+        "waiting",
+        "error",
+        "degraded",
+        "recovered"
+      ]
+    },
+    "tts": {
+      "type": "object",
+      "required": [
+        "backend",
+        "label"
+      ],
+      "properties": {
+        "backend": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 96
+        }
+      },
+      "additionalProperties": false
+    },
+    "webrtc": {
+      "type": "object",
+      "required": [
+        "media_mode",
+        "session_active",
+        "client_active",
+        "media",
+        "reason_codes"
+      ],
+      "properties": {
+        "media_mode": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "session_active": {
+          "type": "boolean"
+        },
+        "client_active": {
+          "type": "boolean"
+        },
+        "media": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "microphone": {
+      "$ref": "#/$defs/component_state"
+    },
+    "camera": {
+      "type": "object",
+      "required": [
+        "state",
+        "enabled",
+        "available",
+        "presence",
+        "scene",
+        "reason_codes"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "presence": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "scene": {
+          "$ref": "#/$defs/camera_scene"
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "camera_scene": {
+      "$ref": "#/$defs/camera_scene"
+    },
+    "vision": {
+      "type": "object",
+      "required": [
+        "enabled",
+        "backend",
+        "continuous_perception_enabled",
+        "state",
+        "available",
+        "grounding_mode",
+        "current_answer_used_vision",
+        "reason_codes"
+      ],
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "backend": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "continuous_perception_enabled": {
+          "type": "boolean"
+        },
+        "state": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "grounding_mode": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "current_answer_used_vision": {
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "protected_playback": {
+      "type": "boolean"
+    },
+    "interruption": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "webrtc_audio_health": {
+      "$ref": "#/$defs/webrtc_audio_health"
+    },
+    "active_listening": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "speech": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "conversation_floor": {
+      "$ref": "#/$defs/conversation_floor"
+    },
+    "memory_persona": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "memory": {
+      "type": "object",
+      "required": [
+        "available"
+      ],
+      "properties": {
+        "available": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "degradation": {
+      "type": "object",
+      "required": [
+        "state",
+        "components",
+        "reason_codes"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "ok",
+            "degraded",
+            "error"
+          ]
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "maxItems": 8,
+          "uniqueItems": true
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "live_text": {
+      "type": "object",
+      "required": [
+        "partial_transcript",
+        "final_transcript",
+        "assistant_subtitle"
+      ],
+      "properties": {
+        "partial_transcript": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 160
+        },
+        "final_transcript": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 160
+        },
+        "assistant_subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 160
+        }
+      },
+      "additionalProperties": false
+    },
+    "last_actor_event": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "last_actor_event_id": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "last_actor_event_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 64
+    },
+    "active_session_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 96
+    },
+    "active_client_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 96
+    },
+    "updated_at": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "reason_codes": {
+      "$ref": "#/$defs/reason_codes"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "component_state": {
+      "type": "object",
+      "required": [
+        "state",
+        "enabled",
+        "available",
+        "reason_codes"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      },
+      "maxItems": 32,
+      "uniqueItems": true
+    },
+    "webrtc_audio_health": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "runtime",
+        "transport",
+        "profile",
+        "language",
+        "microphone_state",
+        "input_track_state",
+        "output_playback_state",
+        "echo_risk",
+        "barge_in_state",
+        "protected_playback",
+        "adaptive_barge_in_armed",
+        "explicit_barge_in_armed",
+        "headphones_recommended",
+        "microphone",
+        "input_track",
+        "output_playback",
+        "echo",
+        "stats",
+        "barge_in",
+        "false_interruption_counts",
+        "updated_at",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 2
+        },
+        "runtime": {
+          "const": "browser"
+        },
+        "transport": {
+          "const": "WebRTC"
+        },
+        "profile": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "language": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "microphone_state": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "input_track_state": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "output_playback_state": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "echo_risk": {
+          "enum": [
+            "unknown",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "barge_in_state": {
+          "enum": [
+            "protected",
+            "armed",
+            "adaptive"
+          ]
+        },
+        "protected_playback": {
+          "type": "boolean"
+        },
+        "adaptive_barge_in_armed": {
+          "type": "boolean"
+        },
+        "explicit_barge_in_armed": {
+          "type": "boolean"
+        },
+        "headphones_recommended": {
+          "type": "boolean"
+        },
+        "microphone": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "input_track": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "output_playback": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "echo": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "stats": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "barge_in": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "false_interruption_counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "maxProperties": 16
+        },
+        "updated_at": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "camera_scene": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "profile",
+        "language",
+        "enabled",
+        "available",
+        "state",
+        "status",
+        "vision_backend",
+        "continuous_perception_enabled",
+        "permission_state",
+        "camera_connected",
+        "camera_fresh",
+        "freshness_state",
+        "track_state",
+        "latest_frame_sequence",
+        "latest_frame_age_ms",
+        "latest_frame_received_at",
+        "on_demand_vision_state",
+        "current_answer_used_vision",
+        "grounding_mode",
+        "last_vision_result_state",
+        "last_used_frame_sequence",
+        "last_used_frame_age_ms",
+        "last_used_frame_at",
+        "degradation",
+        "scene_social_state_v2",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "profile": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "language": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "available": {
+          "type": "boolean"
+        },
+        "state": {
+          "enum": [
+            "disabled",
+            "permission_needed",
+            "waiting_for_frame",
+            "available",
+            "looking",
+            "stale",
+            "stalled",
+            "error"
+          ]
+        },
+        "status": {
+          "enum": [
+            "disabled",
+            "permission_needed",
+            "waiting_for_frame",
+            "available",
+            "looking",
+            "stale",
+            "stalled",
+            "error"
+          ]
+        },
+        "vision_backend": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "continuous_perception_enabled": {
+          "type": "boolean"
+        },
+        "permission_state": {
+          "enum": [
+            "disabled",
+            "granted",
+            "permission_needed",
+            "unknown"
+          ]
+        },
+        "camera_connected": {
+          "type": "boolean"
+        },
+        "camera_fresh": {
+          "type": "boolean"
+        },
+        "freshness_state": {
+          "enum": [
+            "disabled",
+            "fresh",
+            "stale",
+            "waiting",
+            "unknown"
+          ]
+        },
+        "track_state": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "latest_frame_sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "latest_frame_age_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "latest_frame_received_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 96
+        },
+        "on_demand_vision_state": {
+          "enum": [
+            "idle",
+            "looking",
+            "success",
+            "error",
+            "unavailable"
+          ]
+        },
+        "current_answer_used_vision": {
+          "type": "boolean"
+        },
+        "grounding_mode": {
+          "enum": [
+            "none",
+            "single_frame",
+            "continuous_perception"
+          ]
+        },
+        "last_vision_result_state": {
+          "type": "string",
+          "maxLength": 48
+        },
+        "last_used_frame_sequence": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "last_used_frame_age_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "last_used_frame_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 96
+        },
+        "degradation": {
+          "type": "object",
+          "required": [
+            "state",
+            "components",
+            "reason_codes"
+          ],
+          "properties": {
+            "state": {
+              "enum": [
+                "ok",
+                "degraded",
+                "error"
+              ]
+            },
+            "components": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "camera",
+                  "vision"
+                ]
+              },
+              "maxItems": 4,
+              "uniqueItems": true
+            },
+            "reason_codes": {
+              "$ref": "#/$defs/reason_codes"
+            }
+          },
+          "additionalProperties": false
+        },
+        "scene_social_state_v2": {
+          "$ref": "#/$defs/scene_social_state_v2"
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "scene_social_state_v2": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "state_id",
+        "profile",
+        "language",
+        "camera_status",
+        "vision_status",
+        "camera_honesty_state",
+        "frame_freshness",
+        "frame_age_ms",
+        "latest_frame_sequence",
+        "last_used_frame_sequence",
+        "last_used_frame_age_ms",
+        "user_presence_hint",
+        "face_hint",
+        "body_hint",
+        "hands_hint",
+        "object_hint",
+        "object_showing_likelihood",
+        "scene_change_reason",
+        "scene_transition",
+        "last_moondream_result_state",
+        "last_grounding_summary",
+        "last_grounding_summary_hash",
+        "confidence",
+        "confidence_bucket",
+        "scene_age_ms",
+        "updated_at_ms",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 2
+        },
+        "state_id": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "profile": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "language": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "camera_status": {
+          "enum": [
+            "unknown",
+            "permission_needed",
+            "ready",
+            "disabled",
+            "unavailable",
+            "error"
+          ]
+        },
+        "vision_status": {
+          "enum": [
+            "idle",
+            "looking",
+            "answered",
+            "stale",
+            "unavailable",
+            "degraded"
+          ]
+        },
+        "camera_honesty_state": {
+          "enum": [
+            "can_see_now",
+            "recent_frame_available",
+            "available_not_used",
+            "unavailable"
+          ]
+        },
+        "frame_freshness": {
+          "enum": [
+            "none",
+            "fresh",
+            "recent",
+            "stale",
+            "waiting",
+            "disabled",
+            "unknown"
+          ]
+        },
+        "frame_age_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "latest_frame_sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "last_used_frame_sequence": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "last_used_frame_age_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "user_presence_hint": {
+          "enum": [
+            "unknown",
+            "present",
+            "absent",
+            "partial"
+          ]
+        },
+        "face_hint": {
+          "$ref": "#/$defs/visibility_hint"
+        },
+        "body_hint": {
+          "$ref": "#/$defs/visibility_hint"
+        },
+        "hands_hint": {
+          "$ref": "#/$defs/visibility_hint"
+        },
+        "object_hint": {
+          "enum": [
+            "unknown",
+            "visible",
+            "not_visible",
+            "object_showing",
+            "not_evaluated"
+          ]
+        },
+        "object_showing_likelihood": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "scene_change_reason": {
+          "$ref": "#/$defs/scene_transition"
+        },
+        "scene_transition": {
+          "$ref": "#/$defs/scene_transition"
+        },
+        "last_moondream_result_state": {
+          "enum": [
+            "none",
+            "looking",
+            "answered",
+            "unavailable",
+            "error",
+            "stale"
+          ]
+        },
+        "last_grounding_summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 80
+        },
+        "last_grounding_summary_hash": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 32
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "confidence_bucket": {
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "scene_age_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "updated_at_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "scene_transition": {
+      "enum": [
+        "none",
+        "camera_ready",
+        "looking_requested",
+        "frame_captured",
+        "vision_answered",
+        "vision_stale",
+        "vision_unavailable"
+      ]
+    },
+    "visibility_hint": {
+      "enum": [
+        "unknown",
+        "visible",
+        "not_visible",
+        "partial",
+        "not_evaluated"
+      ]
+    },
+    "conversation_floor": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "state",
+        "profile",
+        "language",
+        "floor_model_version",
+        "sub_state",
+        "user_has_floor",
+        "assistant_has_floor",
+        "overlap",
+        "handoff",
+        "repair",
+        "unknown",
+        "assistant_speaking",
+        "user_speaking",
+        "protected_playback",
+        "barge_in_armed",
+        "last_input_type",
+        "last_text_kind",
+        "phrase_class",
+        "phrase_confidence",
+        "phrase_confidence_bucket",
+        "yield_decision",
+        "echo_risk",
+        "barge_in_state",
+        "tts_chunk_role",
+        "low_confidence_transcript",
+        "last_transition_at",
+        "updated_at",
+        "transition_count",
+        "counts",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 1
+        },
+        "state": {
+          "enum": [
+            "user_has_floor",
+            "assistant_has_floor",
+            "overlap",
+            "handoff",
+            "repair",
+            "unknown"
+          ]
+        },
+        "profile": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "language": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "floor_model_version": {
+          "const": 3
+        },
+        "sub_state": {
+          "enum": [
+            "user_holding_floor",
+            "assistant_holding_floor",
+            "overlap_candidate",
+            "accepted_interrupt",
+            "ignored_backchannel",
+            "repair_requested",
+            "handoff_pending",
+            "handoff_complete"
+          ]
+        },
+        "user_has_floor": {
+          "type": "boolean"
+        },
+        "assistant_has_floor": {
+          "type": "boolean"
+        },
+        "overlap": {
+          "type": "boolean"
+        },
+        "handoff": {
+          "type": "boolean"
+        },
+        "repair": {
+          "type": "boolean"
+        },
+        "unknown": {
+          "type": "boolean"
+        },
+        "assistant_speaking": {
+          "type": "boolean"
+        },
+        "user_speaking": {
+          "type": "boolean"
+        },
+        "protected_playback": {
+          "type": "boolean"
+        },
+        "barge_in_armed": {
+          "type": "boolean"
+        },
+        "last_input_type": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "last_text_kind": {
+          "enum": [
+            "empty",
+            "backchannel",
+            "confirmation",
+            "hesitation",
+            "correction",
+            "explicit_interruption",
+            "meaningful"
+          ]
+        },
+        "phrase_class": {
+          "enum": [
+            "empty",
+            "backchannel",
+            "confirmation",
+            "continuer",
+            "hesitation",
+            "correction",
+            "explicit_interrupt",
+            "meaningful"
+          ]
+        },
+        "phrase_confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "phrase_confidence_bucket": {
+          "enum": [
+            "unknown",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "yield_decision": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "echo_risk": {
+          "enum": [
+            "unknown",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "barge_in_state": {
+          "enum": [
+            "protected",
+            "armed",
+            "adaptive"
+          ]
+        },
+        "tts_chunk_role": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "low_confidence_transcript": {
+          "type": "boolean"
+        },
+        "last_transition_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 64
+        },
+        "updated_at": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "transition_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "counts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "maxProperties": 32
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

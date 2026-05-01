@@ -1,0 +1,811 @@
+{
+  "qa_categories": [
+    "skill_learning"
+  ],
+  "description": "Repeated successful bounded work becomes one active reusable skill.",
+  "events": [
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-a1",
+      "event_id": "266cf3f53903400096a9e5c80d2fbc0a",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-a1",
+          "created_at": "2026-04-20T10:51:20.040801+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-a1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Review and report memory health",
+          "updated_at": "2026-04-20T10:51:20.040948+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:00+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-a1",
+      "event_id": "f819f9ffe4ff42049f1fbf602c4ec721",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment-a1",
+        "goal_id": "goal-a1",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-a1",
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-a1",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-a1",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.041533+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.041535+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Review and report memory health.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:00+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "f819f9ffe4ff42049f1fbf602c4ec721",
+      "correlation_id": "goal-a1",
+      "event_id": "91f801917a124608968d79c27f97ab16",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment-a1",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Review and report memory health."
+        },
+        "goal_id": "goal-a1",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-a1",
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-a1",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-a1",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.041533+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.041535+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Review and report memory health.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:01+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "91f801917a124608968d79c27f97ab16",
+      "correlation_id": "goal-a1",
+      "event_id": "17846f2bf2a04ab99398a477e28db120",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-a1",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-a1",
+          "created_at": "2026-04-20T10:51:20.042335+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-a1"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-a1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Review and report memory health.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.042328+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.042332+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review and report memory health",
+          "updated_at": "2026-04-20T10:51:20.042336+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:02+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-a1",
+      "event_id": "349d7d6f40724dc7aa2e2337d4d700fc",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-a1",
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:03+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "349d7d6f40724dc7aa2e2337d4d700fc",
+      "correlation_id": "goal-a1",
+      "event_id": "8be93f2c608546a48f8936cbe3fd6b78",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-a1",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:04+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-a1",
+      "event_id": "686e32c20b5e4c6a944bd0b698667ed4",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-a1",
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:05+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "686e32c20b5e4c6a944bd0b698667ed4",
+      "correlation_id": "goal-a1",
+      "event_id": "bed050706e2b44b7aeda12944abc404a",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-a1",
+        "result": {
+          "accepted": true,
+          "capability_id": "reporting.record_presence_event",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 1
+          },
+          "retryable": false,
+          "summary": "Completed reporting.record_presence_event.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:06+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-a1",
+      "event_id": "644ee7cce419410e9915e9d7017216f7",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-a1",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "commitment-a1",
+          "created_at": "2026-04-20T10:51:20.044312+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-a1"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-a1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Review and report memory health.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.043651+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {
+                "slot": 1
+              },
+              "status": "completed",
+              "summary": "Completed reporting.record_presence_event.",
+              "updated_at": "2026-04-20T10:51:20.044306+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review and report memory health",
+          "updated_at": "2026-04-20T10:51:20.044313+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:07+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-a2",
+      "event_id": "422a8be4c8ca4e7287c5ce0729501d60",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-a2",
+          "created_at": "2026-04-20T10:51:20.044690+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-a2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Review and report memory health again",
+          "updated_at": "2026-04-20T10:51:20.044692+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:40+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-a2",
+      "event_id": "e692225c93fe411f890f9efabadc831a",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment-a2",
+        "goal_id": "goal-a2",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-a2",
+          "created_at": "2026-01-01T00:00:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-a2",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-a2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.045088+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.045090+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Review and report memory health again.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:40+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "e692225c93fe411f890f9efabadc831a",
+      "correlation_id": "goal-a2",
+      "event_id": "a9e17b43ce22453ca34493fbefde88f4",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment-a2",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Review and report memory health again."
+        },
+        "goal_id": "goal-a2",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-a2",
+          "created_at": "2026-01-01T00:00:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-a2",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-a2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.045088+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.045090+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Review and report memory health again.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:41+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "a9e17b43ce22453ca34493fbefde88f4",
+      "correlation_id": "goal-a2",
+      "event_id": "43e5d78b9bef47d1ac0da11d75d3ffe5",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-a2",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-a2",
+          "created_at": "2026-04-20T10:51:20.045842+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-a2"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-a2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Review and report memory health again.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.045837+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.045839+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review and report memory health again",
+          "updated_at": "2026-04-20T10:51:20.045842+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:42+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-a2",
+      "event_id": "f62789a8cd8c4637a9430a456797a131",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-a2",
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:43+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "f62789a8cd8c4637a9430a456797a131",
+      "correlation_id": "goal-a2",
+      "event_id": "465445371ff3463ca19d30cd69f021a6",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-a2",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:44+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-a2",
+      "event_id": "7fd10ca3be764042b6a2e18bb23aa470",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-a2",
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:45+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "7fd10ca3be764042b6a2e18bb23aa470",
+      "correlation_id": "goal-a2",
+      "event_id": "0e3ee844e543466491003dc5d9e4cd26",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-a2",
+        "result": {
+          "accepted": true,
+          "capability_id": "reporting.record_presence_event",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 1
+          },
+          "retryable": false,
+          "summary": "Completed reporting.record_presence_event.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:46+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-a2",
+      "event_id": "20818c2cc36644389bace8fa5628d9b2",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-a2",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "commitment-a2",
+          "created_at": "2026-04-20T10:51:20.047496+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-a2"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-a2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Review and report memory health again.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.046876+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {
+                "slot": 1
+              },
+              "status": "completed",
+              "summary": "Completed reporting.record_presence_event.",
+              "updated_at": "2026-04-20T10:51:20.047492+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review and report memory health again",
+          "updated_at": "2026-04-20T10:51:20.047497+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_candidate_then_active",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_candidate_then_active",
+      "ts": "2026-01-01T00:00:47+00:00",
+      "user_id": "procedural_skill_candidate_then_active"
+    }
+  ],
+  "expected_state": {
+    "procedural_active_skill_ids": [
+      "procedural_skill_cc7eb18730275e3498a9d44d7091f4f4"
+    ],
+    "procedural_candidate_skill_ids": [],
+    "procedural_failure_signature_codes": [],
+    "procedural_low_confidence_skill_ids": [],
+    "procedural_retired_skill_ids": [],
+    "procedural_retirement_reason_codes": [],
+    "procedural_superseded_skill_ids": []
+  },
+  "expected_terminal_state": {},
+  "language": "en",
+  "name": "procedural_skill_candidate_then_active",
+  "presence_scope_key": "local:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "session_id": "text:procedural_skill_candidate_then_active",
+    "thread_id": "text:procedural_skill_candidate_then_active",
+    "user_id": "procedural_skill_candidate_then_active"
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ActiveListenerStateV2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "available",
+    "profile",
+    "language",
+    "phase",
+    "partial_available",
+    "final_available",
+    "partial_transcript_chars",
+    "final_transcript_chars",
+    "interim_transcript_count",
+    "final_transcript_count",
+    "speech_start_count",
+    "speech_stop_count",
+    "turn_started_at",
+    "turn_stopped_at",
+    "last_update_at",
+    "turn_duration_ms",
+    "topics",
+    "constraints",
+    "corrections",
+    "project_references",
+    "topic_count",
+    "constraint_count",
+    "correction_count",
+    "project_reference_count",
+    "uncertainty_flags",
+    "uncertainty_flag_count",
+    "ready_to_answer",
+    "readiness_state",
+    "degradation",
+    "semantic_state_v3",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "available": {
+      "type": "boolean"
+    },
+    "profile": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 96
+    },
+    "language": {
+      "enum": [
+        "zh",
+        "en",
+        "unknown"
+      ]
+    },
+    "phase": {
+      "enum": [
+        "idle",
+        "listening_started",
+        "speech_continuing",
+        "partial_understanding",
+        "transcribing",
+        "final_understanding",
+        "ready_to_answer",
+        "degraded",
+        "error"
+      ]
+    },
+    "partial_available": {
+      "type": "boolean"
+    },
+    "final_available": {
+      "type": "boolean"
+    },
+    "partial_transcript_chars": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "final_transcript_chars": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "interim_transcript_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "final_transcript_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "speech_start_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "speech_stop_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "turn_started_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 64
+    },
+    "turn_stopped_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 64
+    },
+    "last_update_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 64
+    },
+    "turn_duration_ms": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "topics": {
+      "$ref": "#/$defs/hints"
+    },
+    "constraints": {
+      "$ref": "#/$defs/hints"
+    },
+    "corrections": {
+      "$ref": "#/$defs/hints"
+    },
+    "project_references": {
+      "$ref": "#/$defs/hints"
+    },
+    "topic_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "constraint_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "correction_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "project_reference_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "uncertainty_flags": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "maxLength": 48
+      }
+    },
+    "uncertainty_flag_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "ready_to_answer": {
+      "type": "boolean"
+    },
+    "readiness_state": {
+      "enum": [
+        "not_ready",
+        "listening",
+        "partial",
+        "transcribing",
+        "ready",
+        "degraded"
+      ]
+    },
+    "degradation": {
+      "type": "object",
+      "required": [
+        "state",
+        "components",
+        "reason_codes"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "ok",
+            "degraded",
+            "error"
+          ]
+        },
+        "components": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "enum": [
+              "microphone",
+              "stt",
+              "runtime",
+              "media"
+            ]
+          }
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "semantic_state_v3": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "current_topic",
+        "detected_intent",
+        "constraints",
+        "uncertainty",
+        "emotional_tone_label",
+        "language",
+        "enough_information_to_answer",
+        "safe_live_summary",
+        "listener_chips",
+        "listener_chip_count",
+        "camera_reference_state",
+        "memory_context_state",
+        "floor_state",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 3
+        },
+        "current_topic": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 48
+        },
+        "detected_intent": {
+          "enum": [
+            "question",
+            "instruction",
+            "correction",
+            "object_showing",
+            "project_planning",
+            "small_talk",
+            "unknown"
+          ]
+        },
+        "constraints": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "string",
+            "maxLength": 48
+          }
+        },
+        "uncertainty": {
+          "type": "array",
+          "maxItems": 5,
+          "items": {
+            "type": "string",
+            "maxLength": 48
+          }
+        },
+        "emotional_tone_label": {
+          "enum": [
+            "neutral",
+            "positive",
+            "concerned",
+            "frustrated",
+            "uncertain"
+          ]
+        },
+        "language": {
+          "enum": [
+            "zh",
+            "en",
+            "unknown"
+          ]
+        },
+        "enough_information_to_answer": {
+          "type": "boolean"
+        },
+        "safe_live_summary": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "listener_chips": {
+          "type": "array",
+          "maxItems": 7,
+          "items": {
+            "$ref": "#/$defs/semantic_chip"
+          }
+        },
+        "listener_chip_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 7
+        },
+        "camera_reference_state": {
+          "enum": [
+            "not_used",
+            "fresh_supported",
+            "fresh_available",
+            "stale_or_limited",
+            "unsupported",
+            "error"
+          ]
+        },
+        "memory_context_state": {
+          "enum": [
+            "available",
+            "limited",
+            "unavailable"
+          ]
+        },
+        "floor_state": {
+          "type": "string",
+          "maxLength": 48
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_codes": {
+      "$ref": "#/$defs/reason_codes"
+    }
+  },
+  "$defs": {
+    "hint": {
+      "type": "object",
+      "required": [
+        "kind",
+        "value",
+        "confidence",
+        "source",
+        "editable"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "topic",
+            "constraint",
+            "correction",
+            "project_reference"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 48
+        },
+        "confidence": {
+          "enum": [
+            "heuristic",
+            "observed",
+            "unknown"
+          ]
+        },
+        "source": {
+          "enum": [
+            "partial_transcript",
+            "final_transcript",
+            "unknown"
+          ]
+        },
+        "editable": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "hints": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "$ref": "#/$defs/hint"
+      }
+    },
+    "semantic_chip": {
+      "type": "object",
+      "required": [
+        "chip_id",
+        "label",
+        "localized_label",
+        "state",
+        "reason_codes"
+      ],
+      "properties": {
+        "chip_id": {
+          "enum": [
+            "heard_summary",
+            "constraint_detected",
+            "question_detected",
+            "showing_object",
+            "camera_limited",
+            "still_listening",
+            "ready_to_answer"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 48
+        },
+        "localized_label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 48
+        },
+        "state": {
+          "enum": [
+            "active",
+            "pending",
+            "limited",
+            "ready"
+          ]
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_codes": {
+      "type": "array",
+      "maxItems": 24,
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      }
+    }
+  },
+  "additionalProperties": false
+}

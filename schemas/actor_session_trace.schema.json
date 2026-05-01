@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Blink Actor Session Trace",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "primary_path",
+    "started_at",
+    "events"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "primary_path": {
+      "const": "./scripts/run-local-browser-melo.sh"
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "ended_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "trace_mode": {
+      "enum": [
+        "no_trace",
+        "local_trace",
+        "debug_trace"
+      ]
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "actor_event.schema.json"
+      },
+      "maxItems": 10000
+    },
+    "metrics": {
+      "type": "object"
+    }
+  }
+}

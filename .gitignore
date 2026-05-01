@@ -1,0 +1,105 @@
+.vscode
+env/
+__pycache__/
+*~
+venv
+.venv
+.idea
+.gradle
+.next
+next-env.d.ts
+local.properties
+*.log
+*.lock
+smart_turn_audio_log
+#*#
+
+# Distribution / Packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.DS_Store
+.env*
+.blink-local-profiles.json
+fly.toml
+
+# Local secrets
+/docs/key.txt
+
+# Examples
+examples/**/node_modules/
+examples/**/.expo/
+examples/**/dist/
+examples/**/npm-debug.*
+examples/**/*.jks
+examples/**/*.p8
+examples/**/*.p12
+examples/**/*.key
+examples/**/*.mobileprovision
+examples/**/*.orig.*
+examples/**/web-build/
+
+# macOS
+.DS_Store
+
+# Documentation
+docs/api/_build/
+docs/api/api
+
+# uv
+.python-version
+
+# Generated artifacts
+whisker_setup.py
+/artifacts/
+src/blink/web/client_dist/
+artifacts/tts-eval/
+/artifacts/actor_traces/
+/artifacts/bilingual-actor-bench/
+/artifacts/browser-perf-bench/
+/artifacts/performance_episodes_v3/
+/artifacts/performance_preferences_v3/
+/artifacts/runtime_logs/
+/artifacts/robot_head_preview/*.json
+/artifacts/robot_head_shows/*.json
+/native/macos/BlinkCameraHelper/build/
+
+# Optional local CosyVoice reference artifacts
+/docs/CosyVoice-main/.venv/
+/docs/CosyVoice-main/.cache/
+/docs/CosyVoice-main/models/
+/docs/CosyVoice-main/pretrained_models/
+/docs/CosyVoice-main/outputs/
+
+# Optional local MeloTTS reference artifacts
+/docs/MeloTTS-reference/.venv/
+/docs/MeloTTS-reference/outputs/
+/docs/MeloTTS-reference/vendor/
+
+/references
+/runtime/robot_head/live_serial.lock
+/runtime/robot_head/live_motion_arm.json
+
+# Internal planning bundles and generated manifests
+/.agents/
+/agent_skill/
+/docs/codex/
+/phases/
+/prompts/
+/MANIFEST.json
+/phase_manifest.json

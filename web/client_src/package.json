@@ -1,0 +1,12 @@
+{
+  "name": "blink-browser-ui-source",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Repo-owned source workspace for the packaged Blink browser UI bundle.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Blink Voice",
+  "short_name": "Blink",
+  "description": "Blink local voice and vision browser client.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0F172A",
+  "theme_color": "#0F172A",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "24x24",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "./favicon.svg",
+      "sizes": "24x24",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

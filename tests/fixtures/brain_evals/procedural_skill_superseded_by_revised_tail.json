@@ -1,0 +1,1795 @@
+{
+  "qa_categories": [
+    "skill_learning",
+    "supersession"
+  ],
+  "description": "A stronger repeated procedure supersedes an older prefix skill.",
+  "events": [
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s1",
+      "event_id": "e6cb5fa8d7734508a478974d2e0be168",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s1",
+          "created_at": "2026-04-20T10:51:20.064681+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Run short maintenance path",
+          "updated_at": "2026-04-20T10:51:20.064683+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:00+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s1",
+      "event_id": "bb92013a05c44654a23c04ebf19a0ea3",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment-s1",
+        "goal_id": "goal-s1",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-s1",
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-s1",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-s1",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.065100+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Run short maintenance path.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:00+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "bb92013a05c44654a23c04ebf19a0ea3",
+      "correlation_id": "goal-s1",
+      "event_id": "17026209edd34286baef6501295970e9",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment-s1",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Run short maintenance path."
+        },
+        "goal_id": "goal-s1",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-s1",
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-s1",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-s1",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.065100+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Run short maintenance path.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:01+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "17026209edd34286baef6501295970e9",
+      "correlation_id": "goal-s1",
+      "event_id": "7fb2543512fa4b12921c259803130edd",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-s1",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s1",
+          "created_at": "2026-04-20T10:51:20.065667+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-s1"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Run short maintenance path.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.065663+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Run short maintenance path",
+          "updated_at": "2026-04-20T10:51:20.065668+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:02+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s1",
+      "event_id": "1b5679912439440d874ca9eca510b51e",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s1",
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:03+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "1b5679912439440d874ca9eca510b51e",
+      "correlation_id": "goal-s1",
+      "event_id": "a759df10d8484829ae008868b38b1527",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s1",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:04+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s1",
+      "event_id": "3b88917657894c969f7ae7135a89c2ee",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-s1",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 0,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s1",
+          "created_at": "2026-04-20T10:51:20.066580+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-s1"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Run short maintenance path.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.066576+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Run short maintenance path",
+          "updated_at": "2026-04-20T10:51:20.066581+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:05+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s2",
+      "event_id": "024b4b592bb646c5bc3b31545e989043",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s2",
+          "created_at": "2026-04-20T10:51:20.066893+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Run short maintenance path again",
+          "updated_at": "2026-04-20T10:51:20.066894+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:40+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s2",
+      "event_id": "cc25f838335c474aa4be23a4699b5f5c",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment-s2",
+        "goal_id": "goal-s2",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-s2",
+          "created_at": "2026-01-01T00:00:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-s2",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-s2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.067181+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Run short maintenance path again.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:40+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "cc25f838335c474aa4be23a4699b5f5c",
+      "correlation_id": "goal-s2",
+      "event_id": "79186da128f04389b0026fea6261e3ac",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment-s2",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Run short maintenance path again."
+        },
+        "goal_id": "goal-s2",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-s2",
+          "created_at": "2026-01-01T00:00:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-s2",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-s2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.067181+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Run short maintenance path again.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:41+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "79186da128f04389b0026fea6261e3ac",
+      "correlation_id": "goal-s2",
+      "event_id": "aa4b9fa57b86497790fe0c76c43cbda9",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-s2",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s2",
+          "created_at": "2026-04-20T10:51:20.067724+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-s2"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Run short maintenance path again.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.067722+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Run short maintenance path again",
+          "updated_at": "2026-04-20T10:51:20.067725+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:42+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s2",
+      "event_id": "bb4169ab4b6f4059b783858235d97f31",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s2",
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:43+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "bb4169ab4b6f4059b783858235d97f31",
+      "correlation_id": "goal-s2",
+      "event_id": "227c2f3fb15d484a8a199e12da64b5a2",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s2",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:44+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s2",
+      "event_id": "c337e544331d4ee7a2ba22f44dfa23a8",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-s2",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 0,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s2",
+          "created_at": "2026-04-20T10:51:20.068604+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-s2"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Run short maintenance path again.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.068601+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Run short maintenance path again",
+          "updated_at": "2026-04-20T10:51:20.068604+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:00:45+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s3",
+      "event_id": "4f8d009b7a6a4fa8b50a314abf3750fd",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s3",
+          "created_at": "2026-04-20T10:51:20.068888+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s3",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Run stronger maintenance path",
+          "updated_at": "2026-04-20T10:51:20.068889+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:01:20+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s3",
+      "event_id": "b82e9e75554f4450b9b2faa6b785f450",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment-s3",
+        "goal_id": "goal-s3",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-s3",
+          "created_at": "2026-01-01T00:01:20+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-s3",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-s3",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.069200+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.069202+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Run stronger maintenance path.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:01:20+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "b82e9e75554f4450b9b2faa6b785f450",
+      "correlation_id": "goal-s3",
+      "event_id": "9ab6410db4034c9cbd34ae142b10709c",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment-s3",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Run stronger maintenance path."
+        },
+        "goal_id": "goal-s3",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-s3",
+          "created_at": "2026-01-01T00:01:20+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-s3",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-s3",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.069200+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.069202+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Run stronger maintenance path.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:01:21+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "9ab6410db4034c9cbd34ae142b10709c",
+      "correlation_id": "goal-s3",
+      "event_id": "c3887578d90f40f481b6c3dfcd40a274",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-s3",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s3",
+          "created_at": "2026-04-20T10:51:20.069777+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-s3"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s3",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Run stronger maintenance path.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.069769+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.069774+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Run stronger maintenance path",
+          "updated_at": "2026-04-20T10:51:20.069778+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:01:22+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s3",
+      "event_id": "bec54790a83e41fcb6af28205832cd65",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s3",
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:01:23+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "bec54790a83e41fcb6af28205832cd65",
+      "correlation_id": "goal-s3",
+      "event_id": "a81a07c62cb1471998f3445b9c0b4b38",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s3",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:01:24+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s3",
+      "event_id": "c8b9a76d2a4e4194884979419ed162c8",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s3",
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:01:25+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "c8b9a76d2a4e4194884979419ed162c8",
+      "correlation_id": "goal-s3",
+      "event_id": "5761a027432645858db16bf1d500262e",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s3",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 1
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:01:26+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s3",
+      "event_id": "9a54ab57f556483283aaec3daf42082b",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-s3",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s3",
+          "created_at": "2026-04-20T10:51:20.071383+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-s3"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s3",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Run stronger maintenance path.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.070828+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 1
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.071381+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Run stronger maintenance path",
+          "updated_at": "2026-04-20T10:51:20.071384+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:01:27+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s4",
+      "event_id": "6b388f39fa2343268d615c215ff6fbc7",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s4",
+          "created_at": "2026-04-20T10:51:20.071709+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s4",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Run stronger maintenance path again",
+          "updated_at": "2026-04-20T10:51:20.071710+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:00+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s4",
+      "event_id": "0cdb492140f24a218606de1e7b323521",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment-s4",
+        "goal_id": "goal-s4",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-s4",
+          "created_at": "2026-01-01T00:02:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-s4",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-s4",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.072039+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.072040+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Run stronger maintenance path again.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:00+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "0cdb492140f24a218606de1e7b323521",
+      "correlation_id": "goal-s4",
+      "event_id": "1b2cb0c310fa4d74a59ac7213affd9c2",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment-s4",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Run stronger maintenance path again."
+        },
+        "goal_id": "goal-s4",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-s4",
+          "created_at": "2026-01-01T00:02:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-s4",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-s4",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.072039+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.072040+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Run stronger maintenance path again.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:01+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "1b2cb0c310fa4d74a59ac7213affd9c2",
+      "correlation_id": "goal-s4",
+      "event_id": "1d0b816b1098487b8085c06bf6908386",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-s4",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s4",
+          "created_at": "2026-04-20T10:51:20.072643+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-s4"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s4",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Run stronger maintenance path again.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.072639+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.072641+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Run stronger maintenance path again",
+          "updated_at": "2026-04-20T10:51:20.072643+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:02+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s4",
+      "event_id": "2c9add1414dd4b1f9701fa5234e752e2",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s4",
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:03+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "2c9add1414dd4b1f9701fa5234e752e2",
+      "correlation_id": "goal-s4",
+      "event_id": "1a2355cef6dc4f01b87de71ec8796431",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s4",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:04+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s4",
+      "event_id": "427fa3c0a0634f289db1694bac009eb8",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s4",
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:05+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "427fa3c0a0634f289db1694bac009eb8",
+      "correlation_id": "goal-s4",
+      "event_id": "bffdc8e909c041a8bf8d22d613492125",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s4",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 1
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:06+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s4",
+      "event_id": "a46fb1501ca0456ab249bc4e4be055b8",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-s4",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s4",
+          "created_at": "2026-04-20T10:51:20.074179+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-s4"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s4",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Run stronger maintenance path again.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.073565+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 1
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.074176+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Run stronger maintenance path again",
+          "updated_at": "2026-04-20T10:51:20.074179+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:07+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s5",
+      "event_id": "0a3abc8c432946a0a3e3536e07e5fb9f",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s5",
+          "created_at": "2026-04-20T10:51:20.074532+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s5",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Run stronger maintenance path a third time",
+          "updated_at": "2026-04-20T10:51:20.074533+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:40+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s5",
+      "event_id": "927fa1184cb44b18a61851adb4adf176",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment-s5",
+        "goal_id": "goal-s5",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-s5",
+          "created_at": "2026-01-01T00:02:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-s5",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-s5",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.074874+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.074875+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Run stronger maintenance path a third time.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:40+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "927fa1184cb44b18a61851adb4adf176",
+      "correlation_id": "goal-s5",
+      "event_id": "92adf4cf0a1b403a886fc42146c1a149",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment-s5",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Run stronger maintenance path a third time."
+        },
+        "goal_id": "goal-s5",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-s5",
+          "created_at": "2026-01-01T00:02:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-s5",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-s5",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.074874+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.074875+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Run stronger maintenance path a third time.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:41+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "92adf4cf0a1b403a886fc42146c1a149",
+      "correlation_id": "goal-s5",
+      "event_id": "026748b239524474a592a380db2860c4",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-s5",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s5",
+          "created_at": "2026-04-20T10:51:20.075488+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-s5"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s5",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Run stronger maintenance path a third time.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.075485+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.075487+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Run stronger maintenance path a third time",
+          "updated_at": "2026-04-20T10:51:20.075489+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:42+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s5",
+      "event_id": "a99f23fbb46140f4b2525d7408b00c6e",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s5",
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:43+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "a99f23fbb46140f4b2525d7408b00c6e",
+      "correlation_id": "goal-s5",
+      "event_id": "e05656be3e5b46d5a72cb3c054b180b7",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s5",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:44+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s5",
+      "event_id": "19bb694aed31458db39b8cabaceb0b15",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s5",
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:45+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "19bb694aed31458db39b8cabaceb0b15",
+      "correlation_id": "goal-s5",
+      "event_id": "d186bb6b3f524e2b8429ab379816e286",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-s5",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 1
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:46+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-s5",
+      "event_id": "4951f9d6e8af4296a9451e2a1da27c3b",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-s5",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "commitment-s5",
+          "created_at": "2026-04-20T10:51:20.077363+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-s5"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-s5",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Run stronger maintenance path a third time.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.076698+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 1
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.077358+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Run stronger maintenance path a third time",
+          "updated_at": "2026-04-20T10:51:20.077364+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_superseded_by_revised_tail",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+      "ts": "2026-01-01T00:02:47+00:00",
+      "user_id": "procedural_skill_superseded_by_revised_tail"
+    }
+  ],
+  "expected_state": {
+    "procedural_active_skill_ids": [
+      "procedural_skill_6bb94d9c8b3158919ae65b59d57957a4"
+    ],
+    "procedural_candidate_skill_ids": [],
+    "procedural_failure_signature_codes": [],
+    "procedural_low_confidence_skill_ids": [],
+    "procedural_retired_skill_ids": [],
+    "procedural_retirement_reason_codes": [],
+    "procedural_superseded_skill_ids": [
+      "procedural_skill_a9d1f71202e7556e88e5e3c6b54eeaed"
+    ]
+  },
+  "expected_terminal_state": {},
+  "language": "en",
+  "name": "procedural_skill_superseded_by_revised_tail",
+  "presence_scope_key": "local:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "session_id": "text:procedural_skill_superseded_by_revised_tail",
+    "thread_id": "text:procedural_skill_superseded_by_revised_tail",
+    "user_id": "procedural_skill_superseded_by_revised_tail"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "name": "autonomy_merge_same_slot",
+  "description": "Two overlapping candidates merge into one canonical current candidate.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-autonomy-merge-1",
+      "event_type": "goal.candidate.created",
+      "ts": "2026-04-19T02:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "candidate_goal": {
+          "candidate_goal_id": "candidate-merge-primary",
+          "candidate_type": "presence_user_reentered",
+          "source": "perception",
+          "summary": "Primary re-entry candidate.",
+          "goal_family": "environment",
+          "urgency": 0.8,
+          "confidence": 0.92,
+          "initiative_class": "silent_attention_shift",
+          "cooldown_key": "cooldown:merge-slot",
+          "dedupe_key": "dedupe:merge-slot",
+          "policy_tags": [
+            "phase6"
+          ],
+          "requires_user_turn_gap": false,
+          "expires_at": "2026-04-19T02:05:00+00:00",
+          "payload": {},
+          "created_at": "2026-04-19T02:00:00+00:00"
+        }
+      }
+    },
+    {
+      "event_id": "evt-autonomy-merge-2",
+      "event_type": "goal.candidate.created",
+      "ts": "2026-04-19T02:00:01+00:00",
+      "source": "fixture",
+      "payload": {
+        "candidate_goal": {
+          "candidate_goal_id": "candidate-merge-duplicate",
+          "candidate_type": "presence_attention_returned",
+          "source": "perception",
+          "summary": "Duplicate attention candidate.",
+          "goal_family": "environment",
+          "urgency": 0.6,
+          "confidence": 0.7,
+          "initiative_class": "silent_attention_shift",
+          "cooldown_key": "cooldown:merge-slot",
+          "dedupe_key": "dedupe:merge-slot",
+          "policy_tags": [
+            "phase6"
+          ],
+          "requires_user_turn_gap": false,
+          "expires_at": "2026-04-19T02:05:00+00:00",
+          "payload": {},
+          "created_at": "2026-04-19T02:00:01+00:00"
+        }
+      }
+    },
+    {
+      "event_id": "evt-autonomy-merge-3",
+      "event_type": "goal.candidate.merged",
+      "ts": "2026-04-19T02:00:03+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-autonomy-merge-2",
+      "payload": {
+        "candidate_goal_id": "candidate-merge-duplicate",
+        "merged_into_candidate_goal_id": "candidate-merge-primary",
+        "reason": "same_social_slot",
+        "reason_details": {
+          "slot": "attention"
+        }
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "autonomy_current_candidate_ids": [
+      "candidate-merge-primary"
+    ],
+    "autonomy_current_candidate_summaries": [
+      "Primary re-entry candidate."
+    ],
+    "autonomy_recent_decision_kinds": [
+      "merged"
+    ],
+    "autonomy_reason_codes": [
+      "same_social_slot"
+    ]
+  }
+}

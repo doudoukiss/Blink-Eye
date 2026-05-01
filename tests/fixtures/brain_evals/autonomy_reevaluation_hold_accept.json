@@ -1,0 +1,169 @@
+{
+  "name": "autonomy_reevaluation_hold_accept",
+  "description": "A held candidate is reevaluated on user-turn close and accepted without a duplicate proposal.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-reeval-accept-created",
+      "event_type": "goal.candidate.created",
+      "ts": "2026-04-19T04:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "candidate_goal": {
+          "candidate_goal_id": "candidate-reeval-accept",
+          "candidate_type": "presence_user_reentered",
+          "source": "perception",
+          "summary": "Resume scene acknowledgment after the user turn closes.",
+          "goal_family": "environment",
+          "urgency": 0.9,
+          "confidence": 0.96,
+          "initiative_class": "speak_briefly_if_idle",
+          "cooldown_key": "cooldown:reeval-accept",
+          "dedupe_key": "dedupe:reeval-accept",
+          "policy_tags": [
+            "phase7"
+          ],
+          "requires_user_turn_gap": true,
+          "expires_at": "2026-04-19T04:05:00+00:00",
+          "payload": {
+            "goal_intent": "autonomy.presence_brief_reengagement_speech",
+            "goal_details": {
+              "channel": "fixture"
+            }
+          },
+          "created_at": "2026-04-19T04:00:00+00:00"
+        }
+      }
+    },
+    {
+      "event_id": "evt-reeval-accept-held",
+      "event_type": "director.non_action.recorded",
+      "ts": "2026-04-19T04:00:02+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-reeval-accept-created",
+      "payload": {
+        "candidate_goal_id": "candidate-reeval-accept",
+        "reason": "user_turn_open",
+        "reason_details": {
+          "gate": "user_turn"
+        },
+        "expected_reevaluation_condition": "after the user turn ends",
+        "expected_reevaluation_condition_kind": "user_turn_closed",
+        "expected_reevaluation_condition_details": {
+          "turn": "user"
+        }
+      }
+    },
+    {
+      "event_id": "evt-reeval-accept-user-ended",
+      "event_type": "user.turn.ended",
+      "ts": "2026-04-19T04:00:04+00:00",
+      "source": "fixture",
+      "payload": {}
+    },
+    {
+      "event_id": "evt-reeval-accept-trigger",
+      "event_type": "director.reevaluation.triggered",
+      "ts": "2026-04-19T04:00:04+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-reeval-accept-user-ended",
+      "payload": {
+        "trigger": {
+          "kind": "user_turn_closed",
+          "summary": "User turn ended; reconsider held candidates.",
+          "details": {
+            "turn": "user"
+          },
+          "source_event_type": "user.turn.ended",
+          "source_event_id": "evt-reeval-accept-user-ended",
+          "ts": "2026-04-19T04:00:04+00:00"
+        },
+        "candidate_goal_ids": [
+          "candidate-reeval-accept"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-reeval-accept-goal",
+      "event_type": "goal.created",
+      "ts": "2026-04-19T04:00:05+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-reeval-accept-trigger",
+      "payload": {
+        "goal": {
+          "goal_id": "goal-reeval-accept",
+          "title": "Resume scene acknowledgment",
+          "intent": "autonomy.presence_brief_reengagement_speech",
+          "source": "presence_director",
+          "goal_family": "environment",
+          "status": "open",
+          "details": {
+            "autonomy": {
+              "candidate_goal_id": "candidate-reeval-accept"
+            }
+          },
+          "steps": [],
+          "active_step_index": null,
+          "recovery_count": 0,
+          "planning_requested": false,
+          "plan_revision": 1,
+          "resume_count": 0,
+          "last_summary": null,
+          "last_error": null,
+          "created_at": "2026-04-19T04:00:05+00:00",
+          "updated_at": "2026-04-19T04:00:05+00:00"
+        }
+      }
+    },
+    {
+      "event_id": "evt-reeval-accept-accepted",
+      "event_type": "goal.candidate.accepted",
+      "ts": "2026-04-19T04:00:05+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-reeval-accept-trigger",
+      "payload": {
+        "candidate_goal_id": "candidate-reeval-accept",
+        "goal_id": "goal-reeval-accept",
+        "reason": "accepted_for_goal_creation",
+        "reason_details": {
+          "selected_by": "reevaluation"
+        }
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "agenda_contains": {
+      "open_goals": [
+        "Resume scene acknowledgment"
+      ]
+    },
+    "autonomy_recent_decision_kinds": [
+      "non_action",
+      "accepted"
+    ],
+    "autonomy_reason_codes": [
+      "user_turn_open",
+      "accepted_for_goal_creation"
+    ],
+    "autonomy_reevaluation_conditions": [
+      "after the user turn ends"
+    ],
+    "reevaluation_trigger_kinds": [
+      "user_turn_closed"
+    ],
+    "reevaluation_transition_candidate_ids": [
+      "candidate-reeval-accept"
+    ],
+    "reevaluation_transition_outcome_kinds": [
+      "accepted"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "name": "dossier_project_arc_replacement",
+  "description": "Replacing a project arc keeps the new project dossier current while preserving the older summary as recent change history.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-rel-1",
+      "event_type": "autobiography.entry.upserted",
+      "ts": "2026-04-18T03:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "scope_type": "relationship",
+        "scope_id": "blink/main:alpha",
+        "entry_kind": "relationship_arc",
+        "rendered_summary": "We are steadily collaborating on Alpha.",
+        "content": {
+          "summary": "We are steadily collaborating on Alpha."
+        },
+        "salience": 0.9,
+        "source_episode_ids": [],
+        "source_claim_ids": [],
+        "source_event_ids": [
+          "evt-rel-1"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-project-1",
+      "event_type": "autobiography.entry.upserted",
+      "ts": "2026-04-18T03:01:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "scope_type": "relationship",
+        "scope_id": "blink/main:alpha",
+        "entry_kind": "project_arc",
+        "rendered_summary": "Alpha started as an exploratory maintenance project.",
+        "content": {
+          "project_key": "Alpha",
+          "summary": "Alpha started as an exploratory maintenance project."
+        },
+        "salience": 0.7,
+        "source_episode_ids": [],
+        "source_claim_ids": [],
+        "source_event_ids": [
+          "evt-project-1"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-project-2",
+      "event_type": "autobiography.entry.upserted",
+      "ts": "2026-04-18T03:02:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "scope_type": "relationship",
+        "scope_id": "blink/main:alpha",
+        "entry_kind": "project_arc",
+        "rendered_summary": "Alpha is now a reliable maintenance collaboration.",
+        "content": {
+          "project_key": "Alpha",
+          "summary": "Alpha is now a reliable maintenance collaboration."
+        },
+        "salience": 1.0,
+        "source_episode_ids": [],
+        "source_claim_ids": [],
+        "source_event_ids": [
+          "evt-project-2"
+        ]
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "autobiography_entry_kinds": [
+      "relationship_arc",
+      "project_arc"
+    ],
+    "relationship_dossier_summary_contains": "Alpha",
+    "relationship_dossier_freshness": "fresh",
+    "relationship_dossier_contradiction": "clear",
+    "project_dossier_keys": [
+      "Alpha"
+    ]
+  }
+}

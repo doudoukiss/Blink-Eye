@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Blink Actor Event",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_id",
+    "type",
+    "mode",
+    "source",
+    "timestamp",
+    "metadata",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "event_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "session_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "client_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "turn_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "mode": {
+      "enum": [
+        "booting",
+        "connected",
+        "listening",
+        "heard",
+        "thinking",
+        "looking",
+        "speaking",
+        "overlap",
+        "interrupted",
+        "repairing",
+        "waiting",
+        "error"
+      ]
+    },
+    "floor_state": {
+      "enum": [
+        "idle",
+        "user_has_floor",
+        "assistant_has_floor",
+        "overlap",
+        "handoff",
+        "repair",
+        "unknown"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      },
+      "maxItems": 32
+    }
+  },
+  "additionalProperties": false
+}

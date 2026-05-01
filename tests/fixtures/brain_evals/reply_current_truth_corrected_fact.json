@@ -1,0 +1,95 @@
+{
+  "name": "reply_current_truth_corrected_fact",
+  "description": "A current-truth reply packet prefers the corrected fact as present truth.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "context_queries": {
+    "reply": "What is my role right now?"
+  },
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-role-current-1",
+      "event_type": "memory.claim.recorded",
+      "ts": "2026-04-18T00:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "claim_id": "claim_role_prior",
+        "subject_entity_id": "entity:user:alpha",
+        "predicate": "profile.role",
+        "object": {
+          "value": "designer"
+        },
+        "status": "active",
+        "scope_type": "user",
+        "scope_id": "alpha",
+        "claim_key": "profile.role:alpha"
+      }
+    },
+    {
+      "event_id": "evt-role-current-2",
+      "event_type": "memory.claim.recorded",
+      "ts": "2026-04-18T00:01:00+00:00",
+      "source": "fixture",
+      "correlation_id": "evt-role-current-2",
+      "causal_parent_id": "evt-role-current-1",
+      "payload": {
+        "claim_id": "claim_role_current",
+        "subject_entity_id": "entity:user:alpha",
+        "predicate": "profile.role",
+        "object": {
+          "value": "product manager"
+        },
+        "status": "active",
+        "scope_type": "user",
+        "scope_id": "alpha",
+        "claim_key": "profile.role:alpha"
+      }
+    },
+    {
+      "event_id": "evt-role-current-3",
+      "event_type": "memory.claim.superseded",
+      "ts": "2026-04-18T00:01:30+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-role-current-2",
+      "payload": {
+        "prior_claim_id": "claim_role_prior",
+        "new_claim_id": "claim_role_current",
+        "reason": "explicit_correction"
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "current_claims": [
+      {
+        "predicate": "profile.role",
+        "value": "product manager"
+      }
+    ],
+    "historical_claims": [
+      {
+        "predicate": "profile.role",
+        "value": "designer"
+      }
+    ],
+    "reply_packet_temporal_mode": "current_first",
+    "reply_selected_anchor_types": [
+      "claim"
+    ],
+    "reply_selected_temporal_kinds": [
+      "current"
+    ],
+    "reply_selected_backing_ids": [
+      "claim_role_current"
+    ],
+    "governance_superseded_graph_backing_ids": [
+      "claim_role_prior"
+    ]
+  }
+}

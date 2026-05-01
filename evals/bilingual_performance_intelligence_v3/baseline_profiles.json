@@ -1,0 +1,73 @@
+{
+  "baseline_id": "bilingual_performance_intelligence_v3/phase01",
+  "locked_at": "2026-04-27T00:00:00+00:00",
+  "native_pyaudio_isolation_lanes": [
+    "native-en-kokoro",
+    "native-en-kokoro-macos-camera"
+  ],
+  "native_pyaudio_policy": "backend_isolation_only_not_product_ux",
+  "profiles": [
+    {
+      "actor_event_endpoints": [
+        "/api/runtime/actor-events",
+        "/api/runtime/performance-events"
+      ],
+      "actor_state_endpoints": [
+        "/api/runtime/actor-state",
+        "/api/runtime/performance-state"
+      ],
+      "allow_barge_in_default": false,
+      "browser_vision_default": true,
+      "client_url": "http://127.0.0.1:7860/client/",
+      "continuous_perception_default": false,
+      "gate_commands": [
+        "./scripts/eval-performance-intelligence-baseline.sh --check",
+        "./scripts/eval-bilingual-actor-bench.sh",
+        "uv run pytest tests/test_bilingual_actor_bench.py tests/test_actor_release_gate.py",
+        "uv run --extra runner --extra webrtc pytest tests/test_local_workflows.py"
+      ],
+      "isolation_lane": false,
+      "language": "zh",
+      "launcher": "./scripts/run-local-browser-melo.sh",
+      "media": "browser/WebRTC microphone + camera",
+      "product_status": "equal_primary_browser_product_path",
+      "profile": "browser-zh-melo",
+      "protected_playback_default": true,
+      "tts_backend": "local-http-wav",
+      "tts_runtime_label": "local-http-wav/MeloTTS",
+      "vision_backend": "moondream"
+    },
+    {
+      "actor_event_endpoints": [
+        "/api/runtime/actor-events",
+        "/api/runtime/performance-events"
+      ],
+      "actor_state_endpoints": [
+        "/api/runtime/actor-state",
+        "/api/runtime/performance-state"
+      ],
+      "allow_barge_in_default": false,
+      "browser_vision_default": true,
+      "client_url": "http://127.0.0.1:7860/client/",
+      "continuous_perception_default": false,
+      "gate_commands": [
+        "./scripts/eval-performance-intelligence-baseline.sh --check",
+        "./scripts/eval-bilingual-actor-bench.sh",
+        "uv run pytest tests/test_bilingual_actor_bench.py tests/test_actor_release_gate.py",
+        "uv run --extra runner --extra webrtc pytest tests/test_local_workflows.py"
+      ],
+      "isolation_lane": false,
+      "language": "en",
+      "launcher": "./scripts/run-local-browser-kokoro-en.sh",
+      "media": "browser/WebRTC microphone + camera",
+      "product_status": "equal_primary_browser_product_path",
+      "profile": "browser-en-kokoro",
+      "protected_playback_default": true,
+      "tts_backend": "kokoro",
+      "tts_runtime_label": "kokoro/English",
+      "vision_backend": "moondream"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot_type": "PerformanceIntelligenceBaseline"
+}

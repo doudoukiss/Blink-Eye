@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BilingualRuntimeProfile",
+  "type": "object",
+  "required": [
+    "profile",
+    "language",
+    "tts_backend",
+    "tts_runtime_label",
+    "browser_vision_default",
+    "primary_path"
+  ],
+  "properties": {
+    "profile": {
+      "enum": [
+        "browser-zh-melo",
+        "browser-en-kokoro"
+      ]
+    },
+    "language": {
+      "enum": [
+        "zh",
+        "en"
+      ]
+    },
+    "tts_backend": {
+      "type": "string"
+    },
+    "tts_runtime_label": {
+      "type": "string"
+    },
+    "browser_vision_default": {
+      "type": "boolean"
+    },
+    "continuous_perception_default": {
+      "type": "boolean"
+    },
+    "primary_path": {
+      "type": "string"
+    },
+    "protected_playback_default": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

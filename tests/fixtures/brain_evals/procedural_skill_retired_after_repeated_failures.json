@@ -1,0 +1,1594 @@
+{
+  "qa_categories": [
+    "retirement"
+  ],
+  "description": "Relevant repeated failures retire a previously reusable skill.",
+  "events": [
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r1",
+      "event_id": "15ed60ad37464eda89829bcc5dbfcbf4",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r1",
+          "created_at": "2026-04-20T10:51:20.090013+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Review then report maintenance state",
+          "updated_at": "2026-04-20T10:51:20.090014+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:00+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r1",
+      "event_id": "0d13e41e0c734455888b7533a7357a56",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment-r1",
+        "goal_id": "goal-r1",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-r1",
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-r1",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-r1",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.090397+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.090398+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Review then report maintenance state.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:00+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "0d13e41e0c734455888b7533a7357a56",
+      "correlation_id": "goal-r1",
+      "event_id": "87c024e763cd460aae47991782935c63",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment-r1",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Review then report maintenance state."
+        },
+        "goal_id": "goal-r1",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-r1",
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-r1",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-r1",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.090397+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.090398+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Review then report maintenance state.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:01+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "87c024e763cd460aae47991782935c63",
+      "correlation_id": "goal-r1",
+      "event_id": "39eedc3b84bd4cb4bacf3f841ee0bcbb",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-r1",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r1",
+          "created_at": "2026-04-20T10:51:20.090958+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-r1"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Review then report maintenance state.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.090954+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.090956+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review then report maintenance state",
+          "updated_at": "2026-04-20T10:51:20.090958+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:02+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r1",
+      "event_id": "a97e838d967049699f8100e4fbf8ef87",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-r1",
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:03+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "a97e838d967049699f8100e4fbf8ef87",
+      "correlation_id": "goal-r1",
+      "event_id": "9a6cf5148a7f4d599d244bd58660a5a7",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-r1",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:04+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r1",
+      "event_id": "f3e1b7a24e044ead8bc1b315706d576a",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-r1",
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:05+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "f3e1b7a24e044ead8bc1b315706d576a",
+      "correlation_id": "goal-r1",
+      "event_id": "d7dd094f1b86467ea045a611906c5fb2",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-r1",
+        "result": {
+          "accepted": true,
+          "capability_id": "reporting.record_presence_event",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 1
+          },
+          "retryable": false,
+          "summary": "Completed reporting.record_presence_event.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:06+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r1",
+      "event_id": "6269579b7c564156abcd5b8efd650c0d",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-r1",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r1",
+          "created_at": "2026-04-20T10:51:20.092372+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-r1"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Review then report maintenance state.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.091821+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {
+                "slot": 1
+              },
+              "status": "completed",
+              "summary": "Completed reporting.record_presence_event.",
+              "updated_at": "2026-04-20T10:51:20.092369+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review then report maintenance state",
+          "updated_at": "2026-04-20T10:51:20.092373+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:07+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r2",
+      "event_id": "0413b488150c422bb03610b9092248f6",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r2",
+          "created_at": "2026-04-20T10:51:20.092791+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Review then report maintenance state again",
+          "updated_at": "2026-04-20T10:51:20.092792+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:40+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r2",
+      "event_id": "e98e21b6abc0499387875c008265dc97",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment-r2",
+        "goal_id": "goal-r2",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-r2",
+          "created_at": "2026-01-01T00:00:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-r2",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-r2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.093111+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.093113+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Review then report maintenance state again.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:40+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "e98e21b6abc0499387875c008265dc97",
+      "correlation_id": "goal-r2",
+      "event_id": "b8cd05770faa41b68f9f504ee540ea9c",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment-r2",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Review then report maintenance state again."
+        },
+        "goal_id": "goal-r2",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-r2",
+          "created_at": "2026-01-01T00:00:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-r2",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-r2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.093111+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.093113+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Review then report maintenance state again.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:41+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "b8cd05770faa41b68f9f504ee540ea9c",
+      "correlation_id": "goal-r2",
+      "event_id": "cf577d77ca79422a85554a8c8b05b023",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-r2",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r2",
+          "created_at": "2026-04-20T10:51:20.093757+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-r2"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Review then report maintenance state again.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.093753+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.093755+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review then report maintenance state again",
+          "updated_at": "2026-04-20T10:51:20.093758+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:42+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r2",
+      "event_id": "928dbe82606444ac98d602e8cd395214",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-r2",
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:43+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "928dbe82606444ac98d602e8cd395214",
+      "correlation_id": "goal-r2",
+      "event_id": "c996dcdab3ba4a46b16511d503c7176d",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-r2",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:44+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r2",
+      "event_id": "2ad8b41b8feb40459f8e048b3059fede",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-r2",
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:45+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "2ad8b41b8feb40459f8e048b3059fede",
+      "correlation_id": "goal-r2",
+      "event_id": "0ec0cd43b8394e3d8a586181357daba2",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-r2",
+        "result": {
+          "accepted": true,
+          "capability_id": "reporting.record_presence_event",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 1
+          },
+          "retryable": false,
+          "summary": "Completed reporting.record_presence_event.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:46+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r2",
+      "event_id": "f3e3ed2fd2e84309835d166efd85c575",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-r2",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r2",
+          "created_at": "2026-04-20T10:51:20.095420+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-r2"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Review then report maintenance state again.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.094749+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {
+                "slot": 1
+              },
+              "status": "completed",
+              "summary": "Completed reporting.record_presence_event.",
+              "updated_at": "2026-04-20T10:51:20.095417+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review then report maintenance state again",
+          "updated_at": "2026-04-20T10:51:20.095421+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:00:47+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r3",
+      "event_id": "ee27a68f669d4adbbfbceb8c90258a5f",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r3",
+          "created_at": "2026-04-20T10:51:20.095771+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r3",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Review then report maintenance state failure one",
+          "updated_at": "2026-04-20T10:51:20.095772+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:02:00+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r3",
+      "event_id": "96386e60e208414f997a5e4fde2ee49a",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment-r3",
+        "goal_id": "goal-r3",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-r3",
+          "created_at": "2026-01-01T00:02:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-r3",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-r3",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.096097+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.096098+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Attempt Review then report maintenance state failure one.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:02:00+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "96386e60e208414f997a5e4fde2ee49a",
+      "correlation_id": "goal-r3",
+      "event_id": "a02ab86ce4e147fdacf5bdb3a4e3c3f0",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment-r3",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Review then report maintenance state failure one."
+        },
+        "goal_id": "goal-r3",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-r3",
+          "created_at": "2026-01-01T00:02:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-r3",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-r3",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.096097+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.096098+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Attempt Review then report maintenance state failure one.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:02:01+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "a02ab86ce4e147fdacf5bdb3a4e3c3f0",
+      "correlation_id": "goal-r3",
+      "event_id": "cd911a9816684e8a8b4e5a6879b23671",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-r3",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r3",
+          "created_at": "2026-04-20T10:51:20.096697+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-r3"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r3",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Review then report maintenance state failure one.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.096694+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.096696+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review then report maintenance state failure one",
+          "updated_at": "2026-04-20T10:51:20.096698+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:02:02+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r3",
+      "event_id": "3a5dc906f8a34e0c8bd372b632a14d5b",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-r3",
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:02:03+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "3a5dc906f8a34e0c8bd372b632a14d5b",
+      "correlation_id": "goal-r3",
+      "event_id": "e3b56d9d78664545a8ce614aec65e4f5",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-r3",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {},
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:02:04+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r3",
+      "event_id": "0be40e335b8a465da6d196adc5405c82",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-r3",
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:02:05+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "0be40e335b8a465da6d196adc5405c82",
+      "correlation_id": "goal-r3",
+      "event_id": "3f6894d5a7c142e3a3428bacf2faffc1",
+      "event_type": "capability.failed",
+      "payload": {
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-r3",
+        "result": {
+          "accepted": false,
+          "capability_id": "reporting.record_presence_event",
+          "error_code": "operator_review",
+          "metadata": {},
+          "outcome": "failed",
+          "output": {},
+          "retryable": false,
+          "summary": "Failed reporting.record_presence_event.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:02:06+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r3",
+      "event_id": "68203317d4634bffb7f563a409a5443c",
+      "event_type": "goal.failed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-r3",
+          "status": "failed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r3",
+          "created_at": "2026-04-20T10:51:20.098183+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-r3"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r3",
+          "intent": "maintenance.review",
+          "last_error": "operator_review",
+          "last_summary": "Failed Review then report maintenance state failure one.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "failed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.098178+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": "operator_review",
+              "output": {},
+              "status": "failed",
+              "summary": "Failed reporting.record_presence_event.",
+              "updated_at": "2026-04-20T10:51:20.098180+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review then report maintenance state failure one",
+          "updated_at": "2026-04-20T10:51:20.098183+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:02:10+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r4",
+      "event_id": "6646a90ee3cf4c50bda4962a96a4a887",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r4",
+          "created_at": "2026-04-20T10:51:20.098554+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r4",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Review then report maintenance state failure two",
+          "updated_at": "2026-04-20T10:51:20.098555+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:03:00+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r4",
+      "event_id": "6cdb5b9a6524410588308dccf3fbae1d",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment-r4",
+        "goal_id": "goal-r4",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-r4",
+          "created_at": "2026-01-01T00:03:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-r4",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-r4",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.098873+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.098875+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Attempt Review then report maintenance state failure two.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:03:00+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "6cdb5b9a6524410588308dccf3fbae1d",
+      "correlation_id": "goal-r4",
+      "event_id": "b3c88fd3f80e4535b566f4cf52edec7c",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment-r4",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Review then report maintenance state failure two."
+        },
+        "goal_id": "goal-r4",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment-r4",
+          "created_at": "2026-01-01T00:03:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "goal-r4",
+          "missing_inputs": [],
+          "plan_proposal_id": "proposal-r4",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.098873+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.098875+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Attempt Review then report maintenance state failure two.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:03:01+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "b3c88fd3f80e4535b566f4cf52edec7c",
+      "correlation_id": "goal-r4",
+      "event_id": "01720e6f38b943bebad21b055afd2f32",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-r4",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r4",
+          "created_at": "2026-04-20T10:51:20.099475+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-r4"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r4",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Review then report maintenance state failure two.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.099472+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T10:51:20.099473+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review then report maintenance state failure two",
+          "updated_at": "2026-04-20T10:51:20.099476+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:03:02+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r4",
+      "event_id": "a4d99bcbe9984cb4a92dbed4ddd58833",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-r4",
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:03:03+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "a4d99bcbe9984cb4a92dbed4ddd58833",
+      "correlation_id": "goal-r4",
+      "event_id": "19e4bafcd11e43c0b88fa855ede9c75c",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "goal-r4",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {},
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:03:04+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r4",
+      "event_id": "336f299154014afdb45ccf01a54989be",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-r4",
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:03:05+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "336f299154014afdb45ccf01a54989be",
+      "correlation_id": "goal-r4",
+      "event_id": "a64d991ee62f471dbd29434f57d8dda5",
+      "event_type": "capability.failed",
+      "payload": {
+        "capability_id": "reporting.record_presence_event",
+        "goal_id": "goal-r4",
+        "result": {
+          "accepted": false,
+          "capability_id": "reporting.record_presence_event",
+          "error_code": "operator_review",
+          "metadata": {},
+          "outcome": "failed",
+          "output": {},
+          "retryable": false,
+          "summary": "Failed reporting.record_presence_event.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:03:06+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "goal-r4",
+      "event_id": "0c8cb9f2782d424a81a44b709e829d92",
+      "event_type": "goal.failed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-r4",
+          "status": "failed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "commitment-r4",
+          "created_at": "2026-04-20T10:51:20.100989+00:00",
+          "details": {
+            "current_plan_proposal_id": "proposal-r4"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "goal-r4",
+          "intent": "maintenance.review",
+          "last_error": "operator_review",
+          "last_summary": "Failed Review then report maintenance state failure two.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "failed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T10:51:20.100984+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "reporting.record_presence_event",
+              "error_code": "operator_review",
+              "output": {},
+              "status": "failed",
+              "summary": "Failed reporting.record_presence_event.",
+              "updated_at": "2026-04-20T10:51:20.100986+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Review then report maintenance state failure two",
+          "updated_at": "2026-04-20T10:51:20.100989+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "text:procedural_skill_retired_after_repeated_failures",
+      "source": "fixture",
+      "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+      "ts": "2026-01-01T00:03:10+00:00",
+      "user_id": "procedural_skill_retired_after_repeated_failures"
+    }
+  ],
+  "expected_state": {
+    "procedural_active_skill_ids": [],
+    "procedural_candidate_skill_ids": [],
+    "procedural_failure_signature_codes": [
+      "failed",
+      "operator_review"
+    ],
+    "procedural_high_risk_failure_signature_codes": [
+      "failed",
+      "operator_review"
+    ],
+    "procedural_low_confidence_skill_ids": [
+      "procedural_skill_dc27b61839dc543c901f71ee56d0a789"
+    ],
+    "procedural_follow_up_trace_ids": [
+      "procedural_trace_10d46bc667aa5d289ef6feb5640791c8",
+      "procedural_trace_69fec7411d0a551b8e8b8dfc3d3beea0",
+      "procedural_trace_9f9117c242aa5831b88550654284c733",
+      "procedural_trace_c93d51aa219a5265971af6dc003cd24f"
+    ],
+    "procedural_retired_skill_ids": [
+      "procedural_skill_dc27b61839dc543c901f71ee56d0a789"
+    ],
+    "procedural_retirement_reason_codes": [
+      "repeated_relevant_failures"
+    ],
+    "procedural_superseded_skill_ids": []
+  },
+  "expected_terminal_state": {},
+  "language": "en",
+  "name": "procedural_skill_retired_after_repeated_failures",
+  "presence_scope_key": "local:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "session_id": "text:procedural_skill_retired_after_repeated_failures",
+    "thread_id": "text:procedural_skill_retired_after_repeated_failures",
+    "user_id": "procedural_skill_retired_after_repeated_failures"
+  }
+}

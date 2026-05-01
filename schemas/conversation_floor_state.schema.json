@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ConversationFloorState",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "state",
+    "profile",
+    "language",
+    "floor_model_version",
+    "sub_state",
+    "user_has_floor",
+    "assistant_has_floor",
+    "overlap",
+    "handoff",
+    "repair",
+    "unknown",
+    "assistant_speaking",
+    "user_speaking",
+    "protected_playback",
+    "barge_in_armed",
+    "last_input_type",
+    "last_text_kind",
+    "phrase_class",
+    "phrase_confidence",
+    "phrase_confidence_bucket",
+    "yield_decision",
+    "echo_risk",
+    "barge_in_state",
+    "tts_chunk_role",
+    "low_confidence_transcript",
+    "last_transition_at",
+    "updated_at",
+    "transition_count",
+    "counts",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "state": {
+      "enum": [
+        "user_has_floor",
+        "assistant_has_floor",
+        "overlap",
+        "handoff",
+        "repair",
+        "unknown"
+      ]
+    },
+    "profile": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "language": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "floor_model_version": {
+      "const": 3
+    },
+    "sub_state": {
+      "enum": [
+        "user_holding_floor",
+        "assistant_holding_floor",
+        "overlap_candidate",
+        "accepted_interrupt",
+        "ignored_backchannel",
+        "repair_requested",
+        "handoff_pending",
+        "handoff_complete"
+      ]
+    },
+    "user_has_floor": {
+      "type": "boolean"
+    },
+    "assistant_has_floor": {
+      "type": "boolean"
+    },
+    "overlap": {
+      "type": "boolean"
+    },
+    "handoff": {
+      "type": "boolean"
+    },
+    "repair": {
+      "type": "boolean"
+    },
+    "unknown": {
+      "type": "boolean"
+    },
+    "assistant_speaking": {
+      "type": "boolean"
+    },
+    "user_speaking": {
+      "type": "boolean"
+    },
+    "protected_playback": {
+      "type": "boolean"
+    },
+    "barge_in_armed": {
+      "type": "boolean"
+    },
+    "last_input_type": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "last_text_kind": {
+      "enum": [
+        "empty",
+        "backchannel",
+        "confirmation",
+        "hesitation",
+        "correction",
+        "explicit_interruption",
+        "meaningful"
+      ]
+    },
+    "phrase_class": {
+      "enum": [
+        "empty",
+        "backchannel",
+        "confirmation",
+        "continuer",
+        "hesitation",
+        "correction",
+        "explicit_interrupt",
+        "meaningful"
+      ]
+    },
+    "phrase_confidence": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "phrase_confidence_bucket": {
+      "enum": [
+        "unknown",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "yield_decision": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "echo_risk": {
+      "enum": [
+        "unknown",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "barge_in_state": {
+      "enum": [
+        "protected",
+        "armed",
+        "adaptive"
+      ]
+    },
+    "tts_chunk_role": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "low_confidence_transcript": {
+      "type": "boolean"
+    },
+    "last_transition_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 64
+    },
+    "updated_at": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "transition_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "maxProperties": 32
+    },
+    "reason_codes": {
+      "$ref": "#/$defs/reason_codes"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      },
+      "maxItems": 24,
+      "uniqueItems": true
+    }
+  }
+}

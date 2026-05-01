@@ -1,0 +1,123 @@
+{
+  "name": "autonomy_reevaluation_hold_expire",
+  "description": "A held candidate is later reconsidered by a timer wake and expires without a duplicate proposal.",
+  "language": "en",
+  "presence_scope_key": "browser:alpha",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-reeval-expire-created",
+      "event_type": "goal.candidate.created",
+      "ts": "2026-04-19T05:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "candidate_goal": {
+          "candidate_goal_id": "candidate-reeval-expire",
+          "candidate_type": "maintenance_review_findings",
+          "source": "timer",
+          "summary": "Review memory findings after idle grace.",
+          "goal_family": "memory_maintenance",
+          "urgency": 0.7,
+          "confidence": 1.0,
+          "initiative_class": "operator_visible_only",
+          "cooldown_key": "cooldown:reeval-expire",
+          "dedupe_key": "dedupe:reeval-expire",
+          "policy_tags": [
+            "phase7"
+          ],
+          "requires_user_turn_gap": true,
+          "expires_at": "2026-04-19T05:05:00+00:00",
+          "payload": {
+            "goal_intent": "autonomy.maintenance_review_findings"
+          },
+          "created_at": "2026-04-19T05:00:00+00:00"
+        }
+      }
+    },
+    {
+      "event_id": "evt-reeval-expire-held",
+      "event_type": "director.non_action.recorded",
+      "ts": "2026-04-19T05:00:02+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-reeval-expire-created",
+      "payload": {
+        "candidate_goal_id": "candidate-reeval-expire",
+        "reason": "maintenance_window_closed",
+        "reason_details": {
+          "idle_grace_secs": 30
+        },
+        "expected_reevaluation_condition": "after idle grace window opens",
+        "expected_reevaluation_condition_kind": "maintenance_window_open",
+        "expected_reevaluation_condition_details": {
+          "not_before": "2026-04-19T05:04:00+00:00",
+          "idle_grace_secs": 30
+        }
+      }
+    },
+    {
+      "event_id": "evt-reeval-expire-trigger",
+      "event_type": "director.reevaluation.triggered",
+      "ts": "2026-04-19T05:05:01+00:00",
+      "source": "fixture",
+      "payload": {
+        "trigger": {
+          "kind": "time_reached",
+          "summary": "Nearest reevaluation deadline reached.",
+          "details": {
+            "deadline_kind": "expires_at"
+          },
+          "source_event_type": null,
+          "source_event_id": null,
+          "ts": "2026-04-19T05:05:01+00:00"
+        },
+        "candidate_goal_ids": [
+          "candidate-reeval-expire"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-reeval-expire-expired",
+      "event_type": "goal.candidate.expired",
+      "ts": "2026-04-19T05:05:01+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-reeval-expire-trigger",
+      "payload": {
+        "candidate_goal_id": "candidate-reeval-expire",
+        "reason": "candidate_expired",
+        "reason_details": {
+          "expires_at": "2026-04-19T05:05:00+00:00",
+          "trigger_kind": "time_reached",
+          "cleanup_owner": "explicit_expiry_cleanup"
+        }
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "autonomy_recent_decision_kinds": [
+      "non_action",
+      "expired"
+    ],
+    "autonomy_reason_codes": [
+      "maintenance_window_closed",
+      "candidate_expired"
+    ],
+    "autonomy_reevaluation_conditions": [
+      "after idle grace window opens"
+    ],
+    "reevaluation_trigger_kinds": [
+      "time_reached"
+    ],
+    "reevaluation_transition_candidate_ids": [
+      "candidate-reeval-expire"
+    ],
+    "reevaluation_transition_outcome_kinds": [
+      "expired"
+    ]
+  }
+}

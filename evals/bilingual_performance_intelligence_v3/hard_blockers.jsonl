@@ -1,0 +1,6 @@
+{"blocker": "profile_regression", "description": "One primary path changed profile/language/TTS/vision defaults or lost equal status."}
+{"blocker": "hidden_camera_use", "description": "Camera/Moondream used without visible state or user consent surface."}
+{"blocker": "false_camera_claim", "description": "Assistant claims visual grounding without fresh/declared camera context."}
+{"blocker": "unsafe_trace_payload", "description": "Default persistent artifacts include raw media, secrets, hidden prompts, or unbounded transcripts."}
+{"blocker": "stale_tts_after_interrupt", "description": "Old TTS chunk plays after accepted interruption."}
+{"blocker": "unsupported_tts_claim", "description": "UI/plan claims a TTS control not exposed by the integration."}

@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SpeechPerformanceChunk",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "speech_director_version",
+    "chunk_id",
+    "role",
+    "text",
+    "language",
+    "tts_backend",
+    "display_text",
+    "pause_after_ms",
+    "interruptible",
+    "context_id",
+    "generation_token",
+    "turn_id",
+    "chunk_index",
+    "estimated_duration_ms",
+    "subtitle_timing",
+    "stale_generation_token",
+    "backend_capabilities",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "speech_director_version": {
+      "const": 3
+    },
+    "chunk_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "role": {
+      "enum": [
+        "assistant",
+        "acknowledgment",
+        "answer",
+        "aside",
+        "question",
+        "repair",
+        "transition"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "maxLength": 800
+    },
+    "language": {
+      "enum": [
+        "zh",
+        "en",
+        "unknown"
+      ]
+    },
+    "tts_backend": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "display_text": {
+      "type": "string",
+      "maxLength": 800
+    },
+    "pause_after_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5000
+    },
+    "interruptible": {
+      "type": "boolean"
+    },
+    "context_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 160
+    },
+    "generation_token": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "turn_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "chunk_index": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10000
+    },
+    "estimated_duration_ms": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 300000
+    },
+    "subtitle_timing": {
+      "type": "object",
+      "required": [
+        "emit_policy",
+        "ready_at_ms",
+        "playback_start_aligned",
+        "timing_source"
+      ],
+      "properties": {
+        "emit_policy": {
+          "const": "before_or_at_playback_start"
+        },
+        "ready_at_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 300000
+        },
+        "playback_start_aligned": {
+          "type": "boolean"
+        },
+        "timing_source": {
+          "const": "speech_director_v3"
+        }
+      },
+      "additionalProperties": false
+    },
+    "stale_generation_token": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "backend_capabilities": {
+      "type": "object",
+      "required": [
+        "backend_label",
+        "supports_chunk_boundaries",
+        "supports_interruption_flush",
+        "supports_interruption_discard",
+        "supports_pause_timing",
+        "supports_speech_rate",
+        "supports_prosody_emphasis",
+        "supports_partial_stream_abort",
+        "expression_controls_hardware",
+        "reason_codes"
+      ],
+      "properties": {
+        "backend_label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "supports_chunk_boundaries": {
+          "type": "boolean"
+        },
+        "supports_interruption_flush": {
+          "type": "boolean"
+        },
+        "supports_interruption_discard": {
+          "type": "boolean"
+        },
+        "supports_pause_timing": {
+          "type": "boolean"
+        },
+        "supports_speech_rate": {
+          "type": "boolean"
+        },
+        "supports_prosody_emphasis": {
+          "type": "boolean"
+        },
+        "supports_partial_stream_abort": {
+          "type": "boolean"
+        },
+        "expression_controls_hardware": {
+          "type": "boolean"
+        },
+        "reason_codes": {
+          "type": "array",
+          "maxItems": 24,
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_codes": {
+      "type": "array",
+      "maxItems": 24,
+      "items": {
+        "type": "string",
+        "maxLength": 120
+      }
+    }
+  },
+  "additionalProperties": false
+}

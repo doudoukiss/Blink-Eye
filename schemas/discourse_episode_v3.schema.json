@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiscourseEpisodeV3",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "discourse_episode_id",
+    "source_performance_episode_id",
+    "source_event_ids",
+    "profile",
+    "language",
+    "tts_runtime_label",
+    "created_at_ms",
+    "category_labels",
+    "public_summary",
+    "memory_refs",
+    "effect_labels",
+    "conflict_labels",
+    "staleness_labels",
+    "confidence_bucket",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 3
+    },
+    "discourse_episode_id": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "source_performance_episode_id": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "source_event_ids": {
+      "type": "array",
+      "maxItems": 24,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "profile": {
+      "enum": ["browser-zh-melo", "browser-en-kokoro", "manual"]
+    },
+    "language": {
+      "enum": ["zh", "en", "unknown"]
+    },
+    "tts_runtime_label": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "created_at_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "category_labels": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "active_project",
+          "user_preference",
+          "unresolved_commitment",
+          "correction",
+          "visual_event",
+          "repeated_frustration",
+          "success_pattern"
+        ]
+      }
+    },
+    "public_summary": {
+      "type": "string",
+      "maxLength": 180
+    },
+    "memory_refs": {
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "$ref": "#/$defs/memory_ref"
+      }
+    },
+    "effect_labels": {
+      "$ref": "#/$defs/effect_labels"
+    },
+    "conflict_labels": {
+      "$ref": "#/$defs/label_array"
+    },
+    "staleness_labels": {
+      "$ref": "#/$defs/label_array"
+    },
+    "confidence_bucket": {
+      "enum": ["high", "medium", "low", "uncertain"]
+    },
+    "reason_codes": {
+      "$ref": "#/$defs/reason_codes"
+    }
+  },
+  "$defs": {
+    "memory_ref": {
+      "type": "object",
+      "required": [
+        "memory_id",
+        "display_kind",
+        "summary",
+        "source_language",
+        "cross_language",
+        "effect_labels",
+        "confidence_bucket",
+        "reason_codes"
+      ],
+      "properties": {
+        "memory_id": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "display_kind": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "summary": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "source_language": {
+          "enum": ["zh", "en", "unknown"]
+        },
+        "cross_language": {
+          "type": "boolean"
+        },
+        "effect_labels": {
+          "$ref": "#/$defs/effect_labels"
+        },
+        "confidence_bucket": {
+          "enum": ["high", "medium", "low", "uncertain"]
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "effect_labels": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "shorter_explanation",
+          "project_constraint_recall",
+          "corrected_preference",
+          "avoid_repetition",
+          "visual_context_acknowledgement",
+          "tentative_callback",
+          "suppressed_stale_memory",
+          "none"
+        ]
+      }
+    },
+    "label_array": {
+      "type": "array",
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      }
+    },
+    "reason_codes": {
+      "type": "array",
+      "maxItems": 24,
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,246 @@
+{
+  "name": "wake_router_thread_idle_propose_candidate",
+  "description": "A thread-idle wake proposes one bounded candidate and keeps the deferred commitment inspectable.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-wake-propose-goal-created",
+      "event_type": "goal.created",
+      "ts": "2026-04-19T06:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "goal": {
+          "goal_id": "goal-wake-propose",
+          "title": "Follow up once idle",
+          "intent": "narrative.commitment",
+          "source": "memory",
+          "goal_family": "conversation",
+          "commitment_id": "commitment-wake-propose",
+          "status": "waiting",
+          "details": {
+            "commitment_status": "active"
+          },
+          "steps": [],
+          "active_step_index": null,
+          "recovery_count": 0,
+          "planning_requested": false,
+          "blocked_reason": null,
+          "wake_conditions": [],
+          "plan_revision": 1,
+          "resume_count": 0,
+          "last_summary": null,
+          "last_error": null,
+          "created_at": "2026-04-19T06:00:00+00:00",
+          "updated_at": "2026-04-19T06:00:00+00:00"
+        },
+        "commitment": {
+          "commitment_id": "commitment-wake-propose",
+          "scope_type": "relationship",
+          "scope_id": "blink/main:alpha",
+          "status": "active"
+        }
+      }
+    },
+    {
+      "event_id": "evt-wake-propose-goal-deferred",
+      "event_type": "goal.deferred",
+      "ts": "2026-04-19T06:00:01+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-wake-propose-goal-created",
+      "payload": {
+        "goal": {
+          "goal_id": "goal-wake-propose",
+          "title": "Follow up once idle",
+          "intent": "narrative.commitment",
+          "source": "memory",
+          "goal_family": "conversation",
+          "commitment_id": "commitment-wake-propose",
+          "status": "blocked",
+          "details": {
+            "commitment_status": "deferred"
+          },
+          "steps": [],
+          "active_step_index": null,
+          "recovery_count": 0,
+          "planning_requested": false,
+          "blocked_reason": {
+            "kind": "waiting_user",
+            "summary": "Waiting for the thread to settle.",
+            "details": {}
+          },
+          "wake_conditions": [
+            {
+              "kind": "thread_idle",
+              "summary": "Wake when the thread is idle.",
+              "details": {}
+            }
+          ],
+          "plan_revision": 1,
+          "resume_count": 0,
+          "last_summary": "Deferred until the thread is idle.",
+          "last_error": null,
+          "created_at": "2026-04-19T06:00:00+00:00",
+          "updated_at": "2026-04-19T06:00:01+00:00"
+        },
+        "commitment": {
+          "commitment_id": "commitment-wake-propose",
+          "scope_type": "relationship",
+          "scope_id": "blink/main:alpha",
+          "title": "Follow up once idle",
+          "goal_family": "conversation",
+          "intent": "narrative.commitment",
+          "status": "deferred",
+          "details": {
+            "commitment_status": "deferred"
+          },
+          "current_goal_id": "goal-wake-propose",
+          "blocked_reason": {
+            "kind": "waiting_user",
+            "summary": "Waiting for the thread to settle.",
+            "details": {}
+          },
+          "wake_conditions": [
+            {
+              "kind": "thread_idle",
+              "summary": "Wake when the thread is idle.",
+              "details": {}
+            }
+          ],
+          "plan_revision": 1,
+          "resume_count": 0,
+          "created_at": "2026-04-19T06:00:00+00:00",
+          "updated_at": "2026-04-19T06:00:01+00:00",
+          "completed_at": null
+        }
+      }
+    },
+    {
+      "event_id": "evt-wake-propose-trigger",
+      "event_type": "commitment.wake.triggered",
+      "ts": "2026-04-19T06:00:03+00:00",
+      "source": "fixture",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-wake-propose",
+          "scope_type": "relationship",
+          "scope_id": "blink/main:alpha",
+          "title": "Follow up once idle",
+          "goal_family": "conversation",
+          "intent": "narrative.commitment",
+          "status": "deferred",
+          "details": {
+            "commitment_status": "deferred"
+          },
+          "current_goal_id": "goal-wake-propose",
+          "blocked_reason": {
+            "kind": "waiting_user",
+            "summary": "Waiting for the thread to settle.",
+            "details": {}
+          },
+          "wake_conditions": [
+            {
+              "kind": "thread_idle",
+              "summary": "Wake when the thread is idle.",
+              "details": {}
+            }
+          ],
+          "plan_revision": 1,
+          "resume_count": 0,
+          "created_at": "2026-04-19T06:00:00+00:00",
+          "updated_at": "2026-04-19T06:00:01+00:00",
+          "completed_at": null
+        },
+        "wake_condition": {
+          "kind": "thread_idle",
+          "summary": "Wake when the thread is idle.",
+          "details": {}
+        },
+        "trigger": {
+          "commitment_id": "commitment-wake-propose",
+          "wake_kind": "thread_idle",
+          "summary": "Matched durable commitment wake: thread_idle.",
+          "details": {
+            "boundary_kind": "startup_recovery",
+            "candidate_goal_id": "candidate-wake-thread-idle",
+            "candidate_type": "commitment_wake_thread_idle",
+            "commitment_status": "deferred"
+          },
+          "source_event_type": "assistant.turn.ended",
+          "source_event_id": "evt-thread-idle-boundary",
+          "ts": "2026-04-19T06:00:03+00:00"
+        },
+        "routing": {
+          "route_kind": "propose_candidate",
+          "summary": "Route this wake through bounded candidate policy.",
+          "details": {
+            "reason": "wake_matched",
+            "boundary_kind": "startup_recovery",
+            "candidate_goal_id": "candidate-wake-thread-idle",
+            "candidate_type": "commitment_wake_thread_idle",
+            "goal_family": "conversation"
+          }
+        }
+      }
+    },
+    {
+      "event_id": "evt-wake-propose-candidate",
+      "event_type": "goal.candidate.created",
+      "ts": "2026-04-19T06:00:03+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-wake-propose-trigger",
+      "payload": {
+        "candidate_goal": {
+          "candidate_goal_id": "candidate-wake-thread-idle",
+          "candidate_type": "commitment_wake_thread_idle",
+          "source": "commitment",
+          "summary": "Revisit deferred commitment: Follow up once idle",
+          "goal_family": "conversation",
+          "urgency": 0.7,
+          "confidence": 1.0,
+          "initiative_class": "inspect_only",
+          "cooldown_key": "browser:alpha:commitment:commitment-wake-propose:thread_idle",
+          "dedupe_key": "commitment-wake-propose:thread_idle",
+          "policy_tags": [
+            "phase8b",
+            "commitment_wake",
+            "thread_idle",
+            "startup_recovery"
+          ],
+          "requires_user_turn_gap": true,
+          "expires_at": "2026-04-19T06:01:03+00:00",
+          "payload": {
+            "goal_intent": "autonomy.commitment_wake_thread_idle",
+            "commitment_id": "commitment-wake-propose",
+            "wake_kind": "thread_idle"
+          },
+          "created_at": "2026-04-19T06:00:03+00:00"
+        }
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "autonomy_current_candidate_ids": [
+      "candidate-wake-thread-idle"
+    ],
+    "wake_current_waiting_commitment_ids": [
+      "commitment-wake-propose"
+    ],
+    "wake_recent_wake_kinds": [
+      "thread_idle"
+    ],
+    "wake_recent_route_kinds": [
+      "propose_candidate"
+    ],
+    "wake_reason_codes": [
+      "wake_matched"
+    ]
+  }
+}

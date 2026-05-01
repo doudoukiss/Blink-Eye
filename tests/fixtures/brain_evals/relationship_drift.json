@@ -1,0 +1,69 @@
+{
+  "name": "relationship_drift",
+  "description": "Relationship continuity updates are visible through autobiography and health state.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-rel-1",
+      "event_type": "autobiography.entry.upserted",
+      "ts": "2026-04-18T03:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "scope_type": "relationship",
+        "scope_id": "blink/main:alpha",
+        "entry_kind": "relationship_arc",
+        "rendered_summary": "Trust recovered after a direct correction about preferences.",
+        "content": {
+          "summary": "Trust recovered after a direct correction about preferences."
+        },
+        "salience": 0.83,
+        "source_episode_ids": [],
+        "source_claim_ids": [],
+        "source_event_ids": [
+          "evt-rel-1"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-rel-2",
+      "event_type": "memory.health.reported",
+      "ts": "2026-04-18T03:01:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "scope_type": "relationship",
+        "scope_id": "blink/main:alpha",
+        "cycle_id": "cycle_rel_1",
+        "score": 0.71,
+        "status": "watch",
+        "findings": [
+          {
+            "code": "relationship_drift",
+            "severity": "warning",
+            "summary": "Relationship tone changed after a correction."
+          }
+        ],
+        "stats": {
+          "episodes": 2
+        },
+        "artifact_path": "artifacts/relationship_drift.json"
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "autobiography_entry_kinds": [
+      "relationship_arc"
+    ],
+    "health_finding_codes": [
+      "relationship_drift"
+    ],
+    "relationship_arc_contains": "Trust recovered"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "name": "dossier_relationship_correction",
+  "description": "A corrected relationship fact refreshes the compiled relationship dossier without hiding history.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-role-1",
+      "event_type": "memory.claim.recorded",
+      "ts": "2026-04-18T00:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "claim_id": "claim_dc88afcac7455e338340c25d23c24aeb",
+        "subject_entity_id": "entity:user:alpha",
+        "predicate": "profile.role",
+        "object": {
+          "value": "designer"
+        },
+        "status": "active",
+        "scope_type": "user",
+        "scope_id": "alpha",
+        "claim_key": "profile.role:alpha"
+      }
+    },
+    {
+      "event_id": "evt-role-2",
+      "event_type": "memory.claim.recorded",
+      "ts": "2026-04-18T00:01:00+00:00",
+      "source": "fixture",
+      "correlation_id": "evt-role-2",
+      "causal_parent_id": "evt-role-1",
+      "payload": {
+        "claim_id": "claim_47027fb27bc35543815b17fb2943e35e",
+        "subject_entity_id": "entity:user:alpha",
+        "predicate": "profile.role",
+        "object": {
+          "value": "product manager"
+        },
+        "status": "active",
+        "scope_type": "user",
+        "scope_id": "alpha",
+        "claim_key": "profile.role:alpha"
+      }
+    },
+    {
+      "event_id": "evt-role-3",
+      "event_type": "memory.claim.superseded",
+      "ts": "2026-04-18T00:01:30+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-role-2",
+      "payload": {
+        "prior_claim_id": "claim_dc88afcac7455e338340c25d23c24aeb",
+        "new_claim_id": "claim_47027fb27bc35543815b17fb2943e35e",
+        "reason": "explicit_correction"
+      }
+    },
+    {
+      "event_id": "evt-relationship-arc",
+      "event_type": "autobiography.entry.upserted",
+      "ts": "2026-04-18T00:02:00+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-role-2",
+      "payload": {
+        "scope_type": "relationship",
+        "scope_id": "blink/main:alpha",
+        "entry_kind": "relationship_arc",
+        "rendered_summary": "Trust recovered after a direct correction about roles.",
+        "content": {
+          "summary": "Trust recovered after a direct correction about roles."
+        },
+        "salience": 1.0,
+        "source_episode_ids": [],
+        "source_claim_ids": [
+          "claim_47027fb27bc35543815b17fb2943e35e"
+        ],
+        "source_event_ids": [
+          "evt-role-2"
+        ]
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "current_claims": [
+      {
+        "predicate": "profile.role",
+        "value": "product manager"
+      }
+    ],
+    "historical_claims": [
+      {
+        "predicate": "profile.role",
+        "value": "designer"
+      }
+    ],
+    "relationship_dossier_summary_contains": "Trust recovered",
+    "relationship_dossier_freshness": "fresh",
+    "relationship_dossier_contradiction": "clear",
+    "continuity_graph_edge_kinds": [
+      "supersedes",
+      "autobiography_supports_claim"
+    ]
+  }
+}

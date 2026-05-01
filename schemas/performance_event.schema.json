@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Blink Browser Performance Event",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_id",
+    "session_id",
+    "ts",
+    "type"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "client_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ts": {
+      "type": "number"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "server_starting",
+        "client_connected",
+        "client_disconnected",
+        "media_reported",
+        "mic_ready",
+        "camera_ready",
+        "camera_unavailable",
+        "camera_frame_received",
+        "camera_stale",
+        "listening_started",
+        "user_speech_started",
+        "user_speech_stopped",
+        "stt_partial",
+        "stt_final",
+        "thinking_started",
+        "llm_first_token",
+        "assistant_text_chunk",
+        "melo_tts_started",
+        "melo_tts_stopped",
+        "assistant_speaking_started",
+        "assistant_speaking_stopped",
+        "interruption_candidate",
+        "interruption_accepted",
+        "interruption_rejected",
+        "melo_queue_flushed",
+        "vision_started",
+        "vision_result",
+        "vision_error",
+        "memory_trace",
+        "persona_plan",
+        "degraded",
+        "error"
+      ]
+    },
+    "turn_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

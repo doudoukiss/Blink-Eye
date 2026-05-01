@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PerformanceLearningPolicyProposalV3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "proposal_id",
+    "created_at",
+    "status",
+    "target",
+    "summary",
+    "behavior_control_updates",
+    "source_pair_ids",
+    "evidence_refs",
+    "dimension_scores",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": { "const": 3 },
+    "proposal_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "created_at": { "type": "string", "maxLength": 96 },
+    "status": { "enum": ["proposed", "applied", "rejected"] },
+    "target": {
+      "enum": [
+        "persona_anchor_selection",
+        "speech_chunking_bias",
+        "memory_callback_threshold",
+        "interruption_backchannel_policy"
+      ]
+    },
+    "summary": { "type": "string", "maxLength": 180 },
+    "behavior_control_updates": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "maxLength": 80 }
+    },
+    "source_pair_ids": {
+      "type": "array",
+      "maxItems": 16,
+      "items": { "type": "string", "minLength": 1, "maxLength": 160 },
+      "uniqueItems": true
+    },
+    "evidence_refs": {
+      "type": "array",
+      "maxItems": 24,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["evidence_kind", "evidence_id", "summary", "reason_codes"],
+        "properties": {
+          "evidence_kind": { "type": "string", "minLength": 1, "maxLength": 96 },
+          "evidence_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+          "summary": { "type": "string", "maxLength": 180 },
+          "reason_codes": { "$ref": "#/$defs/labels" }
+        }
+      }
+    },
+    "dimension_scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "felt_heard": { "$ref": "#/$defs/score" },
+        "state_clarity": { "$ref": "#/$defs/score" },
+        "interruption_naturalness": { "$ref": "#/$defs/score" },
+        "voice_pacing": { "$ref": "#/$defs/score" },
+        "camera_honesty": { "$ref": "#/$defs/score" },
+        "memory_usefulness": { "$ref": "#/$defs/score" },
+        "persona_consistency": { "$ref": "#/$defs/score" },
+        "enjoyment": { "$ref": "#/$defs/score" },
+        "not_fake_human": { "$ref": "#/$defs/score" }
+      }
+    },
+    "reason_codes": { "$ref": "#/$defs/labels" }
+  },
+  "$defs": {
+    "score": { "type": "number", "minimum": 1, "maximum": 5 },
+    "labels": {
+      "type": "array",
+      "maxItems": 32,
+      "items": { "type": "string", "minLength": 1, "maxLength": 120 },
+      "uniqueItems": true
+    }
+  }
+}

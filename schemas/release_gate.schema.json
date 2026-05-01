@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BilingualActorReleaseGateResult",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "passed",
+    "threshold",
+    "hard_blockers",
+    "scores",
+    "profile_failures",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "passed": {
+      "type": "boolean"
+    },
+    "threshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "hard_blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 120
+      },
+      "maxItems": 16
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        }
+      }
+    },
+    "profile_failures": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "maxItems": 32
+      }
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 160
+      },
+      "maxItems": 64
+    }
+  },
+  "additionalProperties": false
+}

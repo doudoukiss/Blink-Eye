@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ActorEventV2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "event_id",
+    "event_type",
+    "mode",
+    "timestamp",
+    "profile",
+    "language",
+    "tts_backend",
+    "tts_label",
+    "vision_backend",
+    "source",
+    "session_id",
+    "client_id",
+    "metadata",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "event_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "event_type": {
+      "enum": [
+        "connected",
+        "listening",
+        "speech_started",
+        "partial_heard",
+        "final_heard",
+        "listening_started",
+        "partial_understanding_updated",
+        "final_understanding_ready",
+        "listening_degraded",
+        "thinking",
+        "looking",
+        "speaking",
+        "interrupted",
+        "waiting",
+        "error",
+        "memory_used",
+        "persona_plan_compiled",
+        "floor_transition",
+        "interruption_candidate",
+        "interruption_accepted",
+        "interruption_rejected",
+        "output_flushed",
+        "interruption_recovered",
+        "degraded",
+        "recovered"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "connected",
+        "listening",
+        "heard",
+        "thinking",
+        "looking",
+        "speaking",
+        "interrupted",
+        "waiting",
+        "error",
+        "degraded",
+        "recovered"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "profile": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "language": {
+      "type": "string",
+      "maxLength": 32
+    },
+    "tts_backend": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "tts_label": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "vision_backend": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "source": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "session_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 96
+    },
+    "client_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 96
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "maxProperties": 24
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      },
+      "maxItems": 24,
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,149 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Blink Browser Interaction State",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "mode",
+    "runtime",
+    "transport",
+    "tts",
+    "media",
+    "updated_at"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "booting",
+        "ready",
+        "connecting",
+        "listening",
+        "speech_detected",
+        "transcribing",
+        "heard",
+        "thinking",
+        "looking",
+        "speaking",
+        "interruption_candidate",
+        "interrupted",
+        "waiting",
+        "degraded",
+        "error"
+      ]
+    },
+    "runtime": {
+      "type": "string",
+      "const": "browser"
+    },
+    "transport": {
+      "type": "string",
+      "const": "webrtc"
+    },
+    "language": {
+      "type": "string"
+    },
+    "tts": {
+      "type": "object",
+      "properties": {
+        "backend": {
+          "type": "string"
+        },
+        "sidecar_health": {
+          "type": "string"
+        },
+        "queue_depth": {
+          "type": "integer"
+        },
+        "current_subtitle": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "time_to_first_audio_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "media": {
+      "type": "object",
+      "properties": {
+        "mode": {
+          "type": "string"
+        },
+        "microphone_state": {
+          "type": "string"
+        },
+        "camera_state": {
+          "type": "string"
+        },
+        "echo_safe_state": {
+          "type": "string"
+        },
+        "barge_in": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "camera": {
+      "type": "object",
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "latest_frame_age_ms": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "last_vision_used": {
+          "type": "boolean"
+        },
+        "last_vision_summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "last_user_transcript": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "memory_used": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "persona_style_label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "updated_at": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

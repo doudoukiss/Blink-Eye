@@ -1,0 +1,97 @@
+{
+  "name": "reply_associative_project_recall",
+  "description": "An associative reply packet pulls dossier-backed project continuity through relationship context.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "context_queries": {
+    "reply": "What are we pushing together this week?"
+  },
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-alpha-claim",
+      "event_type": "memory.claim.recorded",
+      "ts": "2026-04-18T00:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "claim_id": "claim_alpha_priority",
+        "subject_entity_id": "entity:user:alpha",
+        "predicate": "project.priority",
+        "object": {
+          "value": "assistant refresh"
+        },
+        "status": "active",
+        "scope_type": "user",
+        "scope_id": "alpha",
+        "claim_key": "project.priority:alpha"
+      }
+    },
+    {
+      "event_id": "evt-alpha-relationship",
+      "event_type": "autobiography.entry.upserted",
+      "ts": "2026-04-18T00:01:00+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-alpha-claim",
+      "payload": {
+        "scope_type": "relationship",
+        "scope_id": "blink/main:alpha",
+        "entry_kind": "relationship_arc",
+        "rendered_summary": "We are pushing the Alpha project together this week.",
+        "content": {
+          "summary": "We are pushing the Alpha project together this week."
+        },
+        "salience": 1.0,
+        "source_episode_ids": [],
+        "source_claim_ids": [
+          "claim_alpha_priority"
+        ],
+        "source_event_ids": [
+          "evt-alpha-claim"
+        ]
+      }
+    },
+    {
+      "event_id": "evt-alpha-project",
+      "event_type": "autobiography.entry.upserted",
+      "ts": "2026-04-18T00:01:30+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-alpha-claim",
+      "payload": {
+        "scope_type": "relationship",
+        "scope_id": "blink/main:alpha",
+        "entry_kind": "project_arc",
+        "rendered_summary": "Alpha focuses on the assistant refresh this week.",
+        "content": {
+          "summary": "Alpha focuses on the assistant refresh this week.",
+          "project_key": "Alpha"
+        },
+        "salience": 1.0,
+        "source_episode_ids": [],
+        "source_claim_ids": [
+          "claim_alpha_priority"
+        ],
+        "source_event_ids": [
+          "evt-alpha-claim"
+        ]
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "project_dossier_keys": [
+      "Alpha"
+    ],
+    "reply_packet_temporal_mode": "current_first",
+    "reply_selected_anchor_types": [
+      "dossier"
+    ],
+    "continuity_graph_edge_kinds": [
+      "autobiography_supports_claim"
+    ]
+  }
+}

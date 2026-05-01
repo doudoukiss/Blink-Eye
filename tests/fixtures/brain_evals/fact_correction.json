@@ -1,0 +1,77 @@
+{
+  "name": "fact_correction",
+  "description": "A corrected profile fact supersedes prior current truth while preserving history.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-fact-1",
+      "event_type": "memory.claim.recorded",
+      "ts": "2026-04-18T00:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "subject_entity_id": "entity:user:alpha",
+        "predicate": "profile.role",
+        "object": {
+          "value": "designer"
+        },
+        "status": "active",
+        "scope_type": "user",
+        "scope_id": "alpha",
+        "claim_key": "profile.role:alpha"
+      }
+    },
+    {
+      "event_id": "evt-fact-2",
+      "event_type": "memory.claim.recorded",
+      "ts": "2026-04-18T00:01:00+00:00",
+      "source": "fixture",
+      "correlation_id": "evt-fact-2",
+      "causal_parent_id": "evt-fact-1",
+      "payload": {
+        "subject_entity_id": "entity:user:alpha",
+        "predicate": "profile.role",
+        "object": {
+          "value": "product manager"
+        },
+        "status": "active",
+        "scope_type": "user",
+        "scope_id": "alpha",
+        "claim_key": "profile.role:alpha"
+      }
+    },
+    {
+      "event_id": "evt-fact-3",
+      "event_type": "memory.claim.superseded",
+      "ts": "2026-04-18T00:01:30+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-fact-2",
+      "payload": {
+        "prior_claim_id": "claim_dc88afcac7455e338340c25d23c24aeb",
+        "new_claim_id": "claim_47027fb27bc35543815b17fb2943e35e",
+        "reason": "explicit_correction"
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "current_claims": [
+      {
+        "predicate": "profile.role",
+        "value": "product manager"
+      }
+    ],
+    "historical_claims": [
+      {
+        "predicate": "profile.role",
+        "value": "designer"
+      }
+    ]
+  }
+}

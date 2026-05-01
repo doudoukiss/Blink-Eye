@@ -1,0 +1,493 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ActorControlFrameV3",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "frame_id",
+    "sequence",
+    "profile",
+    "language",
+    "tts_backend",
+    "tts_runtime_label",
+    "boundary",
+    "created_at_ms",
+    "source_event_ids",
+    "persistent_state",
+    "condition_cache_digest",
+    "browser_ui_policy",
+    "speech_policy",
+    "active_listener_policy",
+    "floor_policy",
+    "camera_policy",
+    "memory_policy",
+    "persona_policy",
+    "repair_policy",
+    "lookahead_counters",
+    "reason_trace"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 3
+    },
+    "frame_id": {
+      "type": "string",
+      "maxLength": 160
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "profile": {
+      "enum": [
+        "browser-zh-melo",
+        "browser-en-kokoro",
+        "manual"
+      ]
+    },
+    "language": {
+      "enum": [
+        "zh",
+        "en",
+        "unknown"
+      ]
+    },
+    "tts_backend": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "tts_runtime_label": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "boundary": {
+      "enum": [
+        "vad_boundary",
+        "stt_final_boundary",
+        "speech_chunk_boundary",
+        "tts_queue_boundary",
+        "camera_frame_boundary",
+        "tool_result_boundary",
+        "interruption_boundary",
+        "repair_boundary"
+      ]
+    },
+    "created_at_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source_event_ids": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "maxItems": 16,
+      "uniqueItems": true
+    },
+    "persistent_state": {
+      "type": "object",
+      "required": [
+        "mode",
+        "floor_state",
+        "floor_sub_state",
+        "floor_yield_decision",
+        "active_listener_state",
+        "active_listener_intent",
+        "active_listener_chip_ids",
+        "speech_generation_id",
+        "speech_turn_id",
+        "speech_generation_stale",
+        "outstanding_speech_chunks",
+        "outstanding_subtitles",
+        "held_speech_chunks",
+        "stale_output_dropped_count",
+        "camera_state",
+        "camera_freshness_state",
+        "camera_current_answer_used_vision",
+        "camera_scene_transition",
+        "camera_honesty_state",
+        "camera_user_presence_hint",
+        "camera_last_moondream_result_state",
+        "camera_object_showing_likelihood",
+        "interruption_outcome",
+        "memory_effect_count",
+        "persona_effect_count"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "floor_state": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "floor_sub_state": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "floor_yield_decision": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "active_listener_state": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "active_listener_intent": {
+          "enum": [
+            "question",
+            "instruction",
+            "correction",
+            "object_showing",
+            "project_planning",
+            "small_talk",
+            "unknown"
+          ]
+        },
+        "active_listener_chip_ids": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "enum": [
+              "heard_summary",
+              "constraint_detected",
+              "question_detected",
+              "showing_object",
+              "camera_limited",
+              "still_listening",
+              "ready_to_answer"
+            ]
+          }
+        },
+        "speech_generation_id": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "speech_turn_id": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "speech_generation_stale": {
+          "type": "boolean"
+        },
+        "outstanding_speech_chunks": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "outstanding_subtitles": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "held_speech_chunks": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "stale_output_dropped_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "camera_state": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "camera_freshness_state": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "camera_current_answer_used_vision": {
+          "type": "boolean"
+        },
+        "camera_scene_transition": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "camera_honesty_state": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "camera_user_presence_hint": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "camera_last_moondream_result_state": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "camera_object_showing_likelihood": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "interruption_outcome": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "memory_effect_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "persona_effect_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "condition_cache_digest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{16}$"
+    },
+    "browser_ui_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "speech_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "active_listener_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "floor_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "camera_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "memory_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "persona_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "repair_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "lookahead_counters": {
+      "type": "object",
+      "required": [
+        "speech_chunks_outstanding",
+        "speech_chunks_limit",
+        "subtitles_outstanding",
+        "subtitles_limit",
+        "held_speech_chunks"
+      ],
+      "properties": {
+        "speech_chunks_outstanding": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "speech_chunks_limit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "subtitles_outstanding": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "subtitles_limit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "held_speech_chunks": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_trace": {
+      "$ref": "#/$defs/reason_codes"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "policy": {
+      "type": "object",
+      "required": [
+        "boundary",
+        "reason_codes"
+      ],
+      "properties": {
+        "action": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "state": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "sub_state": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "yield_decision": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "mode": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "boundary": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "generation_id": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "turn_id": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "generation_stale": {
+          "type": "boolean"
+        },
+        "estimated_duration_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 300000
+        },
+        "subtitle_timing_policy": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "stale_generation_state": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "backend_capability_labels": {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "chunk_lookahead_limit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "subtitle_lookahead_limit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "subtitle_state": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "active_listener_state": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "ready_to_answer": {
+          "type": "boolean"
+        },
+        "detected_intent": {
+          "enum": [
+            "question",
+            "instruction",
+            "correction",
+            "object_showing",
+            "project_planning",
+            "small_talk",
+            "unknown"
+          ]
+        },
+        "listener_chip_ids": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "enum": [
+              "heard_summary",
+              "constraint_detected",
+              "question_detected",
+              "showing_object",
+              "camera_limited",
+              "still_listening",
+              "ready_to_answer"
+            ]
+          }
+        },
+        "protected_playback_default": {
+          "type": "boolean"
+        },
+        "freshness_state": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "fresh_frame_used": {
+          "type": "boolean"
+        },
+        "scene_transition": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "camera_honesty_state": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "user_presence_hint": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "last_moondream_result_state": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "object_showing_likelihood": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "latest_frame_sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "latest_frame_age_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "used": {
+          "type": "boolean"
+        },
+        "plan_available": {
+          "type": "boolean"
+        },
+        "effect_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "interruption_outcome": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "stale_output_action": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "stale_output_dropped_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      },
+      "maxItems": 32,
+      "uniqueItems": true
+    }
+  }
+}

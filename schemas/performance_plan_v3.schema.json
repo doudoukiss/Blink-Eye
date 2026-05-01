@@ -1,0 +1,393 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PerformancePlanV3",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "plan_id",
+    "turn_id",
+    "profile",
+    "language",
+    "tts_runtime_label",
+    "created_at_ms",
+    "actor_control_ref",
+    "stance",
+    "response_shape",
+    "voice_pacing",
+    "speech_chunk_budget",
+    "subtitle_policy",
+    "camera_reference_policy",
+    "memory_callback_policy",
+    "interruption_policy",
+    "repair_policy",
+    "ui_status_copy",
+    "plan_summary",
+    "persona_reference_ids",
+    "persona_anchor_refs_v3",
+    "tts_capabilities",
+    "reason_trace"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 3
+    },
+    "plan_id": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "turn_id": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "profile": {
+      "enum": [
+        "browser-zh-melo",
+        "browser-en-kokoro"
+      ]
+    },
+    "language": {
+      "enum": [
+        "zh",
+        "en"
+      ]
+    },
+    "tts_runtime_label": {
+      "enum": [
+        "local-http-wav/MeloTTS",
+        "kokoro/English",
+        "unknown"
+      ]
+    },
+    "created_at_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "actor_control_ref": {
+      "$ref": "#/$defs/actor_control_ref"
+    },
+    "stance": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "response_shape": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "voice_pacing": {
+      "$ref": "#/$defs/policy"
+    },
+    "speech_chunk_budget": {
+      "$ref": "#/$defs/policy"
+    },
+    "subtitle_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "camera_reference_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "memory_callback_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "interruption_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "repair_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "ui_status_copy": {
+      "type": "string",
+      "maxLength": 180
+    },
+    "plan_summary": {
+      "type": "string",
+      "maxLength": 180
+    },
+    "persona_reference_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      },
+      "maxItems": 8,
+      "uniqueItems": true
+    },
+    "persona_anchor_refs_v3": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/persona_anchor_ref_v3"
+      },
+      "maxItems": 8,
+      "uniqueItems": true
+    },
+    "tts_capabilities": {
+      "$ref": "#/$defs/tts_capabilities"
+    },
+    "reason_trace": {
+      "$ref": "#/$defs/reason_codes"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "actor_control_ref": {
+      "type": "object",
+      "required": [
+        "frame_id",
+        "sequence",
+        "boundary",
+        "condition_cache_digest",
+        "source_event_ids"
+      ],
+      "properties": {
+        "frame_id": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "boundary": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "condition_cache_digest": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "source_event_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "maxItems": 12
+        }
+      },
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "state",
+        "reason_codes"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string",
+            "maxLength": 120
+          },
+          {
+            "type": "integer",
+            "minimum": 0
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 96
+            },
+            "maxItems": 12
+          },
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/memory_policy_ref"
+            },
+            "maxItems": 8
+          },
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "maxLength": 96
+            },
+            "maxProperties": 8
+          }
+        ]
+      },
+      "maxProperties": 18
+    },
+    "memory_policy_ref": {
+      "type": "object",
+      "required": [
+        "memory_id",
+        "display_kind",
+        "summary",
+        "source_language",
+        "cross_language",
+        "effect_labels",
+        "confidence_bucket",
+        "reason_codes"
+      ],
+      "properties": {
+        "memory_id": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "display_kind": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "summary": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "source_language": {
+          "enum": ["zh", "en", "unknown"]
+        },
+        "cross_language": {
+          "type": "boolean"
+        },
+        "effect_labels": {
+          "$ref": "#/$defs/reason_codes"
+        },
+        "confidence_bucket": {
+          "enum": ["high", "medium", "low", "uncertain"]
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "tts_capabilities": {
+      "type": "object",
+      "required": [
+        "backend_label",
+        "chunk_boundaries_enabled",
+        "interruption_flush_enabled",
+        "speech_rate_enabled",
+        "prosody_emphasis_enabled",
+        "pause_timing_enabled",
+        "partial_stream_abort_enabled",
+        "interruption_discard_enabled",
+        "expression_controls_hardware",
+        "unsupported_controls",
+        "reason_codes"
+      ],
+      "properties": {
+        "backend_label": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "chunk_boundaries_enabled": {
+          "type": "boolean"
+        },
+        "interruption_flush_enabled": {
+          "type": "boolean"
+        },
+        "speech_rate_enabled": {
+          "type": "boolean"
+        },
+        "prosody_emphasis_enabled": {
+          "type": "boolean"
+        },
+        "pause_timing_enabled": {
+          "type": "boolean"
+        },
+        "partial_stream_abort_enabled": {
+          "type": "boolean"
+        },
+        "interruption_discard_enabled": {
+          "type": "boolean"
+        },
+        "expression_controls_hardware": {
+          "const": false
+        },
+        "unsupported_controls": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "maxItems": 12,
+          "uniqueItems": true
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "persona_anchor_ref_v3": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "anchor_id",
+        "situation_key",
+        "stance_label",
+        "response_shape_label",
+        "behavior_constraint_count",
+        "negative_example_count",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": {
+          "const": 3
+        },
+        "anchor_id": {
+          "type": "string",
+          "maxLength": 96,
+          "pattern": "^persona-anchor-v3:[a-z_]+$"
+        },
+        "situation_key": {
+          "enum": [
+            "interruption_response",
+            "correction_response",
+            "deep_technical_planning",
+            "casual_check_in",
+            "visual_grounding",
+            "uncertainty",
+            "disagreement",
+            "memory_callback",
+            "playful_not_fake_human"
+          ]
+        },
+        "stance_label": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "response_shape_label": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "behavior_constraint_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8
+        },
+        "negative_example_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      },
+      "maxItems": 48,
+      "uniqueItems": true
+    }
+  }
+}

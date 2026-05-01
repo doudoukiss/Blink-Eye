@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SemanticListenerStateV3",
+  "type": "object",
+  "required": [
+    "state_id",
+    "profile",
+    "language",
+    "mode",
+    "updated_at_ms"
+  ],
+  "properties": {
+    "state_id": {
+      "type": "string"
+    },
+    "profile": {
+      "enum": [
+        "browser-zh-melo",
+        "browser-en-kokoro"
+      ]
+    },
+    "language": {
+      "enum": [
+        "zh",
+        "en"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "idle",
+        "listening",
+        "tracking",
+        "ready_to_answer",
+        "uncertain",
+        "repair_needed",
+        "degraded"
+      ]
+    },
+    "topic_labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "intent_labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraint_labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "emotion_label": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "bounded_live_summary": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 280
+    },
+    "updated_at_ms": {
+      "type": "integer"
+    }
+  },
+  "additionalProperties": false
+}

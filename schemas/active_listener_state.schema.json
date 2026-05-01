@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Active Listener State",
+  "type": "object",
+  "required": [
+    "phase",
+    "available",
+    "reason_codes"
+  ],
+  "properties": {
+    "available": {
+      "type": "boolean"
+    },
+    "phase": {
+      "enum": [
+        "idle",
+        "speech_started",
+        "speech_continuing",
+        "speech_stopped",
+        "transcribing",
+        "partial_transcript",
+        "final_transcript",
+        "ready_to_answer",
+        "repair_needed",
+        "error"
+      ]
+    },
+    "turn_duration_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "partial_available": {
+      "type": "boolean"
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 8
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "maxItems": 8
+    },
+    "camera_intent": {
+      "type": "boolean"
+    },
+    "memory_command": {
+      "enum": [
+        "none",
+        "remember",
+        "correct",
+        "forget",
+        "query"
+      ]
+    },
+    "ready_to_answer": {
+      "type": "boolean"
+    },
+    "uncertainty": {
+      "enum": [
+        "none",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 32
+    }
+  },
+  "additionalProperties": true
+}

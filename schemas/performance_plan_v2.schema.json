@@ -1,0 +1,201 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PerformancePlanV2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "turn_id",
+    "profile",
+    "modality",
+    "language",
+    "tts_label",
+    "floor_state",
+    "visible_mode",
+    "stance",
+    "response_shape",
+    "memory_callback_policy",
+    "camera_reference_policy",
+    "interruption_policy",
+    "speech_chunking_hints",
+    "ui_state_hints",
+    "style_summary",
+    "persona_references_used",
+    "reason_codes"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 2
+    },
+    "turn_id": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "profile": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "modality": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "language": {
+      "enum": [
+        "zh",
+        "en"
+      ]
+    },
+    "tts_label": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "floor_state": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "visible_mode": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "stance": {
+      "type": "string",
+      "maxLength": 140
+    },
+    "response_shape": {
+      "type": "string",
+      "maxLength": 96
+    },
+    "memory_callback_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "camera_reference_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "interruption_policy": {
+      "$ref": "#/$defs/policy"
+    },
+    "speech_chunking_hints": {
+      "$ref": "#/$defs/policy"
+    },
+    "ui_state_hints": {
+      "$ref": "#/$defs/policy"
+    },
+    "style_summary": {
+      "type": "string",
+      "maxLength": 180
+    },
+    "persona_references_used": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/reference_summary"
+      },
+      "maxItems": 8
+    },
+    "reason_codes": {
+      "$ref": "#/$defs/reason_codes"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "policy": {
+      "type": "object",
+      "required": [
+        "state"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "maxLength": 80
+        }
+      },
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string",
+            "maxLength": 120
+          },
+          {
+            "type": "integer",
+            "minimum": 0
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 96
+            },
+            "maxItems": 8
+          },
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "maxLength": 96
+            },
+            "maxProperties": 8
+          }
+        ]
+      },
+      "maxProperties": 16
+    },
+    "reference_summary": {
+      "type": "object",
+      "required": [
+        "reference_id",
+        "locale",
+        "scenario",
+        "stance",
+        "response_shape",
+        "performance_notes",
+        "reason_codes"
+      ],
+      "properties": {
+        "reference_id": {
+          "type": "string",
+          "maxLength": 96
+        },
+        "locale": {
+          "enum": [
+            "zh",
+            "en"
+          ]
+        },
+        "scenario": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "stance": {
+          "type": "string",
+          "maxLength": 140
+        },
+        "response_shape": {
+          "type": "string",
+          "maxLength": 180
+        },
+        "performance_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "maxItems": 3
+        },
+        "reason_codes": {
+          "$ref": "#/$defs/reason_codes"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 96
+      },
+      "maxItems": 32,
+      "uniqueItems": true
+    }
+  }
+}

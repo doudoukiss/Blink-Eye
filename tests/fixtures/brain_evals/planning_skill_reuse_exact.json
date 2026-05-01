@@ -1,0 +1,1192 @@
+{
+  "context_queries": {
+    "planning": "Plan the next maintenance step."
+  },
+  "qa_categories": [
+    "skill_reuse"
+  ],
+  "description": "An active skill is reused exactly by the bounded planner.",
+  "events": [
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-1",
+      "event_id": "a6a57ebd78d84cae9f907885535342b2",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-1",
+          "created_at": "2026-04-20T12:19:21.939559+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Seed skill one",
+          "updated_at": "2026-04-20T12:19:21.939763+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:00+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-1",
+      "event_id": "15e2d4d918aa49338b588bac8915858d",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "seed-commitment-1",
+        "goal_id": "seed-goal-1",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "seed-commitment-1",
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "seed-goal-1",
+          "missing_inputs": [],
+          "plan_proposal_id": "seed-proposal-1",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.940278+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.940281+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Seed skill one.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:00+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "15e2d4d918aa49338b588bac8915858d",
+      "correlation_id": "seed-goal-1",
+      "event_id": "5474b6891abb4fbfa9e5a28f085014a0",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "seed-commitment-1",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Seed skill one."
+        },
+        "goal_id": "seed-goal-1",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "seed-commitment-1",
+          "created_at": "2026-01-01T00:00:00+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "seed-goal-1",
+          "missing_inputs": [],
+          "plan_proposal_id": "seed-proposal-1",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.940278+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.940281+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Seed skill one.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:01+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "5474b6891abb4fbfa9e5a28f085014a0",
+      "correlation_id": "seed-goal-1",
+      "event_id": "affc82639719426a82c96ba0b6b63a25",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "seed-commitment-1",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-1",
+          "created_at": "2026-04-20T12:19:21.941046+00:00",
+          "details": {
+            "current_plan_proposal_id": "seed-proposal-1"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Seed skill one.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.941041+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.941043+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Seed skill one",
+          "updated_at": "2026-04-20T12:19:21.941046+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:02+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-1",
+      "event_id": "e3a28c048bd049cba7bdd6101f7daf6e",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "seed-goal-1",
+        "step_index": 0
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:03+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "e3a28c048bd049cba7bdd6101f7daf6e",
+      "correlation_id": "seed-goal-1",
+      "event_id": "5bc357fc3b944955827366eadedd492c",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "seed-goal-1",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:04+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-1",
+      "event_id": "559394945392485b93363ffd96e053fa",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "reporting.record_maintenance_note",
+        "goal_id": "seed-goal-1",
+        "step_index": 1
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:05+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "559394945392485b93363ffd96e053fa",
+      "correlation_id": "seed-goal-1",
+      "event_id": "dc76ae62ade34a458bee8c077874fd0d",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "reporting.record_maintenance_note",
+        "goal_id": "seed-goal-1",
+        "result": {
+          "accepted": true,
+          "capability_id": "reporting.record_maintenance_note",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 1
+          },
+          "retryable": false,
+          "summary": "Completed reporting.record_maintenance_note.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:06+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-1",
+      "event_id": "ec4448ecfc364d21a7112db3890b643d",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "seed-commitment-1",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-1",
+          "created_at": "2026-04-20T12:19:21.942868+00:00",
+          "details": {
+            "current_plan_proposal_id": "seed-proposal-1"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-1",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Seed skill one.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T12:19:21.942243+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {
+                "slot": 1
+              },
+              "status": "completed",
+              "summary": "Completed reporting.record_maintenance_note.",
+              "updated_at": "2026-04-20T12:19:21.942863+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Seed skill one",
+          "updated_at": "2026-04-20T12:19:21.942869+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:07+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-2",
+      "event_id": "2d10a0b1341a407dbfa81a883cccc939",
+      "event_type": "goal.created",
+      "payload": {
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-2",
+          "created_at": "2026-04-20T12:19:21.943243+00:00",
+          "details": {},
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Seed skill two",
+          "updated_at": "2026-04-20T12:19:21.943245+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:40+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-2",
+      "event_id": "545155d6c55c4741a30c94a14f00876b",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "seed-commitment-2",
+        "goal_id": "seed-goal-2",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "seed-commitment-2",
+          "created_at": "2026-01-01T00:00:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "seed-goal-2",
+          "missing_inputs": [],
+          "plan_proposal_id": "seed-proposal-2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.943586+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.943588+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Seed skill two.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:40+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "545155d6c55c4741a30c94a14f00876b",
+      "correlation_id": "seed-goal-2",
+      "event_id": "00b359dff1e04e4e8ed4b7cb6708fc82",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "seed-commitment-2",
+        "decision": {
+          "details": {},
+          "reason": "bounded_plan_available",
+          "summary": "Adopt Seed skill two."
+        },
+        "goal_id": "seed-goal-2",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "seed-commitment-2",
+          "created_at": "2026-01-01T00:00:40+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "request_kind": "initial_plan"
+          },
+          "goal_id": "seed-goal-2",
+          "missing_inputs": [],
+          "plan_proposal_id": "seed-proposal-2",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.943586+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.943588+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Execute Seed skill two.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:41+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "00b359dff1e04e4e8ed4b7cb6708fc82",
+      "correlation_id": "seed-goal-2",
+      "event_id": "bd9d07154ec54722b75646e489f24782",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "seed-commitment-2",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-2",
+          "created_at": "2026-04-20T12:19:21.944337+00:00",
+          "details": {
+            "current_plan_proposal_id": "seed-proposal-2"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Adopt Seed skill two.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.944333+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.944335+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Seed skill two",
+          "updated_at": "2026-04-20T12:19:21.944338+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:42+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-2",
+      "event_id": "ebe861a165084fe4857cdcf81c17a58a",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 0
+        },
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "seed-goal-2",
+        "step_index": 0
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:43+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "ebe861a165084fe4857cdcf81c17a58a",
+      "correlation_id": "seed-goal-2",
+      "event_id": "4e50c843bc5a4f249c53cf669122cd77",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "maintenance.review_memory_health",
+        "goal_id": "seed-goal-2",
+        "result": {
+          "accepted": true,
+          "capability_id": "maintenance.review_memory_health",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 0
+          },
+          "retryable": false,
+          "summary": "Completed maintenance.review_memory_health.",
+          "warnings": []
+        },
+        "step_index": 0
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:44+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-2",
+      "event_id": "134a4c22428146b7bf5614be637b2a31",
+      "event_type": "capability.requested",
+      "payload": {
+        "arguments": {
+          "slot": 1
+        },
+        "capability_id": "reporting.record_maintenance_note",
+        "goal_id": "seed-goal-2",
+        "step_index": 1
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:45+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "134a4c22428146b7bf5614be637b2a31",
+      "correlation_id": "seed-goal-2",
+      "event_id": "9941ac29c510401391a405e917684bd4",
+      "event_type": "capability.completed",
+      "payload": {
+        "capability_id": "reporting.record_maintenance_note",
+        "goal_id": "seed-goal-2",
+        "result": {
+          "accepted": true,
+          "capability_id": "reporting.record_maintenance_note",
+          "error_code": null,
+          "metadata": {},
+          "outcome": "completed",
+          "output": {
+            "slot": 1
+          },
+          "retryable": false,
+          "summary": "Completed reporting.record_maintenance_note.",
+          "warnings": []
+        },
+        "step_index": 1
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:46+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "seed-goal-2",
+      "event_id": "bb01cded6a2e46d68c0bf3480bcdd3c3",
+      "event_type": "goal.completed",
+      "payload": {
+        "commitment": {
+          "commitment_id": "seed-commitment-2",
+          "status": "completed"
+        },
+        "goal": {
+          "active_step_index": 1,
+          "blocked_reason": null,
+          "commitment_id": "seed-commitment-2",
+          "created_at": "2026-04-20T12:19:21.945968+00:00",
+          "details": {
+            "current_plan_proposal_id": "seed-proposal-2"
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "seed-goal-2",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "Completed Seed skill two.",
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "completed",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {
+                "slot": 0
+              },
+              "status": "completed",
+              "summary": "Completed maintenance.review_memory_health.",
+              "updated_at": "2026-04-20T12:19:21.945346+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 1,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {
+                "slot": 1
+              },
+              "status": "completed",
+              "summary": "Completed reporting.record_maintenance_note.",
+              "updated_at": "2026-04-20T12:19:21.945964+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Seed skill two",
+          "updated_at": "2026-04-20T12:19:21.945969+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-01-01T00:00:47+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "commitment_5cd1067322425e4ba0112537a1d4bf27",
+      "event_id": "ce3a2f12f31b415aaa503f0fb113ee90",
+      "event_type": "goal.created",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_5cd1067322425e4ba0112537a1d4bf27",
+          "scope_id": "blink/main",
+          "scope_type": "agent",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment_5cd1067322425e4ba0112537a1d4bf27",
+          "created_at": "2026-04-20T12:19:21.947626+00:00",
+          "details": {
+            "commitment_status": "active",
+            "survive_restart": true
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "7b0ac2b1cca04aa3949dfa016560c9d4",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": null,
+          "plan_revision": 1,
+          "planning_requested": false,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [],
+          "title": "Reuse maintenance skill",
+          "updated_at": "2026-04-20T12:19:21.947627+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "fixture",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-04-20T12:19:21.948149+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": null,
+      "correlation_id": "7b0ac2b1cca04aa3949dfa016560c9d4",
+      "event_id": "555857921518412a9457316e28d26276",
+      "event_type": "planning.requested",
+      "payload": {
+        "goal_id": "7b0ac2b1cca04aa3949dfa016560c9d4",
+        "intent": "maintenance.review"
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-04-20T12:19:21.948636+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "555857921518412a9457316e28d26276",
+      "correlation_id": "7b0ac2b1cca04aa3949dfa016560c9d4",
+      "event_id": "499297be23574fa8a728bf46f4b35e19",
+      "event_type": "planning.proposed",
+      "payload": {
+        "commitment_id": "commitment_5cd1067322425e4ba0112537a1d4bf27",
+        "goal_id": "7b0ac2b1cca04aa3949dfa016560c9d4",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment_5cd1067322425e4ba0112537a1d4bf27",
+          "created_at": "2026-04-20T12:19:21.949270+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "capability_families": [
+              "maintenance",
+              "reporting"
+            ],
+            "procedural": {
+              "delta": null,
+              "origin": "skill_reuse",
+              "rejected_skills": [],
+              "retrieved_skill_candidates": [
+                {
+                  "confidence": 0.7200000000000001,
+                  "details": {
+                    "review_policy": "auto_adopt_ok",
+                    "skill_family_key": "procedural_skill_family_c710908c028b57d9aae41688dcca301a",
+                    "template_fingerprint": "procedural_skill_template_8af124a9c74051beb9fc0eda7a937dbd"
+                  },
+                  "eligibility": "reusable",
+                  "goal_family": "memory_maintenance",
+                  "purpose": "Execute Seed skill two.",
+                  "reason": null,
+                  "required_capability_ids": [
+                    "maintenance.review_memory_health",
+                    "reporting.record_maintenance_note"
+                  ],
+                  "review_policy": "auto_adopt_ok",
+                  "score": 2.02,
+                  "skill_id": "procedural_skill_b02e6a4190925e27a37d9e6af5262979",
+                  "skill_status": "active",
+                  "support_plan_proposal_ids": [
+                    "seed-proposal-1",
+                    "seed-proposal-2"
+                  ],
+                  "support_trace_ids": [
+                    "procedural_trace_d8371b437d725163b1581bdc73259711",
+                    "procedural_trace_ff70c894d67a57bb88ce8383472af901"
+                  ],
+                  "title": "Seed skill two"
+                }
+              ],
+              "selected_skill_confidence": 0.7200000000000001,
+              "selected_skill_id": "procedural_skill_b02e6a4190925e27a37d9e6af5262979",
+              "selected_skill_status": "active",
+              "selected_skill_support_plan_proposal_ids": [
+                "seed-proposal-1",
+                "seed-proposal-2"
+              ],
+              "selected_skill_support_trace_ids": [
+                "procedural_trace_d8371b437d725163b1581bdc73259711",
+                "procedural_trace_ff70c894d67a57bb88ce8383472af901"
+              ]
+            },
+            "remaining_step_count": 2,
+            "request_kind": "initial_plan",
+            "requested_review_policy": "auto_adopt_ok"
+          },
+          "goal_id": "7b0ac2b1cca04aa3949dfa016560c9d4",
+          "missing_inputs": [],
+          "plan_proposal_id": "plan-proposal-304a2c9c-81e6-440f-8ef7-082ad41cd9d9",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.947479+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.947482+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Reuse the successful maintenance procedure.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-04-20T12:19:21.949270+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "499297be23574fa8a728bf46f4b35e19",
+      "correlation_id": "7b0ac2b1cca04aa3949dfa016560c9d4",
+      "event_id": "06c0c4983749496987a75f413df2e3ad",
+      "event_type": "planning.adopted",
+      "payload": {
+        "commitment_id": "commitment_5cd1067322425e4ba0112537a1d4bf27",
+        "decision": {
+          "details": {
+            "capability_families": [
+              "maintenance",
+              "reporting"
+            ],
+            "delta_operation_count": 0,
+            "procedural_origin": "skill_reuse",
+            "request_kind": "initial_plan",
+            "selected_skill_id": "procedural_skill_b02e6a4190925e27a37d9e6af5262979"
+          },
+          "reason": "bounded_plan_available",
+          "summary": "The bounded plan is safe to adopt automatically."
+        },
+        "goal_id": "7b0ac2b1cca04aa3949dfa016560c9d4",
+        "proposal": {
+          "assumptions": [],
+          "commitment_id": "commitment_5cd1067322425e4ba0112537a1d4bf27",
+          "created_at": "2026-04-20T12:19:21.949270+00:00",
+          "current_plan_revision": 1,
+          "details": {
+            "capability_families": [
+              "maintenance",
+              "reporting"
+            ],
+            "procedural": {
+              "delta": null,
+              "origin": "skill_reuse",
+              "rejected_skills": [],
+              "retrieved_skill_candidates": [
+                {
+                  "confidence": 0.7200000000000001,
+                  "details": {
+                    "review_policy": "auto_adopt_ok",
+                    "skill_family_key": "procedural_skill_family_c710908c028b57d9aae41688dcca301a",
+                    "template_fingerprint": "procedural_skill_template_8af124a9c74051beb9fc0eda7a937dbd"
+                  },
+                  "eligibility": "reusable",
+                  "goal_family": "memory_maintenance",
+                  "purpose": "Execute Seed skill two.",
+                  "reason": null,
+                  "required_capability_ids": [
+                    "maintenance.review_memory_health",
+                    "reporting.record_maintenance_note"
+                  ],
+                  "review_policy": "auto_adopt_ok",
+                  "score": 2.02,
+                  "skill_id": "procedural_skill_b02e6a4190925e27a37d9e6af5262979",
+                  "skill_status": "active",
+                  "support_plan_proposal_ids": [
+                    "seed-proposal-1",
+                    "seed-proposal-2"
+                  ],
+                  "support_trace_ids": [
+                    "procedural_trace_d8371b437d725163b1581bdc73259711",
+                    "procedural_trace_ff70c894d67a57bb88ce8383472af901"
+                  ],
+                  "title": "Seed skill two"
+                }
+              ],
+              "selected_skill_confidence": 0.7200000000000001,
+              "selected_skill_id": "procedural_skill_b02e6a4190925e27a37d9e6af5262979",
+              "selected_skill_status": "active",
+              "selected_skill_support_plan_proposal_ids": [
+                "seed-proposal-1",
+                "seed-proposal-2"
+              ],
+              "selected_skill_support_trace_ids": [
+                "procedural_trace_d8371b437d725163b1581bdc73259711",
+                "procedural_trace_ff70c894d67a57bb88ce8383472af901"
+              ]
+            },
+            "remaining_step_count": 2,
+            "request_kind": "initial_plan",
+            "requested_review_policy": "auto_adopt_ok"
+          },
+          "goal_id": "7b0ac2b1cca04aa3949dfa016560c9d4",
+          "missing_inputs": [],
+          "plan_proposal_id": "plan-proposal-304a2c9c-81e6-440f-8ef7-082ad41cd9d9",
+          "plan_revision": 1,
+          "preserved_prefix_count": 0,
+          "review_policy": "auto_adopt_ok",
+          "source": "bounded_planner",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.947479+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.947482+00:00",
+              "warnings": []
+            }
+          ],
+          "summary": "Reuse the successful maintenance procedure.",
+          "supersedes_plan_proposal_id": null
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-04-20T12:19:21.949270+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    },
+    {
+      "agent_id": "blink/main",
+      "causal_parent_id": "06c0c4983749496987a75f413df2e3ad",
+      "correlation_id": "7b0ac2b1cca04aa3949dfa016560c9d4",
+      "event_id": "74a6240d26234f2e91635723e2ba34e9",
+      "event_type": "goal.updated",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment_5cd1067322425e4ba0112537a1d4bf27",
+          "scope_id": "blink/main",
+          "scope_type": "agent",
+          "status": "active"
+        },
+        "goal": {
+          "active_step_index": null,
+          "blocked_reason": null,
+          "commitment_id": "commitment_5cd1067322425e4ba0112537a1d4bf27",
+          "created_at": "2026-04-20T12:19:21.947626+00:00",
+          "details": {
+            "commitment_status": "active",
+            "current_plan_proposal_id": "plan-proposal-304a2c9c-81e6-440f-8ef7-082ad41cd9d9",
+            "plan_review_policy": "auto_adopt_ok",
+            "survive_restart": true
+          },
+          "goal_family": "memory_maintenance",
+          "goal_id": "7b0ac2b1cca04aa3949dfa016560c9d4",
+          "intent": "maintenance.review",
+          "last_error": null,
+          "last_summary": "The bounded plan is safe to adopt automatically.",
+          "plan_revision": 1,
+          "planning_requested": true,
+          "recovery_count": 0,
+          "resume_count": 0,
+          "source": "fixture",
+          "status": "open",
+          "steps": [
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "maintenance.review_memory_health",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.947479+00:00",
+              "warnings": []
+            },
+            {
+              "arguments": {},
+              "attempts": 0,
+              "capability_id": "reporting.record_maintenance_note",
+              "error_code": null,
+              "output": {},
+              "status": "pending",
+              "summary": null,
+              "updated_at": "2026-04-20T12:19:21.947482+00:00",
+              "warnings": []
+            }
+          ],
+          "title": "Reuse maintenance skill",
+          "updated_at": "2026-04-20T12:19:21.950058+00:00",
+          "wake_conditions": []
+        }
+      },
+      "session_id": "browser:planning-skill-reuse-exact",
+      "source": "executive",
+      "thread_id": "browser:planning-skill-reuse-exact",
+      "ts": "2026-04-20T12:19:21.950534+00:00",
+      "user_id": "planning-skill-reuse-exact"
+    }
+  ],
+  "expected_state": {
+    "planning_reason_codes": [
+      "bounded_plan_available"
+    ],
+    "planning_procedural_origins": [
+      "skill_reuse"
+    ],
+    "planning_recent_outcome_kinds": [
+      "adopted"
+    ],
+    "planning_selected_skill_ids": [
+      "procedural_skill_b02e6a4190925e27a37d9e6af5262979"
+    ],
+    "planning_selected_anchor_types": [
+      "procedural_skill"
+    ],
+    "planning_selected_backing_ids": [
+      "procedural_skill_b02e6a4190925e27a37d9e6af5262979"
+    ],
+    "procedural_active_skill_ids": [
+      "procedural_skill_b02e6a4190925e27a37d9e6af5262979"
+    ]
+  },
+  "expected_terminal_state": {},
+  "name": "planning_skill_reuse_exact",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "session_id": "browser:planning-skill-reuse-exact",
+    "thread_id": "browser:planning-skill-reuse-exact",
+    "user_id": "planning-skill-reuse-exact"
+  }
+}

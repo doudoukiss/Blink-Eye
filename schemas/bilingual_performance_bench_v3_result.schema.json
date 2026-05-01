@@ -1,0 +1,554 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BilingualPerformanceBenchV3Result",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "suite_id",
+    "run_id",
+    "generated_at",
+    "profiles",
+    "passed",
+    "threshold",
+    "case_results",
+    "profile_results",
+    "release_gate",
+    "hard_blockers",
+    "scores",
+    "aggregate_metrics",
+    "paired_comparison",
+    "preference_review",
+    "avatar_contract_evidence",
+    "alive_performance_summary",
+    "artifact_links"
+  ],
+  "properties": {
+    "schema_version": { "const": 3 },
+    "suite_id": { "const": "bilingual_performance_bench/v3" },
+    "run_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+    "generated_at": { "type": "string", "minLength": 1, "maxLength": 64 },
+    "profiles": {
+      "type": "array",
+      "prefixItems": [
+        { "const": "browser-zh-melo" },
+        { "const": "browser-en-kokoro" }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "passed": { "type": "boolean" },
+    "threshold": { "type": "number", "minimum": 0, "maximum": 5 },
+    "case_results": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/case_result" },
+      "minItems": 20
+    },
+    "profile_results": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/profile_result" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "release_gate": { "$ref": "#/$defs/release_gate" },
+    "hard_blockers": { "$ref": "#/$defs/hard_blocker_array" },
+    "scores": { "$ref": "#/$defs/profile_score_map" },
+    "aggregate_metrics": { "$ref": "#/$defs/metric_map" },
+    "paired_comparison": { "$ref": "#/$defs/paired_comparison" },
+    "preference_review": { "$ref": "#/$defs/preference_review" },
+    "avatar_contract_evidence": { "$ref": "#/$defs/avatar_contract_evidence" },
+    "alive_performance_summary": { "type": "string", "minLength": 1, "maxLength": 320 },
+    "artifact_links": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "maxLength": 320 }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "profile": {
+      "enum": ["browser-zh-melo", "browser-en-kokoro"]
+    },
+    "language": {
+      "enum": ["zh", "en"]
+    },
+    "tts_label": {
+      "enum": ["local-http-wav/MeloTTS", "kokoro/English"]
+    },
+    "category": {
+      "enum": [
+        "connection",
+        "listening",
+        "speech",
+        "overlap_interruption",
+        "camera_grounding",
+        "repair",
+        "memory_persona",
+        "long_session_continuity",
+        "preference_comparison",
+        "safety_controls"
+      ]
+    },
+    "score_dimension": {
+      "enum": [
+        "state_clarity",
+        "felt_heard",
+        "voice_pacing",
+        "interruption_naturalness",
+        "camera_honesty",
+        "memory_usefulness",
+        "persona_consistency",
+        "enjoyment",
+        "not_fake_human"
+      ]
+    },
+    "metric_name": {
+      "enum": [
+        "state_clarity",
+        "perceived_responsiveness_proxy",
+        "interruption_stop_latency_ms",
+        "stale_chunk_drops",
+        "camera_frame_age_policy",
+        "memory_effect_rate",
+        "persona_reference_hit_rate",
+        "episode_sanitizer_pass_rate",
+        "bilingual_parity_delta"
+      ]
+    },
+    "hard_blocker": {
+      "enum": [
+        "profile_regression",
+        "hidden_camera_use",
+        "false_camera_claim",
+        "self_interruption",
+        "stale_tts_after_interrupt",
+        "memory_contradiction",
+        "unsupported_tts_claim",
+        "unsafe_trace_payload",
+        "missing_consent_controls",
+        "realistic_human_avatar_capability"
+      ]
+    },
+    "string_array": {
+      "type": "array",
+      "items": { "type": "string", "maxLength": 160 }
+    },
+    "hard_blocker_array": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/hard_blocker" },
+      "uniqueItems": true
+    },
+    "score_map": {
+      "type": "object",
+      "properties": {
+        "state_clarity": { "type": "number", "minimum": 0, "maximum": 5 },
+        "felt_heard": { "type": "number", "minimum": 0, "maximum": 5 },
+        "voice_pacing": { "type": "number", "minimum": 0, "maximum": 5 },
+        "interruption_naturalness": { "type": "number", "minimum": 0, "maximum": 5 },
+        "camera_honesty": { "type": "number", "minimum": 0, "maximum": 5 },
+        "memory_usefulness": { "type": "number", "minimum": 0, "maximum": 5 },
+        "persona_consistency": { "type": "number", "minimum": 0, "maximum": 5 },
+        "enjoyment": { "type": "number", "minimum": 0, "maximum": 5 },
+        "not_fake_human": { "type": "number", "minimum": 0, "maximum": 5 }
+      },
+      "required": [
+        "state_clarity",
+        "felt_heard",
+        "voice_pacing",
+        "interruption_naturalness",
+        "camera_honesty",
+        "memory_usefulness",
+        "persona_consistency",
+        "enjoyment",
+        "not_fake_human"
+      ],
+      "additionalProperties": false
+    },
+    "metric_map": {
+      "type": "object",
+      "properties": {
+        "state_clarity": { "type": "number", "minimum": 0, "maximum": 5 },
+        "perceived_responsiveness_proxy": { "type": "number", "minimum": 0, "maximum": 5 },
+        "interruption_stop_latency_ms": { "type": "number", "minimum": 0, "maximum": 10000 },
+        "stale_chunk_drops": { "type": "number", "minimum": 0, "maximum": 10000 },
+        "camera_frame_age_policy": { "type": "number", "minimum": 0, "maximum": 1 },
+        "memory_effect_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "persona_reference_hit_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "episode_sanitizer_pass_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "bilingual_parity_delta": { "type": "number", "minimum": 0, "maximum": 5 }
+      },
+      "required": [
+        "state_clarity",
+        "perceived_responsiveness_proxy",
+        "interruption_stop_latency_ms",
+        "stale_chunk_drops",
+        "camera_frame_age_policy",
+        "memory_effect_rate",
+        "persona_reference_hit_rate",
+        "episode_sanitizer_pass_rate",
+        "bilingual_parity_delta"
+      ],
+      "additionalProperties": false
+    },
+    "profile_score_map": {
+      "type": "object",
+      "properties": {
+        "browser-zh-melo": { "$ref": "#/$defs/score_map" },
+        "browser-en-kokoro": { "$ref": "#/$defs/score_map" }
+      },
+      "required": ["browser-zh-melo", "browser-en-kokoro"],
+      "additionalProperties": false
+    },
+    "category_result_map": {
+      "type": "object",
+      "properties": {
+        "connection": { "type": "boolean" },
+        "listening": { "type": "boolean" },
+        "speech": { "type": "boolean" },
+        "overlap_interruption": { "type": "boolean" },
+        "camera_grounding": { "type": "boolean" },
+        "repair": { "type": "boolean" },
+        "memory_persona": { "type": "boolean" },
+        "long_session_continuity": { "type": "boolean" },
+        "preference_comparison": { "type": "boolean" },
+        "safety_controls": { "type": "boolean" }
+      },
+      "required": [
+        "connection",
+        "listening",
+        "speech",
+        "overlap_interruption",
+        "camera_grounding",
+        "repair",
+        "memory_persona",
+        "long_session_continuity",
+        "preference_comparison",
+        "safety_controls"
+      ],
+      "additionalProperties": false
+    },
+    "check_result": {
+      "type": "object",
+      "required": ["check_id", "passed", "detail", "reason_codes"],
+      "properties": {
+        "check_id": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "passed": { "type": "boolean" },
+        "detail": { "type": "string", "minLength": 1, "maxLength": 320 },
+        "reason_codes": { "$ref": "#/$defs/string_array" }
+      },
+      "additionalProperties": false
+    },
+    "case": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "case_id",
+        "pair_id",
+        "profile",
+        "language",
+        "tts_label",
+        "category",
+        "title",
+        "event_count",
+        "control_frame_count",
+        "plan_summary_count",
+        "score_dimensions",
+        "metric_names",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": { "const": 3 },
+        "case_id": { "type": "string", "minLength": 1, "maxLength": 160 },
+        "pair_id": { "$ref": "#/$defs/category" },
+        "profile": { "$ref": "#/$defs/profile" },
+        "language": { "$ref": "#/$defs/language" },
+        "tts_label": { "$ref": "#/$defs/tts_label" },
+        "category": { "$ref": "#/$defs/category" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 220 },
+        "event_count": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "control_frame_count": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "plan_summary_count": { "type": "integer", "minimum": 0, "maximum": 10000 },
+        "score_dimensions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/score_dimension" },
+          "minItems": 9,
+          "maxItems": 9
+        },
+        "metric_names": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/metric_name" },
+          "minItems": 9,
+          "maxItems": 9
+        },
+        "reason_codes": { "$ref": "#/$defs/string_array" }
+      },
+      "additionalProperties": false
+    },
+    "case_evidence": {
+      "type": "object",
+      "required": [
+        "profile",
+        "language",
+        "category",
+        "event_types",
+        "control_frame_count",
+        "plan_summary_count",
+        "preference_real_pair_count",
+        "hard_blocker_count"
+      ],
+      "properties": {
+        "profile": { "$ref": "#/$defs/profile" },
+        "language": { "$ref": "#/$defs/language" },
+        "category": { "$ref": "#/$defs/category" },
+        "event_types": { "$ref": "#/$defs/string_array" },
+        "control_frame_count": { "type": "integer", "minimum": 0 },
+        "plan_summary_count": { "type": "integer", "minimum": 0 },
+        "preference_real_pair_count": { "type": "integer", "minimum": 0 },
+        "hard_blocker_count": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "case_result": {
+      "type": "object",
+      "required": ["case", "passed", "checks", "scores", "metrics", "hard_blockers", "evidence"],
+      "properties": {
+        "case": { "$ref": "#/$defs/case" },
+        "passed": { "type": "boolean" },
+        "checks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/check_result" },
+          "minItems": 1
+        },
+        "scores": { "$ref": "#/$defs/score_map" },
+        "metrics": { "$ref": "#/$defs/metric_map" },
+        "hard_blockers": { "$ref": "#/$defs/hard_blocker_array" },
+        "evidence": { "$ref": "#/$defs/case_evidence" }
+      },
+      "additionalProperties": false
+    },
+    "profile_result": {
+      "type": "object",
+      "required": [
+        "profile",
+        "language",
+        "tts_label",
+        "case_count",
+        "category_results",
+        "scores",
+        "metrics",
+        "hard_blockers",
+        "passed",
+        "reason_codes"
+      ],
+      "properties": {
+        "profile": { "$ref": "#/$defs/profile" },
+        "language": { "$ref": "#/$defs/language" },
+        "tts_label": { "$ref": "#/$defs/tts_label" },
+        "case_count": { "type": "integer", "minimum": 0 },
+        "category_results": { "$ref": "#/$defs/category_result_map" },
+        "scores": { "$ref": "#/$defs/score_map" },
+        "metrics": { "$ref": "#/$defs/metric_map" },
+        "hard_blockers": { "$ref": "#/$defs/hard_blocker_array" },
+        "passed": { "type": "boolean" },
+        "reason_codes": { "$ref": "#/$defs/string_array" }
+      },
+      "additionalProperties": false
+    },
+    "release_gate": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "passed",
+        "threshold",
+        "parity_delta_threshold",
+        "hard_blockers",
+        "profile_failures",
+        "parity_deltas",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": { "const": 3 },
+        "passed": { "type": "boolean" },
+        "threshold": { "type": "number", "minimum": 0, "maximum": 5 },
+        "parity_delta_threshold": { "type": "number", "minimum": 0, "maximum": 5 },
+        "hard_blockers": { "$ref": "#/$defs/hard_blocker_array" },
+        "profile_failures": {
+          "type": "object",
+          "properties": {
+            "browser-zh-melo": { "$ref": "#/$defs/string_array" },
+            "browser-en-kokoro": { "$ref": "#/$defs/string_array" }
+          },
+          "additionalProperties": false
+        },
+        "parity_deltas": {
+          "type": "object",
+          "properties": {
+            "state_clarity": { "type": "number", "minimum": 0, "maximum": 5 },
+            "felt_heard": { "type": "number", "minimum": 0, "maximum": 5 },
+            "voice_pacing": { "type": "number", "minimum": 0, "maximum": 5 },
+            "interruption_naturalness": { "type": "number", "minimum": 0, "maximum": 5 },
+            "camera_honesty": { "type": "number", "minimum": 0, "maximum": 5 },
+            "memory_usefulness": { "type": "number", "minimum": 0, "maximum": 5 },
+            "persona_consistency": { "type": "number", "minimum": 0, "maximum": 5 },
+            "enjoyment": { "type": "number", "minimum": 0, "maximum": 5 },
+            "not_fake_human": { "type": "number", "minimum": 0, "maximum": 5 },
+            "bilingual_parity_delta": { "type": "number", "minimum": 0, "maximum": 5 }
+          },
+          "required": [
+            "state_clarity",
+            "felt_heard",
+            "voice_pacing",
+            "interruption_naturalness",
+            "camera_honesty",
+            "memory_usefulness",
+            "persona_consistency",
+            "enjoyment",
+            "not_fake_human",
+            "bilingual_parity_delta"
+          ],
+          "additionalProperties": false
+        },
+        "reason_codes": { "$ref": "#/$defs/string_array" }
+      },
+      "additionalProperties": false
+    },
+    "paired_comparison": {
+      "type": "object",
+      "required": [
+        "matched_pair_count",
+        "categories",
+        "profiles",
+        "structural_parity",
+        "bilingual_parity_delta"
+      ],
+      "properties": {
+        "matched_pair_count": { "type": "integer", "minimum": 0 },
+        "categories": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/category" },
+          "minItems": 10,
+          "maxItems": 10
+        },
+        "profiles": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/profile" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "structural_parity": { "type": "boolean" },
+        "bilingual_parity_delta": { "type": "number", "minimum": 0, "maximum": 5 }
+      },
+      "additionalProperties": false
+    },
+    "synthetic_evidence_ref": {
+      "type": "object",
+      "required": ["evidence_kind", "evidence_id", "summary", "reason_codes"],
+      "properties": {
+        "evidence_kind": { "type": "string", "maxLength": 120 },
+        "evidence_id": { "type": "string", "maxLength": 160 },
+        "summary": { "type": "string", "maxLength": 220 },
+        "reason_codes": { "$ref": "#/$defs/string_array" }
+      },
+      "additionalProperties": false
+    },
+    "preference_review": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "source",
+        "synthetic_pair_count",
+        "real_pair_count",
+        "real_proposal_count",
+        "profile_counts",
+        "dimensions",
+        "synthetic_evidence_refs",
+        "real_pair_ids",
+        "policy_proposal_ids",
+        "sanitizer_pass",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": { "const": 3 },
+        "source": { "const": "synthetic_with_optional_jsonl" },
+        "synthetic_pair_count": { "type": "integer", "minimum": 0 },
+        "real_pair_count": { "type": "integer", "minimum": 0 },
+        "real_proposal_count": { "type": "integer", "minimum": 0 },
+        "profile_counts": {
+          "type": "object",
+          "properties": {
+            "browser-zh-melo": { "type": "integer", "minimum": 0 },
+            "browser-en-kokoro": { "type": "integer", "minimum": 0 },
+            "cross_profile": { "type": "integer", "minimum": 0 }
+          },
+          "additionalProperties": false
+        },
+        "dimensions": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "felt_heard",
+              "state_clarity",
+              "interruption_naturalness",
+              "voice_pacing",
+              "camera_honesty",
+              "memory_usefulness",
+              "persona_consistency",
+              "enjoyment",
+              "not_fake_human"
+            ]
+          },
+          "minItems": 9,
+          "maxItems": 9
+        },
+        "synthetic_evidence_refs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/synthetic_evidence_ref" },
+          "minItems": 2
+        },
+        "real_pair_ids": { "$ref": "#/$defs/string_array" },
+        "policy_proposal_ids": { "$ref": "#/$defs/string_array" },
+        "sanitizer_pass": { "type": "boolean" },
+        "reason_codes": { "$ref": "#/$defs/string_array" }
+      },
+      "additionalProperties": false
+    },
+    "avatar_contract_evidence": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "allowed_surfaces",
+        "forbidden_capabilities",
+        "raw_media_allowed",
+        "reason_codes"
+      ],
+      "properties": {
+        "schema_version": { "const": 3 },
+        "allowed_surfaces": {
+          "type": "array",
+          "items": {
+            "enum": ["abstract_avatar", "status_avatar", "symbolic_avatar", "debug_status"]
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "forbidden_capabilities": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "realistic_human_likeness",
+              "identity_cloning",
+              "face_reenactment",
+              "camera_frame_access",
+              "audio_stream_access",
+              "hidden_context_access"
+            ]
+          },
+          "minItems": 6,
+          "maxItems": 6
+        },
+        "raw_media_allowed": { "const": false },
+        "reason_codes": { "$ref": "#/$defs/string_array" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

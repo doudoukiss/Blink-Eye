@@ -1,0 +1,311 @@
+{
+  "name": "wake_router_condition_cleared_resume_direct",
+  "description": "A condition-cleared wake resumes the same commitment directly and keeps the causal wake chain inspectable.",
+  "language": "en",
+  "presence_scope_key": "browser:presence",
+  "session_ids": {
+    "agent_id": "blink/main",
+    "user_id": "alpha",
+    "session_id": "browser:alpha",
+    "thread_id": "browser:alpha"
+  },
+  "events": [
+    {
+      "event_id": "evt-wake-resume-goal-created",
+      "event_type": "goal.created",
+      "ts": "2026-04-19T07:00:00+00:00",
+      "source": "fixture",
+      "payload": {
+        "goal": {
+          "goal_id": "goal-wake-resume",
+          "title": "Resume after blocker clears",
+          "intent": "robot_head.sequence",
+          "source": "interpreter",
+          "goal_family": "environment",
+          "commitment_id": "commitment-wake-resume",
+          "status": "waiting",
+          "details": {
+            "commitment_status": "active"
+          },
+          "steps": [
+            {
+              "capability_id": "robot_head.blink",
+              "arguments": {},
+              "status": "blocked",
+              "attempts": 1,
+              "summary": "Robot head was busy.",
+              "error_code": "robot_head_busy",
+              "warnings": [],
+              "output": {},
+              "updated_at": "2026-04-19T07:00:00+00:00"
+            }
+          ],
+          "active_step_index": 0,
+          "recovery_count": 0,
+          "planning_requested": false,
+          "blocked_reason": null,
+          "wake_conditions": [],
+          "plan_revision": 1,
+          "resume_count": 0,
+          "last_summary": null,
+          "last_error": null,
+          "created_at": "2026-04-19T07:00:00+00:00",
+          "updated_at": "2026-04-19T07:00:00+00:00"
+        },
+        "commitment": {
+          "commitment_id": "commitment-wake-resume",
+          "scope_type": "relationship",
+          "scope_id": "blink/main:alpha",
+          "status": "active"
+        }
+      }
+    },
+    {
+      "event_id": "evt-wake-resume-goal-deferred",
+      "event_type": "goal.deferred",
+      "ts": "2026-04-19T07:00:01+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-wake-resume-goal-created",
+      "payload": {
+        "goal": {
+          "goal_id": "goal-wake-resume",
+          "title": "Resume after blocker clears",
+          "intent": "robot_head.sequence",
+          "source": "interpreter",
+          "goal_family": "environment",
+          "commitment_id": "commitment-wake-resume",
+          "status": "blocked",
+          "details": {
+            "commitment_status": "blocked"
+          },
+          "steps": [
+            {
+              "capability_id": "robot_head.blink",
+              "arguments": {},
+              "status": "blocked",
+              "attempts": 1,
+              "summary": "Robot head was busy.",
+              "error_code": "robot_head_busy",
+              "warnings": [],
+              "output": {},
+              "updated_at": "2026-04-19T07:00:01+00:00"
+            }
+          ],
+          "active_step_index": 0,
+          "recovery_count": 0,
+          "planning_requested": false,
+          "blocked_reason": {
+            "kind": "robot_head_busy",
+            "summary": "Robot head is busy.",
+            "details": {
+              "capability_id": "robot_head.blink"
+            }
+          },
+          "wake_conditions": [
+            {
+              "kind": "condition_cleared",
+              "summary": "Wake when the blocker clears.",
+              "details": {
+                "capability_id": "robot_head.blink"
+              }
+            }
+          ],
+          "plan_revision": 1,
+          "resume_count": 0,
+          "last_summary": "Blocked until the robot head becomes available.",
+          "last_error": null,
+          "created_at": "2026-04-19T07:00:00+00:00",
+          "updated_at": "2026-04-19T07:00:01+00:00"
+        },
+        "commitment": {
+          "commitment_id": "commitment-wake-resume",
+          "scope_type": "relationship",
+          "scope_id": "blink/main:alpha",
+          "title": "Resume after blocker clears",
+          "goal_family": "environment",
+          "intent": "robot_head.sequence",
+          "status": "blocked",
+          "details": {
+            "commitment_status": "blocked"
+          },
+          "current_goal_id": "goal-wake-resume",
+          "blocked_reason": {
+            "kind": "robot_head_busy",
+            "summary": "Robot head is busy.",
+            "details": {
+              "capability_id": "robot_head.blink"
+            }
+          },
+          "wake_conditions": [
+            {
+              "kind": "condition_cleared",
+              "summary": "Wake when the blocker clears.",
+              "details": {
+                "capability_id": "robot_head.blink"
+              }
+            }
+          ],
+          "plan_revision": 1,
+          "resume_count": 0,
+          "created_at": "2026-04-19T07:00:00+00:00",
+          "updated_at": "2026-04-19T07:00:01+00:00",
+          "completed_at": null
+        }
+      }
+    },
+    {
+      "event_id": "evt-wake-resume-trigger",
+      "event_type": "commitment.wake.triggered",
+      "ts": "2026-04-19T07:00:03+00:00",
+      "source": "fixture",
+      "payload": {
+        "commitment": {
+          "commitment_id": "commitment-wake-resume",
+          "scope_type": "relationship",
+          "scope_id": "blink/main:alpha",
+          "title": "Resume after blocker clears",
+          "goal_family": "environment",
+          "intent": "robot_head.sequence",
+          "status": "blocked",
+          "details": {
+            "commitment_status": "blocked"
+          },
+          "current_goal_id": "goal-wake-resume",
+          "blocked_reason": {
+            "kind": "robot_head_busy",
+            "summary": "Robot head is busy.",
+            "details": {
+              "capability_id": "robot_head.blink"
+            }
+          },
+          "wake_conditions": [
+            {
+              "kind": "condition_cleared",
+              "summary": "Wake when the blocker clears.",
+              "details": {
+                "capability_id": "robot_head.blink"
+              }
+            }
+          ],
+          "plan_revision": 1,
+          "resume_count": 0,
+          "created_at": "2026-04-19T07:00:00+00:00",
+          "updated_at": "2026-04-19T07:00:01+00:00",
+          "completed_at": null
+        },
+        "wake_condition": {
+          "kind": "condition_cleared",
+          "summary": "Wake when the blocker clears.",
+          "details": {
+            "capability_id": "robot_head.blink"
+          }
+        },
+        "trigger": {
+          "commitment_id": "commitment-wake-resume",
+          "wake_kind": "condition_cleared",
+          "summary": "Matched durable commitment wake: condition_cleared.",
+          "details": {
+            "boundary_kind": "goal_terminal",
+            "capability_id": "robot_head.blink",
+            "commitment_status": "blocked"
+          },
+          "source_event_type": "goal.completed",
+          "source_event_id": "evt-environment-goal-complete",
+          "ts": "2026-04-19T07:00:03+00:00"
+        },
+        "routing": {
+          "route_kind": "resume_direct",
+          "summary": "Resume this commitment directly because the blocker cleared.",
+          "details": {
+            "reason": "blocker_cleared",
+            "boundary_kind": "goal_terminal",
+            "capability_id": "robot_head.blink",
+            "goal_family": "environment"
+          }
+        }
+      }
+    },
+    {
+      "event_id": "evt-wake-resume-goal-resumed",
+      "event_type": "goal.resumed",
+      "ts": "2026-04-19T07:00:03+00:00",
+      "source": "fixture",
+      "causal_parent_id": "evt-wake-resume-trigger",
+      "payload": {
+        "goal": {
+          "goal_id": "goal-wake-resume",
+          "title": "Resume after blocker clears",
+          "intent": "robot_head.sequence",
+          "source": "interpreter",
+          "goal_family": "environment",
+          "commitment_id": "commitment-wake-resume",
+          "status": "waiting",
+          "details": {
+            "commitment_status": "active"
+          },
+          "steps": [
+            {
+              "capability_id": "robot_head.blink",
+              "arguments": {},
+              "status": "pending",
+              "attempts": 1,
+              "summary": "Robot head was busy.",
+              "error_code": null,
+              "warnings": [],
+              "output": {},
+              "updated_at": "2026-04-19T07:00:03+00:00"
+            }
+          ],
+          "active_step_index": 0,
+          "recovery_count": 0,
+          "planning_requested": false,
+          "blocked_reason": null,
+          "wake_conditions": [],
+          "plan_revision": 1,
+          "resume_count": 1,
+          "last_summary": "The commitment is active again.",
+          "last_error": null,
+          "created_at": "2026-04-19T07:00:00+00:00",
+          "updated_at": "2026-04-19T07:00:03+00:00"
+        },
+        "commitment": {
+          "commitment_id": "commitment-wake-resume",
+          "scope_type": "relationship",
+          "scope_id": "blink/main:alpha",
+          "title": "Resume after blocker clears",
+          "goal_family": "environment",
+          "intent": "robot_head.sequence",
+          "status": "active",
+          "details": {
+            "commitment_status": "active"
+          },
+          "current_goal_id": "goal-wake-resume",
+          "blocked_reason": null,
+          "wake_conditions": [],
+          "plan_revision": 1,
+          "resume_count": 1,
+          "created_at": "2026-04-19T07:00:00+00:00",
+          "updated_at": "2026-04-19T07:00:03+00:00",
+          "completed_at": null
+        }
+      }
+    }
+  ],
+  "expected_terminal_state": {},
+  "expected_state": {
+    "commitment_titles_by_status": {
+      "active": [
+        "Resume after blocker clears"
+      ]
+    },
+    "wake_recent_wake_kinds": [
+      "condition_cleared"
+    ],
+    "wake_recent_route_kinds": [
+      "resume_direct"
+    ],
+    "wake_reason_codes": [
+      "blocker_cleared"
+    ]
+  }
+}
