@@ -1,5 +1,18 @@
 # Current Project Snapshot
 
+## Research Alignment
+
+Blink's V3 performance-intelligence direction is informed by the GenJen paper
+set summarized in [../research_references.md](../research_references.md),
+especially the LPM framing of conversation as real-time performance. The source
+tree already reflects those ideas through separated speaking/listening control,
+public actor state, bounded TTS lookahead, camera honesty, persona/memory
+planning, and benchmarked bilingual browser paths.
+
+This is why V3 is not just another chat layer. It is an attempt to make
+frontier conversational-agent ideas practical, local, inspectable, and safe to
+iterate.
+
 ## Equal primary local browser paths
 
 - Chinese conversation path: `./scripts/run-local-browser-melo.sh`

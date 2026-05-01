@@ -1,5 +1,9 @@
 # LPM research translation for Blink V3
 
+Source context: this note translates the LPM paper from the GenJen reference
+set. See [../research_references.md](../research_references.md) for the
+maintained paper summary and scope boundaries.
+
 The LPM paper's central claim is that performance is the externalization of intent, emotion, and personality through visual, vocal, and temporal behavior. It frames conversation as a full-duplex performance problem: a character speaks, listens, reacts, emotes, yields, and remains coherent over time.
 
 ## What transfers directly to Blink

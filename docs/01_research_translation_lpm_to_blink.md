@@ -1,5 +1,9 @@
 # 01 — Research translation: LPM ideas mapped to Blink
 
+Source context: this note translates the LPM paper from the GenJen reference
+set. See [research_references.md](./research_references.md) for the maintained
+paper summary and scope boundaries.
+
 ## Core LPM idea
 
 LPM defines performance as the externalization of intent, emotion, and personality through visual, vocal, and temporal behavior. For Blink, this means personality and memory should not remain hidden prompt/context features. They must appear through timing, turn-taking, listening behavior, speech chunking, camera grounding, and UI feedback.

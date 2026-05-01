@@ -10,6 +10,15 @@ typed memory, continuity evaluation, public-safe actor state, camera honesty,
 and bounded embodied actions. The next work is about making those foundations
 feel coherent, reliable, and product-grade.
 
+The actor-runtime and performance-planning direction is informed by the GenJen
+paper set summarized in [`research_references.md`](./research_references.md).
+
+That makes Blink a research-forward project, not only an integration wrapper.
+The codebase is translating frontier ideas from conversational performance
+research into practical local infrastructure: visible actor state, separated
+speaking/listening streams, multi-reference persona anchors, interruption-safe
+speech queues, camera honesty, and benchmark-driven product iteration.
+
 ## Current State
 
 Blink is ready for local engineering use:
@@ -39,6 +48,10 @@ Blink should feel like a capable local companion for technical work: responsive,
 interruptible, honest about what it sees, able to remember useful context, and
 legible enough that an operator can understand why it behaved the way it did.
 
+The ambition is world-class in architecture even while remaining local-first:
+Blink should make advanced assistant behavior inspectable, reproducible, and
+safe enough to improve through evidence rather than hidden prompt churn.
+
 That ambition breaks down into five commitments:
 
 - **Local trust first:** a user should be able to run and inspect meaningful
@@ -52,6 +65,24 @@ That ambition breaks down into five commitments:
   remain explicit, narrow, replayable, and easy to disable.
 - **Evidence-driven improvement:** performance learning should use structured
   local evidence and release gates before changing behavior.
+
+## Research Translation Priorities
+
+The most important paper ideas Blink carries forward are:
+
+- **Performance trilemma awareness:** real assistants need expressiveness,
+  latency control, and long-horizon consistency at the same time.
+- **Full-duplex conversation:** listening is active behavior, not silence while
+  waiting for a transcript.
+- **Online actor state:** a browser assistant should expose whether it is
+  listening, thinking, looking, speaking, repairing, or degraded.
+- **Multi-reference identity translated to persona:** stable behavior comes
+  from selected situational anchors, not one monolithic prompt.
+- **Boundary-aligned updates:** interruption, camera, memory, and speech changes
+  should apply at safe runtime boundaries instead of corrupting in-flight output.
+- **Performance evaluation:** release gates should score state clarity,
+  felt-heard, interruption naturalness, speech pacing, camera honesty, memory
+  usefulness, persona consistency, and not-fake-human behavior.
 
 ## Near-Term Priorities
 

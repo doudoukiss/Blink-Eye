@@ -1,5 +1,9 @@
 # LPM research translation for Blink
 
+Source context: this note translates the LPM paper from the GenJen reference
+set. See [../research_references.md](../research_references.md) for the
+maintained paper summary and scope boundaries.
+
 LPM 1.0 argues that conversation is a performance problem, not just a talking problem. Its most transferable ideas are:
 
 1. **Speaking and listening are distinct control streams.** Blink should separately model assistant speech output and user-listening input.

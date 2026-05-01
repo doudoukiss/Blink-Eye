@@ -5,6 +5,16 @@ runtime makes Blink's listening, thinking, looking, speaking, interruption,
 memory/persona use, and degradation state visible through public-safe browser
 APIs and deterministic release gates.
 
+This is the part of Blink most directly shaped by the GenJen paper set. Instead
+of treating the browser as a thin chat frontend, Blink treats it as an actor
+runtime: a live system with speaking/listening streams, online state,
+interruption boundaries, camera honesty, persona references, and release gates
+for perceived interaction quality.
+
+The design goal is advanced but concrete. Blink does not ship a realistic video
+avatar; it builds the substrate a serious real-time assistant needs before any
+avatar, robot, or hosted provider is allowed to sit on top.
+
 ## Primary Browser Paths
 
 Blink has two equal primary local browser product paths:

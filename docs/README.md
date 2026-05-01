@@ -14,6 +14,8 @@ actions, and the proof lanes used to keep those pieces inspectable.
 - [`../tutorial.md`](../tutorial.md): architecture tutorial and mental model.
 - [`FILE_MAP.md`](./FILE_MAP.md): current source layout.
 - [`roadmap.md`](./roadmap.md): product and runtime direction.
+- [`research_references.md`](./research_references.md): GenJen paper references
+  and how Blink translates them.
 
 ## Local Product Paths
 
@@ -33,6 +35,8 @@ actions, and the proof lanes used to keep those pieces inspectable.
 
 - [`08_repo_integration_map.md`](./08_repo_integration_map.md): high-level
   integration map.
+- [`research_references.md`](./research_references.md): source paper themes
+  behind the actor runtime and performance-planning direction.
 - [`bilingual_actor_runtime/README.md`](./bilingual_actor_runtime/README.md):
   actor-state, actor-events, browser UI, and bilingual release gate.
 - [`performance_intelligence_v3/00_current_project_snapshot.md`](./performance_intelligence_v3/00_current_project_snapshot.md):

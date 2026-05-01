@@ -12,6 +12,12 @@ path is a MacBook Pro workflow using Python 3.12, `uv`, Ollama, local STT, and
 local TTS. Provider integrations remain available, but they are optional rather
 than required for a first run.
 
+Blink is also a research-aligned system. Its browser actor runtime translates
+ideas from recent GenJen reference papers, especially LPM 1.0, into practical
+local software: full-duplex conversation, separated speaking/listening control
+streams, online actor state, multi-reference persona behavior, bounded speech
+lookahead, and bench-driven evaluation.
+
 ## What Makes Blink Different
 
 - **Frame-based runtime:** audio, text, video, transcription, interruption, and
@@ -25,6 +31,10 @@ than required for a first run.
 - **Observable actor state:** the browser runtime exposes public-safe state for
   listening, thinking, speaking, looking, interruption, camera honesty,
   memory/persona use, and degradation.
+- **Frontier performance architecture:** Blink treats conversation as a live
+  performance system, not a request/response chatbot. Runtime state, speech
+  timing, interruption, memory, camera grounding, and persona selection are
+  explicit control surfaces.
 - **Memory and continuity:** Blink includes typed local memory, continuity
   evaluation lanes, behavior controls, and bounded public traces designed for
   inspection without exposing secrets, prompts, raw audio, or raw images.
@@ -93,6 +103,28 @@ Core concepts:
 Start with [`tutorial.md`](./tutorial.md) for the mental model and
 [`docs/FILE_MAP.md`](./docs/FILE_MAP.md) for the current source layout.
 
+## Research-Aligned Runtime
+
+The GenJen paper set, summarized in
+[`docs/research_references.md`](./docs/research_references.md), pushed Blink
+toward a more advanced architecture than a standard chat loop:
+
+- Conversation is modeled as **full-duplex performance**, where listening,
+  thinking, looking, speaking, interruption, and repair are visible states.
+- Assistant speech output and user-listening input are handled as **separate
+  control streams**, so speech chunking and interruption do not fight the same
+  queue.
+- Persona is represented through **situational references**, not only one hidden
+  personality prompt.
+- Long responses are constrained by **bounded lookahead** and stale-token
+  invalidation so the runtime can stop cleanly when the user interrupts.
+- Product quality is measured through **actor benchmarks**: felt-heard,
+  state clarity, camera honesty, memory usefulness, persona consistency, and
+  not-fake-human behavior.
+
+Blink does not claim to ship the LPM video model. It applies the paper's
+interaction ideas to a local, inspectable, open-source assistant runtime.
+
 ## Source-First Repository State
 
 This checkout is intentionally kept to source, required configuration, and
@@ -159,6 +191,7 @@ For browser actor/runtime changes:
 - [Architecture tutorial](./tutorial.md)
 - [Documentation index](./docs/README.md)
 - [Roadmap](./docs/roadmap.md)
+- [Research references](./docs/research_references.md)
 - [Chinese conversation adaptation](./docs/chinese-conversation-adaptation.md)
 - [Security policy](./SECURITY.md)
 
