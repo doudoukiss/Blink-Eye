@@ -18,6 +18,24 @@ local software: full-duplex conversation, separated speaking/listening control
 streams, online actor state, multi-reference persona behavior, bounded speech
 lookahead, and bench-driven evaluation.
 
+## Robot Prototype and Public Evidence
+
+The product and Python package are named **Blink**; `Blink-Eye` is the historical
+public repository slug. A desktop expressive robot prototype provides a concrete
+embodied test surface for the robot-head runtime documented in this repository.
+
+[![Blink desktop expressive robot prototype](https://github.com/doudoukiss/Blink-Eye/releases/download/blink-eye-robot-demo-2026-06/LI-Lin-Blink-Image-1.jpg)](https://github.com/doudoukiss/Blink-Eye/releases/tag/blink-eye-robot-demo-2026-06)
+
+- [Curated public evidence pack](https://github.com/doudoukiss/Blink-Eye/releases/tag/blink-eye-robot-demo-2026-06)
+- [Lightweight robot demo](https://github.com/doudoukiss/Blink-Eye/releases/download/blink-eye-robot-demo-2026-06/LI-Lin-Blink-Demo-Compressed.mp4)
+- [Two-page hardware and contribution summary](https://github.com/doudoukiss/Blink-Eye/releases/download/blink-eye-robot-demo-2026-06/LI-Lin-Blink-Project-Pager.pdf)
+- [Robot-head integration](./docs/ROBOT_HEAD_INTEGRATION.md) and [bench limits](./docs/robot_head_live_limits.md)
+
+These materials demonstrate physical assembly, bounded head and facial actuation,
+and an implemented robot-head integration path. They do not by themselves establish
+autonomous perception, validated HRI outcomes, production safety, or a complete
+humanoid system.
+
 ## What Makes Blink Different
 
 - **Frame-based runtime:** audio, text, video, transcription, interruption, and
