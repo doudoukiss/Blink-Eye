@@ -47,11 +47,11 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/blink-ai/Blink"
-Documentation = "https://github.com/blink-ai/Blink/tree/main/docs"
-Source = "https://github.com/blink-ai/Blink"
-Issues = "https://github.com/blink-ai/Blink/issues"
-Changelog = "https://github.com/blink-ai/Blink/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/doudoukiss/Blink-Eye"
+Documentation = "https://github.com/doudoukiss/Blink-Eye/tree/main/docs"
+Source = "https://github.com/doudoukiss/Blink-Eye"
+Issues = "https://github.com/doudoukiss/Blink-Eye/issues"
+Changelog = "https://github.com/doudoukiss/Blink-Eye/blob/main/CHANGELOG.md"
 
 [project.scripts]
 blink-local-chat = "blink.cli.local_chat:main"
@@ -254,7 +254,7 @@ directory = "changelog"
 start_string = "<!-- towncrier release notes start -->\n"
 template = "changelog/_template.md.j2"
 title_format = "## [{version}] - {project_date}"
-issue_format = "[#{issue}](https://github.com/blink-ai/Blink/pull/{issue})"
+issue_format = "[#{issue}](https://github.com/doudoukiss/Blink-Eye/pull/{issue})"
 underlines = ["", "", ""]
 wrap = true
 
